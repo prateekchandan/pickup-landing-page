@@ -6,7 +6,7 @@ jQuery(function($){
 	"use strict";
 	$.supersized({
 		// Functionality
-		slideshow               :   1,			// Slideshow on/off
+		slideshow               :   0,			// Slideshow on/off
 		autoplay				:	1,			// Slideshow starts playing automatically
 		start_slide             :   1,			// Start slide (0 is random)
 		stop_loop				:	0,			// Pauses slideshow on last slide
@@ -32,9 +32,7 @@ jQuery(function($){
 		thumb_links				:	1,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-		       					   	 		{image : './images/slider/image1.jpg', title : 'Cian - Responsive Landing Page Template'},
-											{image : './images/slider/image2.jpg', title : 'Cian - Responsive Landing Page Template'},
-											{image : './images/slider/image3.jpg', title : 'Cian - Responsive Landing Page Template'}
+										{image : 'images/slider/image1.jpg', title : 'Cian - Responsive Landing Page Template'},
 									],
 										
 		// Theme Options			   

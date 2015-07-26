@@ -122,7 +122,7 @@ h1 {
 }
 
 #homepage{
-	background: url(../images/patterns/pattern3.png) repeat;
+	background: url(./images/patterns/pattern3.png) repeat;
 	padding: 0px;
 	margin: 0px;
 	text-align: center;
