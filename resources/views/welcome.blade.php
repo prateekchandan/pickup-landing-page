@@ -38,7 +38,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" style="background-color:#000">
 			<div class="content">
 				<div class="title">Laravel 5</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
