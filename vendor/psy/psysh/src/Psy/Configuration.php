@@ -16,12 +16,12 @@ use Psy\ExecutionLoop\ForkingLoop;
 use Psy\ExecutionLoop\Loop;
 use Psy\Output\OutputPager;
 use Psy\Output\ShellOutput;
-use Psy\Presenter\PresenterManager;
 use Psy\Readline\GNUReadline;
 use Psy\Readline\Libedit;
 use Psy\Readline\Readline;
 use Psy\Readline\Transient;
 use Psy\TabCompletion\AutoCompleter;
+use Psy\VarDumper\Presenter;
 use XdgBaseDir\Xdg;
 
 /**
@@ -33,7 +33,6 @@ class Configuration
         'defaultIncludes', 'useReadline', 'usePcntl', 'codeCleaner', 'pager',
         'loop', 'configDir', 'dataDir', 'runtimeDir', 'manualDbFile',
         'requireSemicolons', 'historySize', 'eraseDuplicates', 'tabCompletion',
-        'tabCompletionMatchers',
     );
 
     private $defaultIncludes;
@@ -62,7 +61,7 @@ class Configuration
     private $pager;
     private $loop;
     private $manualDb;
-    private $presenters;
+    private $presenter;
     private $completer;
 
     /**
@@ -257,7 +256,7 @@ class Configuration
             }
         }
 
-        foreach (array('commands', 'tabCompletionMatchers', 'presenters') as $option) {
+        foreach (array('commands', 'tabCompletionMatchers', 'casters') as $option) {
             if (isset($options[$option])) {
                 $method = 'add' . ucfirst($option);
                 $this->$method($options[$option]);
@@ -836,6 +835,16 @@ class Configuration
     }
 
     /**
+     * Set the Shell autocompleter service.
+     *
+     * @param AutoCompleter $completer
+     */
+    public function setAutoCompleter(AutoCompleter $completer)
+    {
+        $this->completer = $completer;
+    }
+
+    /**
      * Get an AutoCompleter service instance.
      *
      * @return AutoCompleter
@@ -971,29 +980,26 @@ class Configuration
     }
 
     /**
-     * Add an array of Presenters.
+     * Add an array of casters definitions.
      *
-     * @param array $presenters
+     * @param array $casters
      */
-    public function addPresenters(array $presenters)
+    public function addCasters(array $casters)
     {
-        $manager = $this->getPresenterManager();
-        foreach ($presenters as $presenter) {
-            $manager->addPresenter($presenter);
-        }
+        $this->getPresenter()->addCasters($casters);
     }
 
     /**
-     * Get the PresenterManager service.
+     * Get the Presenter service.
      *
-     * @return PresenterManager
+     * @return Presenter
      */
-    public function getPresenterManager()
+    public function getPresenter()
     {
-        if (!isset($this->presenters)) {
-            $this->presenters = new PresenterManager();
+        if (!isset($this->presenter)) {
+            $this->presenter = new Presenter($this->getOutput()->getFormatter());
         }
 
-        return $this->presenters;
+        return $this->presenter;
     }
 }

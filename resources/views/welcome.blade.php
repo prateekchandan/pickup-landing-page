@@ -19,7 +19,10 @@
                     </div> 
                     <h2 class="slide-btm-text">Pickup FOR DESIGN AGENCIES - BUSINESS AND CORPORATE</h2>
                     <div class="home-arrow-down text-center">
-                        <p class="scrollto"><a href="#about" class="btn btn-lg btn-theme-color">Get your free ride</a></p>
+                        <p class="scrollto"><a href="#bookRide" class="btn btn-lg btn-theme-color">
+                        <i class="fa fa-gift fa-lg"></i>
+                        Get your free ride
+                        </a></p>
                     </div>
                 </div>
             </div>
@@ -42,7 +45,7 @@
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#work">Work</a></li>
+                            <li><a href="#bookRide">Book Your Ride</a></li>
 
                             <li><a href="#contact">Contact</a></li>
 
@@ -59,7 +62,13 @@
                 <div class="container">
                     <div class="section-heading text-center">
                         <h4 class="small section-title"><span>We love what we do?</span></h4>
-                        <h2 class="large section-title">About us</h2>
+                        <h2 class="large section-title">
+                        <?php
+                        if(DB::connection()->getDatabaseName())
+{
+   echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+}?>
+About us</h2>
                     </div><!--section heading-->             
 
                 </div><!--container-->
@@ -393,293 +402,88 @@
         <!--section services end here-->
 
 
+        <!--pricing table section start here-->
 
 
-        <!--our work section start here-->
-        <section id="work" class="padding-80">
+        <section id="bookRide" class="padding-80 full-screen-section">
 
-            <div class="work-section-1">
+
+
+            <div class="bookRide-section">
                 <div class="container">
                     <div class="section-heading text-center">
-                        <h4 class="small section-title"><span>Latest portfolio</span></h4>
-                        <h2 class="large section-title">Our work</h2>
+                        <h4 class="small section-title">
+                        	<i class="fa fa-gift fa-7x"></i>
+                        </h4>
+                        <h2 class="large section-title">BOOK YOUR FREE RIDE</h2>
                     </div><!--section heading-->
-                </div>                
-                <div class="container">
-                    <ul class="filter list-inline">
-                        <li><a class="active" href="#" data-filter="*">Show All</a></li>
-                        <li><a href="#" data-filter=".photography">Photography</a></li>
-                        <li><a href="#" data-filter=".illustration">illustration</a></li>
-                        <li><a href="#" data-filter=".branding">branding</a></li>
-                        <li><a href="#" data-filter=".web-design">web design</a></li>
-                    </ul>
-                    <div class="row">
-                        <div class="portfolio-box iso-call work-col-4">
-                            <div class="project-post photography branding">
-                                <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img2.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            Graphics Design
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-                            <div class="project-post illustration web-design">
-                               <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img2.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            Illustrate
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-                            <div class="project-post photography web-design">
-                               <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img3.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            Logo Design
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-
-                            <div class="project-post branding">
-                                <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img4.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            HTML5
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-                            <div class="project-post  illustration">
-                                <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img5.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            Magento
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-
-                            <div class="project-post  branding">
-                                <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img6.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            Photoshop
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-
-
-                            <div class="project-post   web-design">
-                                <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img7.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                           Illustrate
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-
-                            <div class="project-post  branding">
-                                 <a href="single-work.html">
-                                        <div class="image-wrapper">
-                                            <img src="{{asset('assets/img/sec-img8.jpg')}}" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p>
-                                                    View Detail
-                                                </p>
-                                            </div><!--.image-overlay-->
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                            Wordpress
-                                        </p>
-                                    </div><!--.work-desc-->
-                            </div><!--project post-->
-                        </div>
-                    </div>
-                </div><!--container-->
-
-
-            </div><!--work section 1-->
-            <!--testimonials-->
-               <div class="testi parallax " data-stellar-background-ratio="0.5">
+                </div><!--section heading-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center">
-                            <div id="testi-carousel" class="owl-carousel">
-                                <div>
-                                    <img src="{{asset('assets/img/t-1.jpg')}}" alt="">
-                                    <h4>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia.
-                                    </h4>
-                                    <p>Kris watson</p>
-                                </div><!--testimonials item like paragraph-->
-                                <div>
-                                    <img src="{{asset('assets/img/t-2.jpg')}}" alt="">
-                                    <h4>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia.
-                                    </h4>
-                                    <p>Daniel faulkner</p>
-                                </div><!--testimonials item like paragraph-->
-                                <div>
-                                    <img src="{{asset('assets/img/t-3.jpg')}}" alt="">
-                                    <h4>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia.
-                                    </h4>
-                                    <p> Steve Smith</p>
-                                </div><!--testimonials item like paragraph-->
-                            </div>
-                        </div>
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="animated fadeInDown" data-wow-delay=".3s">
+                            	<div class="col-md-10 col-md-offset-1 book_icon_set">
+			                        <div class="col-md-3 active" id="home_icon">
+			                       		<i class="fa fa-map-marker fa-3x"></i>
+			                        </div>
+			                        <div class="col-md-3" id="office_icon">
+			                            <i class="fa fa-map-marker fa-3x"></i>
+			                        </div>
+			                        <div class="col-md-3" id="email_icon">
+			                            <i class="fa fa-envelope fa-3x"></i>
+			                        </div>
+			                        <div class="col-md-3" id="phone_icon">
+			                            <i class="fa fa-mobile-phone fa-3x"></i>
+			                        </div>
+			                    </div>
+			                    <div class="col-md-12">
+			                    	<div class="book-flex-slider">
+			                    		<form>
+					                        <ul class="slides">
+					                            <li>
+		                                            <input type="text" id="home-input" class="colour-input"  placeholder="Enter your Home Address" autocomplete="false">
+		                                            <span id="home-error" class="error_text"></span>
+		                                            <input type="hidden" id="home-location">
+					                            </li>
+					                            <li>
+			                                            <input type="text" id="office-input" class="colour-input"  placeholder="Enter your Office Address" autocomplete="false">
+			                                            <span id="office-error" class="error_text"></span>
+			                                            <input type="hidden" id="office-location">
+					                            </li>
+					                            <li>
+			                                        <input type="email" id="email-input" class="colour-input"  placeholder="Enter your email id" autocomplete="false">
+			                                        <span id="email-error" class="error_text"></span>
+					                            </li>
+					                            <li>
+			                                        <input type="text" id="phone-input" class="phone-input colour-input"  placeholder="Enter your 10 digit mobile number" autocomplete="false">
+			                                        <span id="phone-error" class="phone-error error_text"></span>
+					                            </li>
+
+					                        </ul>
+					                    </form>
+				                    </div> 
+	                            </div>
+	                            <div class=" col-md-12">
+	                                <div class="book_flex_next" id="book_flex_next">
+	                                    <i class="fa fa-angle-right fa-2x" id="book_next_icon"></i>
+	                                </div>
+	                            </div>
+                                
+                            </div><!--pricing wrapper-->
+                        </div><!--price col-->
                     </div>
                 </div>
-            </div>
-            <!--testimonials-->
-            <div class="work-section-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 text-center margin-btm-40">
-                            <div class="section-heading text-center">
-                                <h4 class="small section-title"><span>Super creative heroes</span></h4>
-                                <h2 class="large section-title">Our team</h2>
-                            </div>
-                        </div>                                            
-                    </div><!--.row-->
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="person">
-                                <img src="{{asset('assets/img/team-1.jpg')}}" class="img-responsive" alt="">
-                                <div class="person-desc">
-                                    <h4>Daniel Smith</h4>
-                                    <em>Creative Designer</em>
-                                    <p>
-                                        Vivamus motestues phasellus enim sed orci eu pharetra. Donec posuere nunc vitae tortor sagittis feugiat in non massa. Quisqueeas sed mi nec.
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!--team-col-->
-                        <div class="col-sm-4">
-                            <div class="person">
-                                <img src="{{asset('assets/img/team-2.jpg')}}" class="img-responsive" alt="">
-                                <div class="person-desc">
-                                    <h4>maria Smith</h4>
-                                    <em>Team manager</em>
-                                    <p>
-                                        Vivamus motestues phasellus enim sed orci eu pharetra. Donec posuere nunc vitae tortor sagittis feugiat in non massa. Quisqueeas sed mi nec.
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!--team-col-->
-                        <div class="col-sm-4">
-                            <div class="person">
-                                <img src="{{asset('assets/img/team-3.jpg')}}" class="img-responsive" alt="">
-                                <div class="person-desc">
-                                    <h4>Daniel Smith</h4>
-                                    <em>Creative Designer</em>
-                                    <p>
-                                        Vivamus motestues phasellus enim sed orci eu pharetra. Donec posuere nunc vitae tortor sagittis feugiat in non massa. Quisqueeas sed mi nec.
-                                    </p>
-                                </div>
-                            </div>
-                        </div><!--team-col-->
-                    </div>
-                </div><!--.container-->
-            </div><!--team section end-->
-            <!--fun facts-->
-            <div class=" fun-facts parallax" id="numbers" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">34565</h2>
-                                <h4>Projects Complete</h4>
-                            </div>
-                        </div><!--fun col-->
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">1599</h2>
-                                <h4>Happy Customers</h4>
-                            </div>
-                        </div><!--fun col-->
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">99999</h2>
-                                <h4>Songs Listen</h4>
-                            </div>
-                        </div><!--fun col-->
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">1255</h2>
-                                <h4>Cups of coffee</h4>
-                            </div>
-                        </div><!--fun col-->
-                    </div>
-                </div>
-            </div>
-            <!--fun facts-->
-        </section><!--#work-section-->
+            </div><!--price section one end here-->
 
-        <!--our work section end-->
+
+           
+
+        </section> <!--pricing table section end here-->
+
+
+
+
+     
 
 
         <section id="contact" class="padding-80">
@@ -803,5 +607,105 @@
                 </div>
             </div>
         </section><!--footer end-->
+
+         <script>
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+var placeSearch, autocomplete1, autocomplete2;
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete1 = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('home-input')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete1.addListener('place_changed', fillInAddress1);
+
+  autocomplete2 = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('office-input')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete2.addListener('place_changed', fillInAddress2);
+
+  geolocate();
+}
+
+// [START region_fillform]
+function fillInAddress1() {
+	$('#home-location').val("");
+  // Get the place details from the autocomplete object.
+  var place = autocomplete1.getPlace();
+  console.log(place);
+  var check = checkInPlace(place);
+  
+  if(!check){
+  	$('#home-error').html("Sorry! We are only supporting in Bombay Now");
+  	$('#home-input').val("");
+  	return;
+  }
+  $('#home-error').html("");
+   $('#home-location').val(place.geometry.location.G+","+place.geometry.location.K);
+}
+function checkInPlace(place){
+	var check = false;
+	for (var i = place.address_components.length - 1; i >= 0; i--) {
+  	var part = place.address_components[i];
+  	if(part.types[0]=="administrative_area_level_2")
+  	{
+  		if(part.short_name=="Mumbai Suburban"||part.short_name=="Thane"||part.short_name=="Kalyan"||part.short_name=="Mumbai")
+  			check=true;
+  		break;
+  	}
+  };
+  return check;
+}
+function fillInAddress2() {
+  // Get the place details from the autocomplete object.
+  $('#office-location').val("");
+  var place = autocomplete2.getPlace();
+ 
+  var check = checkInPlace(place);
+  
+  if(!check){
+  	$('#office-input').val("");
+  	$('#office-error').html("Sorry! We are only supporting in Bombay Now");
+  	return;
+  }
+  	$('#office-error').html("");
+   $('#office-location').val(place.geometry.location.G+","+place.geometry.location.K);
+}
+// [END region_fillform]
+
+// [START region_geolocation]
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      console.log(position);
+      autocomplete1.setBounds(circle.getBounds());
+      autocomplete2.setBounds(circle.getBounds());
+    });
+  }
+}
+// [END region_geolocation]
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete"
+        async defer></script>
 
 @endsection

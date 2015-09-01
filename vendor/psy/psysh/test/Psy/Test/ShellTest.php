@@ -11,10 +11,11 @@
 
 namespace Psy\Test;
 
+use Psy\Configuration;
 use Psy\Exception\ErrorException;
 use Psy\Exception\ParseErrorException;
 use Psy\Shell;
-use Psy\Configuration;
+use Psy\TabCompletion\Matcher\ClassMethodsMatcher;
 use Symfony\Component\Console\Output\StreamOutput;
 
 class ShellTest extends \PHPUnit_Framework_TestCase
@@ -82,6 +83,19 @@ class ShellTest extends \PHPUnit_Framework_TestCase
 
         $includes = $shell->getIncludes();
         $this->assertEquals('/file.php', $includes[0]);
+    }
+
+    public function testAddMatchersViaConfig()
+    {
+        $config = $this->getConfig(array(
+            'tabCompletionMatchers' => array(
+                new ClassMethodsMatcher(),
+            ),
+        ));
+
+        $matchers = $config->getTabCompletionMatchers();
+
+        $this->assertTrue(array_pop($matchers) instanceof ClassMethodsMatcher);
     }
 
     public function testRenderingExceptions()
@@ -271,8 +285,8 @@ class ShellTest extends \PHPUnit_Framework_TestCase
     public function getReturnValues()
     {
         return array(
-            array('{{return value}}', '=> <string>"{{return value}}"</string>' . PHP_EOL),
-            array(1, '=> <number>1</number>' . PHP_EOL),
+            array('{{return value}}', "=> \"\033[32m{{return value}}\033[39m\"" . PHP_EOL),
+            array(1, "=> \033[35m1\033[39m" . PHP_EOL),
         );
     }
 

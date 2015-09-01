@@ -15,6 +15,7 @@ use PhpParser\Node;
 use PhpParser\Node\Expr;
 use PhpParser\Node\Expr\ClassConstFetch;
 use PhpParser\Node\Expr\New_ as NewExpr;
+use PhpParser\Node\Expr\StaticCall;
 use PhpParser\Node\Stmt;
 use PhpParser\Node\Stmt\Class_ as ClassStmt;
 use PhpParser\Node\Stmt\Interface_ as InterfaceStmt;
@@ -63,6 +64,8 @@ class ValidClassNamePass extends NamespaceAwarePass
             $this->validateNewExpression($node);
         } elseif ($node instanceof ClassConstFetch) {
             $this->validateClassConstFetchExpression($node);
+        } elseif ($node instanceof StaticCall) {
+            $this->validateStaticCallExpression($node);
         }
     }
 
@@ -128,6 +131,19 @@ class ValidClassNamePass extends NamespaceAwarePass
     }
 
     /**
+     * Validate a class constant fetch expression's class.
+     *
+     * @param StaticCall $stmt
+     */
+    protected function validateStaticCallExpression(StaticCall $stmt)
+    {
+        // if class name is an expression, give it a pass for now
+        if (!$stmt->class instanceof Expr) {
+            $this->ensureMethodExists($this->getFullyQualifiedName($stmt->class), $stmt->name, $stmt);
+        }
+    }
+
+    /**
      * Ensure that no class, interface or trait name collides with a new definition.
      *
      * @throws FatalErrorException
@@ -173,6 +189,29 @@ class ValidClassNamePass extends NamespaceAwarePass
     }
 
     /**
+     * Ensure that a statically called method exists.
+     *
+     * @throws FatalErrorException
+     *
+     * @param string $class
+     * @param string $name
+     * @param Stmt   $stmt
+     */
+    protected function ensureMethodExists($class, $name, $stmt)
+    {
+        $this->ensureClassExists($class, $stmt);
+
+        // if method name is an expression, give it a pass for now
+        if ($name instanceof Expr) {
+            return;
+        }
+
+        if (!method_exists($class, $name) && !method_exists($class, '__callStatic')) {
+            throw $this->createError(sprintf('Call to undefined method %s::%s()', $class, $name), $stmt);
+        }
+    }
+
+    /**
      * Ensure that a referenced interface exists.
      *
      * @throws FatalErrorException
@@ -212,12 +251,21 @@ class ValidClassNamePass extends NamespaceAwarePass
     /**
      * Check whether a class exists, or has been defined in the current code snippet.
      *
+     * Gives `self`, `static` and `parent` a free pass.
+     *
      * @param string $name
      *
-     * @return boolean
+     * @return bool
      */
     protected function classExists($name)
     {
+        // Give `self`, `static` and `parent` a pass. This will actually let
+        // some errors through, since we're not checking whether the keyword is
+        // being used in a class scope.
+        if (in_array(strtolower($name), array('self', 'static', 'parent'))) {
+            return true;
+        }
+
         return class_exists($name) || $this->findInScope($name) === self::CLASS_TYPE;
     }
 
@@ -226,7 +274,7 @@ class ValidClassNamePass extends NamespaceAwarePass
      *
      * @param string $name
      *
-     * @return boolean
+     * @return bool
      */
     protected function interfaceExists($name)
     {
@@ -238,7 +286,7 @@ class ValidClassNamePass extends NamespaceAwarePass
      *
      * @param string $name
      *
-     * @return boolean
+     * @return bool
      */
     protected function traitExists($name)
     {

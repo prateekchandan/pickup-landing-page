@@ -1,22 +1,97 @@
-/* 
- * Theme: Codeon - one page responsive template built for humans.
- * Version: v1.1
- * Author:  Design_mylife
- * Created on : May 31, 2014, 10:42:39 AM(india)
- * file: custome js(editable)
- */
+var bookSlider;
+function IsEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+function IsPhone(phone){
+  var regex=/^(\+91|0)?[7-9]\d{9}$/;
+  return regex.test(phone);
+}
 
-/* ==============================================
-main flex slider
-=============================================== */
 $(window).load(function() {
-    $('.main-flex-slider').flexslider({
-        slideshowSpeed: 5000,
+    $('.book-flex-slider').flexslider({
+        slideshow: false,
         directionNav: false,
-        animation: "fade",
-        controlNav:false
+        animation: "slide",
+        controlNav:false,
+        slideshowSpeed: 200,
+        after:function(){
+          $('#book_flex_next').off("click").click(nextSlide);
+        }
     });
+    $("#home-input").on('keyup',function(){
+        $("#home-location").val("");
+    });
+    $("#office-input").on('keyup',function(){
+        $("#office-location").val("");
+    });
+    $("#email-input").on('keyup',function(){
+        if(IsEmail($("#email-input").val()))
+          $("#email-error").html("");
+    });
+    $(".phone-input").on('keyup',function(){
+        if(IsPhone($(this).val()))
+          $(".phone-error").html("");
+    });
+    bookSlider = $('.book-flex-slider').data('flexslider');
+    var slide = 0;
+    $('#book_flex_next').click(nextSlide);
+
+    function nextSlide(){
+      $('#book_flex_next').off("click");
+      console.log(slide);
+      if(slide==0){
+        if($("#home-location").val()==""){
+          $('#home-error').html("Invalid/Empty Home Location");
+          $('#book_flex_next').click(nextSlide);
+          return;
+        }
+        $('#home_icon').removeClass('active');
+        $('#office_icon').addClass('active');
+      }
+      else if(slide==1){
+        if($("#office-location").val()==""){
+          $('#office-error').html("Invalid/Empty Office Location");
+          $('#book_flex_next').click(nextSlide);
+          return;
+        }
+        $('#office_icon').removeClass('active');
+        $('#email_icon').addClass('active');
+      }
+      else if(slide==2){
+        var email = $("#email-input").val();
+        if(!IsEmail(email)){
+          $('#email-error').html("Invalid/Empty Email");
+          $('#book_flex_next').click(nextSlide);
+          return;
+        }
+        $('#email_icon').removeClass('active');
+        $('#phone_icon').addClass('active');
+        $('#book_next_icon').removeClass('fa-angle-right');
+        $('#book_next_icon').addClass('fa-save');
+      }
+      else if(slide==3){
+        var phone = $(".phone-input").last().val();
+        if(!IsPhone(phone)){
+          $('.phone-error').html("Invalid/Empty Phone Number");
+          $('#book_flex_next').click(nextSlide);
+          return;
+        }
+        submitUser();
+        return;
+      }
+      $('.book-flex-slider').flexslider('next');
+      
+      slide++;
+      slide = slide % 4;
+    }
+
+    function submitUser(){
+      
+    }
 });
+
+
 
 /* ==============================================
 portfolio gallery slide
@@ -29,7 +104,6 @@ $(window).load(function() {
         controlNav:true
     });
 });
-
 
 
 

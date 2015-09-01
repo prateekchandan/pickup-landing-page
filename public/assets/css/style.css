@@ -10,7 +10,7 @@
 /*--------------base-------
 */
 html,
-body {
+body {margin:0;padding:0;
   height: 100%;
   color: #121212; }
 
@@ -80,6 +80,11 @@ a:focus {
 
 .margin-btm-20 {
   margin-bottom: 20px; }
+
+.full-screen-section {
+  height: 100%;
+}
+
 
 /*****************home ********
 ******************************/
@@ -925,7 +930,54 @@ our work section
   text-transform: uppercase;
   font-weight: 600;
   font-size: 11px; }
-
+/*****************Book Your Ride******************/
+.bookRide-section .section-title{
+   color: #f7505a;
+}
+.book-flex-slider{
+  color: #f7505a;
+}
+.book_flex_next{
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  background-color: #f7505a;
+  text-align: center;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+.book_flex_next i{
+  color: #fff;
+}
+.book_flex_slider>ul li{
+  text-align: center;
+}
+.book_icon_set{
+  padding-bottom: 20px;
+}
+.book_icon_set .active{
+  color: #f7505a;
+}
+.colour-input{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 0px !important;
+  width: 100%;
+}
+.colour-input:focus{
+  padding: 5px;
+  border: 1px solid #f7505a !important;
+}
+.error_text{
+  font-size: 12px;
+  margin-top: -10px;
+}
 /*****************Pricing tables******************/
 .pricing-section-1 {
   background-color: #fff;
