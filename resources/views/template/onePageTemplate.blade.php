@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pickup</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @yield('meta')
+        <link rel="apple-touch-icon" sizes="57x57" href="{{asset('assets/img/icon/apple-icon-57x57.png')}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{asset('assets/img/icon/apple-icon-60x60.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{asset('assets/img/icon/apple-icon-72x72.png')}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/icon/apple-icon-76x76.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{asset('assets/img/icon/apple-icon-114x114.png')}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{asset('assets/img/icon/apple-icon-120x120.png')}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{asset('assets/img/icon/apple-icon-144x144.png')}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{asset('assets/img/icon/apple-icon-152x152.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/icon/apple-icon-180x180.png')}}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{asset('assets/img/icon/android-icon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/icon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/icon/favicon-96x96.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/icon/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{asset('assets/img/icon/manifest.json')}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{asset('assets/img/icon/ms-icon-144x144.png')}}">
+        <meta name="theme-color" content="#ffffff">
+        <!--bootstrap css-->
+        <link href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <!--custom css-->
+        <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
+        <!--flex slider css-->
+        <link href="{{asset('assets/css/flexslider.css')}}" rel="stylesheet">
+        <!--google web fonts css-->
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,800' rel='stylesheet' type='text/css'>
+        
+        <!-- icons css-->
+        <link href="{{asset('assets/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+        <!--animated css-->
+        <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
+        <!--owl carousel css-->
+        <link href="{{asset('assets/css/owl.carousel.css')}}" rel="stylesheet" type="text/css" media="screen">
+        <link href="{{asset('assets/css/owl.theme.css')}}" rel="stylesheet" type="text/css" media="screen">
+        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="{{asset('assets/js/respond.min.js')}}"></script>
+        <![endif]-->
+    </head>
+    <body data-spy="scroll" data-target="#navigation" data-offset="80">
+
+        @yield('body')
+
+        <!--back to top-->
+        <a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+        <!--back to top end-->
+
+        <!--script files-->
+        <script src="{{asset('assets/js/jquery.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/moderniz.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery-migrate.min.js')}}" type="text/javascript"></script> 
+        <script src="{{asset('assets/js/jquery.easing.1.3.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery.flexslider-min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/wow.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery.sticky.js')}}" type="text/javascript"></script>        
+        <script src="{{asset('assets/js/bootstrap-hover-dropdown.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery.stellar.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/owl.carousel.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery.mb.YTPlayer.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/waypoints.min.js')}}"></script>
+        <script src="{{asset('assets/js/easypiechart.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.isotope.min.js')}}" type="text/javascript"></script>
+        <!--image loads plugin -->
+        <script src="{{asset('assets/js/jquery.imagesloaded.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery.counterup.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jquery.countdown.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/contact_me.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/jqBootstrapValidation.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/custom.js')}}" type="text/javascript"></script>
+        <!--revolution slider plugins-->
+        <script src="{{asset('assets/rs-plugin/js/jquery.themepunch.tools.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/rs-plugin/js/jquery.themepunch.revolution.min.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/revolution-custom.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/isotope-custom.js')}}" type="text/javascript"></script>
+        <script src="{{asset('assets/js/pace.min.js')}}" type="text/javascript"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript">
+            var myLatlng;
+            var map;
+            var marker;
+
+            function initialize() {
+                myLatlng = new google.maps.LatLng(37.397802, -121.890288);
+
+                var mapOptions = {
+                    zoom: 13,
+                    center: myLatlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    scrollwheel: false,
+                    draggable: false
+                };
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+                var contentString = '<p>123 My Street, Codeon City, CA 4567</p>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Marker'
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    infowindow.open(map, marker);
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+
+    </body>
+</html>
