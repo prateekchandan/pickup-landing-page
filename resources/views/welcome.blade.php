@@ -65,9 +65,10 @@
                         <h2 class="large section-title">
                         <?php
                         if(DB::connection()->getDatabaseName())
-{
-   echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
-}?>
+						{
+						   echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+						}?>
+						
 About us</h2>
                     </div><!--section heading-->             
 

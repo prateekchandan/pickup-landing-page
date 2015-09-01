@@ -12,7 +12,7 @@ class Dotenv
      *
      * @var bool
      */
-    protected static $immutable = true;
+    protected static $immutable = false;
 
     /**
      * Load `.env` file in given directory.
