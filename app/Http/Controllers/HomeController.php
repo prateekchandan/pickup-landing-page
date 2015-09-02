@@ -45,9 +45,9 @@ class HomeController extends Controller {
 	public function contact(Request $request){
 		$name = $request->get('name');
 		$email = $request->get('email');
-		$message = $request->get('message');
+		$bmessage = $request->get('message');
 		if(env('APP_ENV', 'local')!="local"){
-			 Mail::send('email.contactus', array('name' => $name,'email'=>$email,'message'=>$message),   function($message){
+			 Mail::send('email.contactus', array('name' => $name,'email'=>$email,'bmessage'=>$bmessage),   function($message){
 		        $message->to('support@getpickup.in',"Team Pickup")->subject('Test Email');
 		    });
 		}
