@@ -66,7 +66,9 @@
         <!--back to top-->
         <a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
         <!--back to top end-->
-
+        <script>
+            var contact_url="{{route('contact-us')}}";
+        </script>
         <!--script files-->
         <script src="{{asset('assets/js/jquery.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('assets/js/moderniz.min.js')}}" type="text/javascript"></script>

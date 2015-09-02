@@ -12,4 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::any('/add-user', 'UserController@addUser');
+Route::post('/add-user', 'UserController@addUser');
+
+Route::post('/contact-us',array('as'=>'contact-us','uses'=>'HomeController@contact'));

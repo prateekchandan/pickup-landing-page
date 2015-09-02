@@ -1,6 +1,9 @@
 <?php 
 namespace App\Http\Controllers;
 use App\User as User;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use Mail;
 class HomeController extends Controller {
 
 	/*
@@ -34,6 +37,20 @@ class HomeController extends Controller {
 		return view('welcome');
 	}
 
-
-
+	/**
+	 * Contact
+	 *
+	 * @return Response
+	 */
+	public function contact(Request $request){
+		$name = $request->get('name');
+		$email = $request->get('email');
+		$message = $request->get('message');
+		if(env('APP_ENV', 'local')!="local"){
+			 Mail::send('email.contactus', array('name' => $name,'email'=>$email,'message'=>$message),   function($message){
+		        $message->to('support@getpickup.in')->subject('Test Email');
+		    });
+		}
+		return "Success";
+	}
 }

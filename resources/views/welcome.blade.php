@@ -55,342 +55,64 @@
                 </div><!--/.container -->
             </div>
         </section><!--navigation section end here-->
-        <section id="about" class="padding-80">
-
-            <!--about page content-->
-            <div class="about-section">
+        <section id="about" class="padding-80 full-screen-section">
+ 			<div>
                 <div class="container">
                     <div class="section-heading text-center">
-                        <h4 class="small section-title"><span>We love what we do?</span></h4>
+                        <h4 class="small section-title"><span>What we do?</span></h4>
                         <h2 class="large section-title">About us</h2>
                     </div><!--section heading-->             
 
                 </div><!--container-->
                 <div class="container">
+                   
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="about-box wow animated fadeInDown" data-wow-duration="0.3s">
-                                <div class="about-box-icon">
-                                    <i class="fa fa-lightbulb-o"></i>
-                                </div>
-                                <div class="about-box-text">
-                                    <h4>Creative ideas </h4>
-                                    <p>
-                                    </p>
-                                </div>
-                            </div><!--about us box end-->
+                        <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
+                        	<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                            </p>
+                           
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="about-box wow animated fadeInDown" data-wow-delay="0.5">
-                                <div class="about-box-icon">
-                                    <i class="fa fa-code"></i>
-                                </div>
-                                <div class="about-box-text">
-                                    <h4>Clean Code</h4>
-                                    <p>
-                                        Vivamus congue diam vitae tortor imperdiet congue. Nullam sagittis, tristique diam, ut ullamcorper tellus. Cras porttitor massa
-                                    </p>
-                                </div>
-                            </div><!--about us box end-->
-                        </div>
-                    </div><!--about services row end--> 
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="about-box wow animated fadeInDown" data-wow-delay="0.6s">
-                                <div class="about-box-icon">
-                                    <i class="fa fa-image"></i>
-                                </div>
-                                <div class="about-box-text">
-                                    <h4>Unique Designs </h4>
-                                    <p>
-                                        Vivamus congue diam vitae tortor imperdiet congue. Nullam sagittis, tristique diam, ut ullamcorper tellus. Cras porttitor massa
-                                    </p>
-                                </div>
-                            </div><!--about us box end-->
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="about-box wow animated fadeInDown" data-wow-delay="0.8s">
-                                <div class="about-box-icon">
-                                    <i class="fa fa-hand-o-up"></i>
-                                </div>
-                                <div class="about-box-text">
-                                    <h4>Creative Team </h4>
-                                    <p>
-                                        Vivamus congue diam vitae tortor imperdiet congue. Nullam sagittis, tristique diam, ut ullamcorper tellus. Cras porttitor massa
-                                    </p>
-                                </div>
-                            </div><!--about us box end-->
-                        </div>
-                    </div><!--about services row end--> 
-                    <div class="about-section-more">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="about-more-info wow animated fadeInUp" data-wow-delay="0.3s">
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="skills-wrapper wow animated bounceIn" data-wow-delay="0.6s">
-                                    <h3 class="heading-progress">Web Design <span class="pull-right">88%</span></h3>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
-                                        </div>
-                                    </div>
-                                    <h3 class="heading-progress">Web Development <span class="pull-right">78%</span></h3>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 78%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
-                                        </div>
-                                    </div>
-                                    <h3 class="heading-progress">Marketing <span class="pull-right">82%</span></h3>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 82%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="82" role="progressbar">
-                                        </div>
-                                    </div>                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row easy-pie-chart-row">
-                            <div class="col-sm-3 text-center">
-                                <div class="progress-circle">
+                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
 
-                                    <div class="chart" data-percent="95" data-scale-color="#f7505a">
-                                        <span>95%</span>
-                                        <canvas height="120" width="120"></canvas>
-                                    </div>
-                                    <p class="progress-text">HTML5 / CSS3</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 text-center">
-                                <div class="progress-circle">
-
-                                    <div class="chart" data-percent="85" data-scale-color="#f7505a">
-                                        <span>85%</span>
-                                        <canvas height="120" width="120"></canvas>
-                                    </div>
-                                    <p class="progress-text">WORDPRESS</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 text-center">
-                                <div class="progress-circle">
-
-                                    <div class="chart" data-percent="75" data-scale-color="#f7505a">
-                                        <span>75%</span>
-                                        <canvas height="120" width="120"></canvas>
-                                    </div>
-                                    <p class="progress-text">Jquery</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 text-center">
-                                <div class="progress-circle">
-
-                                    <div class="chart" data-percent="89" data-scale-color="#f7505a">
-                                        <span>89%</span>
-                                        <canvas height="120" width="120"></canvas>
-                                    </div>
-                                    <p class="progress-text">Photoshop</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div><!--section about 3 end-->
-                </div>
-            </div>
-
-            <div class="purchase-now parallax" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <h1 class="wow animated fadeInLeft" data-wow-delay="0.3s">Using Design as a <strong>Business</strong> Strategy</h1>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#" class="btn btn-lg btn-theme-color wow animated bounceIn" data-wow-delay="0.6s"> Purchase Now</a>
+                            
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--page about content end here-->            
+            </div>          
         </section>
         <!--about section end here-->
 
         <!--section services start here-->
 
-        <section id="services" class="padding-80">
+        <section id="services" class="padding-80 full-screen-section">
 
 
-            <div class="services-section-1">
+            <div>
                 <div class="container">
                     <div class="section-heading text-center">
-                        <h4 class="small section-title"><span>What we do?</span></h4>
+                        <h4 class="small section-title"><span></span></h4>
                         <h2 class="large section-title">Our Services</h2>
                     </div><!--section heading-->             
 
                 </div><!--container-->
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="margin-btm-40">
-                                <h4>Flexibility built in</h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. Donec vitae dolor lectus. Etiam facilisis rutrum vestibulum. In at ligula vitae lectus porta posuere vel vel est. Aliquam interdum mi vitae arcu fermentum iaculis. Sed feugiat.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="row">
                         <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
-
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-image"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Website design</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-plane"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Marketing </h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-leaf"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Logo design </h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-paper-plane"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Search engine optimization(seo) </h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
+                        	<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                            </p>
+                           
                         </div>
                         <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
 
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-image"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Website design</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-plane"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Marketing </h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-leaf"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Logo design </h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
-                            <div class="row margin-btm-20">
-                                <div class="col-md-2">
-                                    <div class="services-icon">
-                                        <i class="fa fa-paper-plane"></i>
-                                    </div> 
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="services-info">
-                                        <h3>Search engine optimization(seo) </h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div><!--.services row end-->
+                            
                         </div>
                     </div>
                 </div>
-            </div><!--services section 1 end-->
-            <div class="services-section-2 parallax" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <h1>Subscribe to Newsletter</h1>
-                            <form class="newsletter-form">
-                                <div class="row">
-                                    <div class="col-sm-4 col-sm-offset-4">
-                                        <div class="input-group">
-                                            <label class="sr-only" for="subscribe-email">Email address</label>
-                                            <input tabindex="-1"type="email" class="form-control" id="subscribe-email" placeholder="Enter your email">
-                                            <span class="input-group-btn">
-                                                <button type="submit" class="btn btn-theme-color btn-lg">OK</button>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div><!--services section 1 end-->
+            </div>
+           
         </section>
         <!--section services end here-->
 
@@ -510,9 +232,10 @@
                 </div><!--.container-->
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <h4>Get in touch</h4>
                             <form name="sentMessage" id="contactForm" method="post" novalidate>
+                            	<input type="hidden" name="_token" id="_token1" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="row control-group">
@@ -552,50 +275,31 @@
                             </form>
                             <!--contact form-->
                         </div>
-                        <div class="col-md-4">
-                            <h4>Contact info</h4>
-                            <div class="contact-info wow animated fadeInRight" data-wow-delay=".6s">
-                                <p><i class="fa fa-home"></i> 124,Munna wali Dhani Jaipur, India</p>
-                                <p><i class="fa fa-home"></i> +91 141-1234567890</p>
-                                <p><b>Fax:</b> +91 1234567890</p>
-                                <p><i class="fa fa-envelope"></i> <a href="#">mail@domain.com</a></p>
-                                <p><i class="fa fa-clock-o"></i> Monday-Friday 9:30-5:30pm</p>
-                                <hr>
-                                <h4>Elsewhere</h4>
-                                <ul class="list-inline social-colored"> 
-                                    <li><a href="#"><i class="fa fa-facebook icon-fb" data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter icon-twit" data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus icon-plus" data-toggle="tooltip" title="" data-original-title="Google pluse" data-placement="top"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin icon-in" data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"></i></a></li>
-
-                                </ul> <!--colored social-->
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div><!--Contact-sec-1 end-->
 
         </section><!--contact section end-->
-        <div id="map-canvas" style="width:100%; height: 350px;"></div>
         <div class="contact-sec-2">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="contact-col wow animated flipInY" data-wow-delay=".3s">
                             <i class="fa fa-phone"></i>
-                            <p>+91 0141 123456789</p>
+                            <p>+91 8268430474</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="contact-col wow animated flipInY" data-wow-delay=".3s">
                             <i class="fa fa-envelope"></i>
-                            <p>mail@Domain.com</p>
+                            <p>support@getpickup.in</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="contact-col wow animated flipInY" data-wow-delay=".3s">
                             <i class="fa fa-home"></i>
-                            <p>124,munnawali jaipur<br>302012, india</p>
+                            <p>Powai , Mumbai<br>40076, India</p>
                         </div>
                     </div>
                 </div>
@@ -611,9 +315,6 @@
                     </div>
                     <div class="col-md-6 col-sm-6 footer-nav">
                         <ul class="list-inline">
-                            <li><a href="demo-default.html">Home</a></li>
-                            <li><a href="blog-list.html">Latest news</a></li>
-                            <li><a href="typography.html">Typography</a></li>
                         </ul>
                     </div>
                 </div>
