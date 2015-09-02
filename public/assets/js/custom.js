@@ -20,6 +20,7 @@ $(window).load(function() {
         }
     });
     $("#home-input").on('keyup',function(){
+      $('#book_server_msg').html("");
         $("#home-location").val("");
     });
     $("#office-input").on('keyup',function(){
@@ -35,6 +36,7 @@ $(window).load(function() {
     });
     bookSlider = $('.book-flex-slider').data('flexslider');
     var slide = 0;
+    var submitData={};
     $('#book_flex_next').click(nextSlide);
 
     function nextSlide(){
@@ -48,6 +50,8 @@ $(window).load(function() {
         }
         $('#home_icon').removeClass('active');
         $('#office_icon').addClass('active');
+        submitData['home_text'] = $('#home-input').val();
+        submitData['home_location'] = $('#home-location').val();
       }
       else if(slide==1){
         if($("#office-location").val()==""){
@@ -56,9 +60,21 @@ $(window).load(function() {
           return;
         }
         $('#office_icon').removeClass('active');
-        $('#email_icon').addClass('active');
+        $('#name_icon').addClass('active');
+        submitData['office_text'] = $('#office-input').val();
+        submitData['office_location'] = $('#office-location').val();
       }
       else if(slide==2){
+        if($('#name-input').val()==""){
+          $('#name-error').html("Empty Name Not allowed");
+          $('#book_flex_next').click(nextSlide);
+          return;
+        }
+        submitData['name'] = $('#name-input').val();
+        $('#name_icon').removeClass('active');
+        $('#email_icon').addClass('active');
+      }
+      else if(slide==3){
         var email = $("#email-input").val();
         if(!IsEmail(email)){
           $('#email-error').html("Invalid/Empty Email");
@@ -69,25 +85,63 @@ $(window).load(function() {
         $('#phone_icon').addClass('active');
         $('#book_next_icon').removeClass('fa-angle-right');
         $('#book_next_icon').addClass('fa-save');
+        submitData['email'] = email;
       }
-      else if(slide==3){
+      else if(slide==4){
         var phone = $(".phone-input").last().val();
         if(!IsPhone(phone)){
           $('.phone-error').html("Invalid/Empty Phone Number");
           $('#book_flex_next').click(nextSlide);
           return;
         }
+        submitData['phone'] = phone;
+
         submitUser();
+        $('#book_flex_next').click(nextSlide);
         return;
       }
       $('.book-flex-slider').flexslider('next');
       
       slide++;
-      slide = slide % 4;
+      slide = slide % 5;
     }
 
     function submitUser(){
-      
+      submitData['_token']=$("#_token").val();
+       $.ajax({
+                url: "./add-user",
+                type: "POST",
+                data: submitData,
+                cache: false,
+                success: function(data) {
+                    console.log(data);
+                    if(typeof(Storage) !== "undefined") {
+                        localStorage.setItem("register", "1");
+                        localStorage.setItem("email",submitData['email']);
+                    }
+                    $('#book-body').html('<div class="animated fadeInDown text-center" data-wow-delay=".3s"><h2>Thankyou for registering '+submitData['name']+'</h2><p>You will be shortly contacted by us. Please contact us for further queries</p></div>');
+                },
+                error: function(data) {
+                    // Fail message
+                    $('#book_server_msg').html("<div class='alert alert-danger'>");
+                    $('#book_server_msg > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#book_server_msg > .alert-danger').append("<strong>Sorry , it seems that the user is already registered.");
+                    $('#book_server_msg > .alert-danger').append('</div>');
+                    //clear all fields
+                    submitData={};
+                    $('#user_add_form').trigger("reset");
+                    $('.book-flex-slider').flexslider(0);
+                    $('#book_next_icon').addClass('fa-angle-right');
+                    $('#book_next_icon').removeClass('fa-save');
+                    $('#phone_icon').removeClass('active');
+                    $('#home_icon').addClass('active');
+                    $('.error_text').html("");
+                    $("#office-location").val("");
+                    $("#home-location").val("");
+                    slide = 0;
+                },
+            })
     }
 });
 

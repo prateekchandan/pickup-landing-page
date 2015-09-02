@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
+Route::any('/add-user', 'UserController@addUser');

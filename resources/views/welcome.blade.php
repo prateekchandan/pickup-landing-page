@@ -62,14 +62,7 @@
                 <div class="container">
                     <div class="section-heading text-center">
                         <h4 class="small section-title"><span>We love what we do?</span></h4>
-                        <h2 class="large section-title">
-                        <?php
-                        if(DB::connection()->getDatabaseName())
-						{
-						   echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
-						}?>
-						
-About us</h2>
+                        <h2 class="large section-title">About us</h2>
                     </div><!--section heading-->             
 
                 </div><!--container-->
@@ -83,7 +76,6 @@ About us</h2>
                                 <div class="about-box-text">
                                     <h4>Creative ideas </h4>
                                     <p>
-                                        Vivamus congue diam vitae tortor imperdiet congue. Nullam sagittis, tristique diam, ut ullamcorper tellus. Cras porttitor massa
                                     </p>
                                 </div>
                             </div><!--about us box end-->
@@ -387,7 +379,7 @@ About us</h2>
                                     <div class="col-sm-4 col-sm-offset-4">
                                         <div class="input-group">
                                             <label class="sr-only" for="subscribe-email">Email address</label>
-                                            <input type="email" class="form-control" id="subscribe-email" placeholder="Enter your email">
+                                            <input tabindex="-1"type="email" class="form-control" id="subscribe-email" placeholder="Enter your email">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-theme-color btn-lg">OK</button>
                                             </span>
@@ -420,58 +412,77 @@ About us</h2>
                     </div><!--section heading-->
                 </div><!--section heading-->
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="animated fadeInDown" data-wow-delay=".3s">
-                            	<div class="col-md-10 col-md-offset-1 book_icon_set">
-			                        <div class="col-md-3 active" id="home_icon">
-			                       		<i class="fa fa-map-marker fa-3x"></i>
-			                        </div>
-			                        <div class="col-md-3" id="office_icon">
-			                            <i class="fa fa-map-marker fa-3x"></i>
-			                        </div>
-			                        <div class="col-md-3" id="email_icon">
-			                            <i class="fa fa-envelope fa-3x"></i>
-			                        </div>
-			                        <div class="col-md-3" id="phone_icon">
-			                            <i class="fa fa-mobile-phone fa-3x"></i>
-			                        </div>
-			                    </div>
-			                    <div class="col-md-12">
-			                    	<div class="book-flex-slider">
-			                    		<form>
-					                        <ul class="slides">
-					                            <li>
-		                                            <input type="text" id="home-input" class="colour-input"  placeholder="Enter your Home Address" autocomplete="false">
-		                                            <span id="home-error" class="error_text"></span>
-		                                            <input type="hidden" id="home-location">
-					                            </li>
-					                            <li>
-			                                            <input type="text" id="office-input" class="colour-input"  placeholder="Enter your Office Address" autocomplete="false">
-			                                            <span id="office-error" class="error_text"></span>
-			                                            <input type="hidden" id="office-location">
-					                            </li>
-					                            <li>
-			                                        <input type="email" id="email-input" class="colour-input"  placeholder="Enter your email id" autocomplete="false">
-			                                        <span id="email-error" class="error_text"></span>
-					                            </li>
-					                            <li>
-			                                        <input type="text" id="phone-input" class="phone-input colour-input"  placeholder="Enter your 10 digit mobile number" autocomplete="false">
-			                                        <span id="phone-error" class="phone-error error_text"></span>
-					                            </li>
+                    <div class="row" id="book-body">
+                        
+                        	@if(is_null(session("registered")))
+                        	<div class="col-md-6 col-md-offset-3">
+	                            <div class="animated fadeInDown" data-wow-delay=".3s">
+	                            	<div class="col-md-10 col-md-offset-2 book_icon_set">
+				                        <div class="col-md-2 active" id="home_icon">
+				                       		<i class="fa fa-map-marker fa-3x"></i>
+				                        </div>
+				                        <div class="col-md-2" id="office_icon">
+				                            <i class="fa fa-map-marker fa-3x"></i>
+				                        </div>
+				                        <div class="col-md-2" id="name_icon">
+				                            <i class="fa fa-user fa-3x"></i>
+				                        </div>
+				                        <div class="col-md-2" id="email_icon">
+				                            <i class="fa fa-envelope fa-3x"></i>
+				                        </div>
+				                        <div class="col-md-3" id="phone_icon">
+				                            <i class="fa fa-mobile-phone fa-3x"></i>
+				                        </div>
+				                    </div>
+				                    <div class="col-md-12">
+				                    	<form id="user_add_form">
+				                    		<input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
+				                    		<div class="book-flex-slider">
+						                        <ul class="slides">
+						                            <li>
+			                                            <input tabindex="-1" type="text" name="home_text" id="home-input" class="colour-input"  placeholder="Enter your Home Address" autocomplete="false">
+			                                            <span id="home-error" class="error_text"></span>
+			                                            <input type="hidden" id="home-location" name="home_location">
+						                            </li>
+						                            <li>
+				                                            <input tabindex="-1" type="text" id="office-input" name="office_text" class="colour-input"  placeholder="Enter your Office Address" autocomplete="false">
+				                                            <span id="office-error" class="error_text"></span>
+				                                            <input type="hidden" id="office-location" name="office_location">
+						                            </li>
+						                            <li>
+				                                        <input tabindex="-1" type="text" id="name-input" name="name" class="colour-input"  placeholder="Enter your name" autocomplete="false">
+				                                        <span id="name-error" class="error_text"></span>
+						                            </li>
+						                            <li>
+				                                        <input tabindex="-1" type="email" id="email-input" name="email" class="colour-input"  placeholder="Enter your email id" autocomplete="false">
+				                                        <span id="email-error" class="error_text"></span>
+						                            </li>
+						                            <li>
+				                                        <input tabindex="-1" type="text" id="phone-input" name="phone" class="phone-input colour-input"  placeholder="Enter your 10 digit mobile number" autocomplete="false">
+				                                        <span id="phone-error" class="phone-error error_text"></span>
+						                            </li>
 
-					                        </ul>
-					                    </form>
-				                    </div> 
-	                            </div>
-	                            <div class=" col-md-12">
-	                                <div class="book_flex_next" id="book_flex_next">
-	                                    <i class="fa fa-angle-right fa-2x" id="book_next_icon"></i>
-	                                </div>
-	                            </div>
-                                
-                            </div><!--pricing wrapper-->
-                        </div><!--price col-->
+						                        </ul>
+					                    	</div> 
+						                </form>
+		                            </div>
+		                            <div class=" col-md-12">
+		                                <div class="book_flex_next" id="book_flex_next">
+		                                    <i class="fa fa-angle-right fa-2x" id="book_next_icon"></i>
+		                                </div>
+		                            </div>
+		                            <div class="col-md-12" id="book_server_msg">
+		                            </div>
+	                                
+	                            </div><!--pricing wrapper-->
+	                        </div><!--price col-->
+                            @else
+                            <div class="animated fadeInDown text-center" data-wow-delay=".3s">
+                            	<h2>You are already registered from {{session("email")}}</h2>
+                            	<p>Please <a href="#contact">contact us</a> for any queries</p>
+                            </div>
+                            @endif
+                       
                     </div>
                 </div>
             </div><!--price section one end here-->

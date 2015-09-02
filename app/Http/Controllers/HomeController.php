@@ -1,6 +1,7 @@
-<?php namespace App\Http\Controllers;
-
-class WelcomeController extends Controller {
+<?php 
+namespace App\Http\Controllers;
+use App\User as User;
+class HomeController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,5 +33,7 @@ class WelcomeController extends Controller {
 	{
 		return view('welcome');
 	}
+
+
 
 }

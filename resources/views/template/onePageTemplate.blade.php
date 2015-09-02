@@ -2,6 +2,20 @@
 <html lang="en">
     <head>
         <title>Pickup</title>
+        <!--
+        /***********************************************************/
+
+         mmmmm  mmmmm    mmm  m    m m    m mmmmm 
+         #   "#   #    m"   " #  m"  #    # #   "#
+         #mmm#"   #    #      #m#    #    # #mmm#"
+         #        #    #      #  #m  #    # #     
+         #      mm#mm   "mmm" #   "m "mmmm" #  
+        
+
+        If you are reading this , then contact us . We will hire you
+        /***********************************************************/
+
+        -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
