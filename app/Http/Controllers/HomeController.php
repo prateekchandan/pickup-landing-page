@@ -48,7 +48,7 @@ class HomeController extends Controller {
 		$bmessage = $request->get('message');
 		if(env('APP_ENV', 'local')!="local"){
 			 Mail::send('email.contactus', array('name' => $name,'email'=>$email,'bmessage'=>$bmessage),   function($message){
-		        $message->to('support@getpickup.in',"Team Pickup")->subject('Test Email');
+		        $message->to('support@getpickup.in',"Team Pickup")->subject('[NEW] Contact Us Email');
 		    });
 		}
 		return "Success";
