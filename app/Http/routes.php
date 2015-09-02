@@ -12,6 +12,13 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/login', array('as'=>'login','uses'=>'UserController@login_view'));
 Route::post('/add-user', 'UserController@addUser');
 
 Route::post('/contact-us',array('as'=>'contact-us','uses'=>'HomeController@contact'));
+
+Route::group(['as' => 'admin::','middleware' => 'admin'], function () {
+    Route::get('dashboard', ['as' => 'dashboard', function () {
+        // Route named "admin::dashboard"
+    }]);
+});

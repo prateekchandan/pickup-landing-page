@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Facebook\FacebookSession;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
+use Facebook\FacebookRedirectLoginHelper;
 
 class UserController extends Controller
 {
@@ -30,5 +35,12 @@ class UserController extends Controller
     
     session(['registered'=>'1','email'=>$u->email]);
     return $u;
+  }
+
+  /*
+    * LOGIN show
+  */
+  public function login_view(){
+    return "fb";
   }
 }
