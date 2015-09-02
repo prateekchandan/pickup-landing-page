@@ -1,4 +1,4 @@
 From : <b>{{$email}}</b> <br>
 Name : <b>{{$name}}</b>  <br><br>
-Message :
+Message :<br>
 {{$bmessage}}
