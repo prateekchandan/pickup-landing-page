@@ -63,7 +63,7 @@ class UserController extends Controller
         return redirect()->route('login');
     }
     if(is_null($gruser->getEmail())){
-        $request->session()->flash('msg','Unable to fetch your email from Facebook');
+        $request->session()->flash('msg','Unable to fetch your email from Facebook. Please check your facebook settings or ');
         return redirect()->route('login');
     }
     $fbid = $gruser->getId();
