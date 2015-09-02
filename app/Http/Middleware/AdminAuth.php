@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Contracts\Auth\Guard;
 
 use Closure;
+use Auth;
 
 class AdminAuth
 {
@@ -44,6 +45,17 @@ class AdminAuth
             else
             {
                 return redirect()->route('login');
+            }
+        }
+
+        if($this->auth->user()->admin!="1"){
+            if ($request->ajax())
+            {
+                return response('Unauthorized.', 401);
+            }
+            else
+            {
+                return redirect('/');
             }
         }
 

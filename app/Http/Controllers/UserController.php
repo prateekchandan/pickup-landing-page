@@ -15,8 +15,15 @@ class UserController extends Controller
   {
     $u = User::where('email','=', $request->input('email'))
                 ->orWhere('phone','=',$request->input('phone'))->first();
-    if(is_null($u))
-        $u = new User();      
+    if(is_null($u)){
+        $u = new User();    
+        $u->company = "";
+        $u->second_name="";
+        $u->gender ="";
+        $u->age = 0;
+        $u->fbid ="";
+        $u->device_id =uniqid();  
+    }
     
     $u->email = $request->input('email');
     $u->home_text = $request->input('home_text');
@@ -24,13 +31,8 @@ class UserController extends Controller
     $u->office_text = $request->input('office_text');
     $u->office_location = $request->input('office_location');
     $u->first_name = $request->input('name');
-    $u->age = 0;
     $u->phone = $request->input('phone');
-    $u->company = "";
-    $u->second_name="";
-    $u->gender ="";
-    $u->fbid ="";
-    $u->device_id =uniqid();
+
     $u->save();
     
     session(['registered'=>'1','email'=>$u->email]);
@@ -86,9 +88,20 @@ class UserController extends Controller
         $u->save();
         Auth::login($u);
     }
-    else
+    else{
+        $user->fbid = $fbid;
+        $user->first_name = $name;
+        $user->gender = $gender;
+        $user->save();
         Auth::login($user);
+    }
 
+    return redirect('/');
+  }
+
+
+  public function logout(){
+    Auth::logout();
     return redirect('/');
   }
 }

@@ -21,8 +21,12 @@ Route::group(['middleware'=>'guest'],function(){
 });
 Route::post('/contact-us',array('as'=>'contact-us','uses'=>'HomeController@contact'));
 
-Route::group(['as' => 'admin::','middleware' => 'admin'], function () {
-    Route::get('dashboard', ['as' => 'dashboard', function () {
-        return Auth::user();
-    }]);
+Route::get('/logout', array('as'=>'logout','middleware'=>'auth','uses'=>'UserController@logout'));
+
+
+Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], function () {
+    Route::get('', ['as' => 'home', 'uses'=>'AdminController@home']);
+    Route::get('users', ['as' => 'user', 'uses'=>'AdminController@showUser']);
+    Route::delete('delete_users', ['as' => 'delete_user', 'uses'=>'AdminController@deleteUser']);
+    Route::get('delete_users', ['as' => 'delete_user', 'uses'=>'AdminController@deleteUser']);
 });
