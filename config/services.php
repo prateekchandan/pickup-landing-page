@@ -34,4 +34,10 @@ return [
 		'secret' => '',
 	],
 
+	'facebook'=>[
+		'client_id' => env('FB_APP_ID',"RANDOM"),
+	    'client_secret' => env('FB_APP_SECRET',"RANDOM"),
+	    'redirect' => env('FB_REDIRECT_PATH',"http://getpickup.in/fblogin_callback"),
+	],
+
 ];
