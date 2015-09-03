@@ -29,4 +29,8 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
     Route::get('users', ['as' => 'user', 'uses'=>'AdminController@showUser']);
     Route::delete('delete_users', ['as' => 'delete_user', 'uses'=>'AdminController@deleteUser']);
     Route::get('delete_users', ['as' => 'delete_user', 'uses'=>'AdminController@deleteUser']);
+
+    Route::get('create_driver', ['as' => 'driver.add', 'uses'=>'AdminController@createDriverview']);
+    Route::post('create_driver', ['as' => 'driver.add', 'uses'=>'AdminController@createDriver']);
+    Route::get('driver', ['as' => 'driver', 'uses'=>'AdminController@allDriver']);
 });

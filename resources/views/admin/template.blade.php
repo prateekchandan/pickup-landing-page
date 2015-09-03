@@ -154,6 +154,14 @@
                                     <li><a {{($submenu=="user.all")?'class="active"':''}} href="{{route('admin::user')}}">See all Users</a></li>
                                 </ul>
                             </li>
+                            <li class="sub-menu {{($menu=='driver')?'active toggled':''}}">
+                                <a href="#"><i class="md md-now-widgets"></i> Drivers</a>
+
+                                <ul>
+                                    <li><a {{($submenu=="driver.add")?'class="active"':''}} href="{{route('admin::driver.add')}}">Add new Driver</a></li>
+                                    <li><a {{($submenu=="driver")?'class="active"':''}} href="{{route('admin::driver')}}">See Drivers</a></li>
+                                </ul>
+                            </li>
 
                         </ul>
                     </div>

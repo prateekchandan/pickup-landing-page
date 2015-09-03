@@ -8,8 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use View;
 use Input;
+use Hash;;
 use App\User;
-
+use App\Driver;
 
 class AdminController extends Controller
 {
@@ -35,5 +36,36 @@ class AdminController extends Controller
     	}
     	$user = User::where('id','=',Input::get('user'))->delete();
     	return "success";
+    }
+
+    public function createDriverView(){
+    	return view('admin.add_driver',[
+    		'menu'=>'driver',
+    		'submenu'=>'driver.add'
+    	]);
+    }
+
+    public function createDriver(Request $request){
+    	$temp_driver = new Driver();
+    	$temp_driver->username = Input::get('username');
+    	$temp_driver->password = Hash::make(Input::get('password'));
+    	$temp_driver->driver_name = Input::get('driver_name');
+    	$temp_driver->phone = Input::get('phone');
+    	$temp_driver->car_model = Input::get('car_model');
+    	$temp_driver->car_number = Input::get('car_number');
+    	$temp_driver->license_details = Input::get('license_details');
+    	$temp_driver->driver_address = Input::get('driver_address');
+    	$temp_driver->save();
+    	$request->session()->flash('message','Driver Successfully Added');
+    	return redirect()->route('admin::driver.add');
+    }
+
+    public function allDriver(){
+    	$drivers = Driver::all();
+    	return view('admin.driver',[
+    		'menu'=>'driver',
+    		'submenu'=>'driver',
+    		'drivers'=>$drivers,
+    	]);
     }
 }
