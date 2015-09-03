@@ -148,14 +148,14 @@
                             @endif
                             <li {{($menu=="home")?'class="active"':''}}><a href="{{route('admin::home')}}"><i class="md md-home"></i> Home</a></li>
                             <li class="sub-menu {{($menu=='user')?'active toggled':''}}">
-                                <a href="#"><i class="md md-now-widgets"></i> Users</a>
+                                <a href="#"><i class="md md-person"></i> Users</a>
 
                                 <ul>
                                     <li><a {{($submenu=="user.all")?'class="active"':''}} href="{{route('admin::user')}}">See all Users</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu {{($menu=='driver')?'active toggled':''}}">
-                                <a href="#"><i class="md md-now-widgets"></i> Drivers</a>
+                                <a href="#"><i class="md md-directions-car"></i> Drivers</a>
 
                                 <ul>
                                     <li><a {{($submenu=="driver.add")?'class="active"':''}} href="{{route('admin::driver.add')}}">Add new Driver</a></li>
