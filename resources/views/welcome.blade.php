@@ -234,7 +234,7 @@
                 <div class="container">
                     <div class="row" id="book-body">
                         
-                        	@if(1||is_null(session("registered")))
+                        	@if(is_null(session("registered")))
                         	<div class="col-md-6 col-md-offset-3">
 	                            <div class="animated fadeInDown" data-wow-delay=".3s">
 	                            	<div class="col-md-10 col-md-offset-1 book_icon_set">
