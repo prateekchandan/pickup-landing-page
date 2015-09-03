@@ -14,6 +14,7 @@
                                     <th data-column-id="username">username</th>
                                     <th data-column-id="location">Current Location</th>
                                     <th data-column-id="status">Status</th>
+                                    <th data-column-id="emstatus">Empty Status</th>
                                     <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
                                 </tr>
                             </thead>
@@ -25,6 +26,7 @@
                                     <td>{{$driver->username}}</td>
                                     <td><a href="http://maps.google.com/maps?q={{$driver->current_pos}}&z=17" target="_blank"> {{$driver->current_pos}}</a></td>
                                     <td>{{$driver->phone_status}}</td>
+                                    <td>{{$driver->driver_status}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
