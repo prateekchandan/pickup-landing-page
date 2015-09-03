@@ -32,6 +32,7 @@ class UserController extends Controller
     $u->office_location = $request->input('office_location');
     $u->first_name = $request->input('name');
     $u->phone = $request->input('phone');
+    $u->leaving_office = $request->input('office_time');
 
     $u->save();
     

@@ -7,6 +7,7 @@
        
 */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 /*--------------base-------
 */
 html,
@@ -85,12 +86,23 @@ a:focus {
   margin-bottom: 20px; }
 
 .full-screen-section {
-  height: 100%;
+  min-height: 100%;
 }
 
+.one-four-screen{
+  height: 25%;
+}
 
 /*****************home ********
 ******************************/
+.main_page_text{
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#site-header-logo{
+  height: 200px;
+}
 #home.full-screen-dem {
   background-color: #fff;
   background-position: center 0%;
@@ -212,6 +224,25 @@ bootstrap navbar overrides
 .navbar-brand:hover {
   color: #000 !important; }
 
+.features_heading{
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #f7505a;
+  font-size: 3em;
+}
+.features-text{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 2em;
+  line-height: 1.3em;
+}
+
+.feature-img{
+  max-height: 80%;
+  max-width: 80%;
+  margin: auto;
+}
+.featureHead a,.featureHead a:hover,.featureHead a:focus{
+  color: #a7afb8;
+}
 /***************buttons*****************************/
 .btn {
   font-weight: 600;
@@ -941,6 +972,7 @@ our work section
   color: #f7505a;
 }
 .book_flex_next{
+  display: inline-block;
   width: 40px;
   height: 40px;
   padding: 4px;
@@ -1562,4 +1594,8 @@ label span {
 
 .navbar-brand{
   padding: 0px;
+}
+
+.theme_color{
+  color: #f7505a !important;
 }

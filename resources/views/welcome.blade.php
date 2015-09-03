@@ -6,23 +6,44 @@
 
 @section('body')
         <section id="home" class="full-screen-dem parallax" data-stellar-background-ratio="0.5">
+            <div class="parallax-overlay">
+                <img src="{{asset('assets/img/logo1.png')}}" id="site-header-logo">
+            </div>
             <div class="home-content text-center">
-                <div class="container">
-                    <h1 class=" slide-logo">Pickup</h1>
+                <div class="container" style="margin-top: 150px;">
                     <div class="main-flex-slider">
                         <ul class="slides">
                             <li>
-                                <h1>LET'S WORK TOGETHER</h1>
+                                <h1>DAILY COMMUTE PERFECTED</h1>
 
                             </li>
                         </ul>
                     </div> 
-                    <h2 class="slide-btm-text">Pickup FOR DESIGN AGENCIES - BUSINESS AND CORPORATE</h2>
+                    <h2 class="slide-btm-text">On Demand Affordable Shared Cabs</h2>
                     <div class="home-arrow-down text-center">
                         <p class="scrollto"><a href="#bookRide" class="btn btn-lg btn-theme-color">
                         <i class="fa fa-gift fa-lg"></i>
                         Get your free ride
                         </a></p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <i class="fa fa-cab theme_color fa-5x"></i>
+                            <p class="main_page_text">Book a ride on your phone</p>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="fa fa-user theme_color fa-5x"></i>
+                            <p class="main_page_text">Get picked up on your corner by a professionally chauffeured vehicle</p>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="fa fa-users theme_color fa-5x"></i>
+                            <p class="main_page_text">Share your ride with others going the same way</p>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="fa fa-rupee theme_color fa-5x"></i>
+                            <p class="main_page_text">Save cash and reduce your carbon footprint</p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -43,8 +64,7 @@
 
                         <ul class="nav navbar-nav navbar-right scrollto">
                             <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
+                            <li><a href="#features">Features</a></li>
                             <li><a href="#bookRide">Book Your Ride</a></li>
 
                             <li><a href="#contact">Contact</a></li>
@@ -55,66 +75,144 @@
                 </div><!--/.container -->
             </div>
         </section><!--navigation section end here-->
-        <section id="about" class="padding-80 full-screen-section">
- 			<div>
-                <div class="container">
-                    <div class="section-heading text-center">
-                        <h4 class="small section-title"><span>What we do?</span></h4>
-                        <h2 class="large section-title">About us</h2>
-                    </div><!--section heading-->             
-
-                </div><!--container-->
-                <div class="container">
-                   
+        <section id="features" class="padding-80" style="height:400%">
+ 			
+                <div class="container one-four-screen" id="feature-1">
                     <div class="row">
+                        <div class="col-md-6 col-md-offset-3 featureHead">
+                            <div class="col-xs-3">
+                                <a href="#feature-1"><i class=" theme_color fa fa-gears fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-2"><i class="fa fa-clock-o fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-3"><i class="fa fa-database fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-4"><i class="fa fa-rupee fa-4x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="margin-top:100px">
                         <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
-                        	<p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                            </p>
+                            <div class="col-md-8 col-md-offset-3"  style="margin-top:60px">
+                                 <div class="features_heading">COMFORTABLE</div>
+                                    <p class="features-text">
+                                        Your comfortable cab ride is now available for daily use
+                                    </p>
+                                   
+                            </div>
                            
                         </div>
                         <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
-
-                            
+                            <img class="feature-img" src="{{asset('assets/img/john_relaxing.png')}}">
                         </div>
                     </div>
                 </div>
-            </div>          
-        </section>
-        <!--about section end here-->
 
-        <!--section services start here-->
-
-        <section id="services" class="padding-80 full-screen-section">
-
-
-            <div>
-                <div class="container">
-                    <div class="section-heading text-center">
-                        <h4 class="small section-title"><span></span></h4>
-                        <h2 class="large section-title">Our Services</h2>
-                    </div><!--section heading-->             
-
-                </div><!--container-->
-                <div class="container">
-                   
+                <div class="container one-four-screen" id="feature-2">
                     <div class="row">
+                        <div class="col-md-6 col-md-offset-3 featureHead">
+                            <div class="col-xs-3">
+                                <a href="#feature-1"><i class="fa fa-gears fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-2"><i class="theme_color fa fa-clock-o fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-3"><i class="fa fa-database fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-4"><i class="fa fa-rupee fa-4x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="margin-top:80px">
+                        <div class="col-md-6 wow animated fadeInLeft text-right" data-wow-delay="0.3s">
+                            <img class="feature-img" src="{{asset('assets/img/john_computer_time.png')}}">
+                        </div>
+                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
+                            <div class="col-md-8 col-md-offset-3"  style="margin-top:100px">
+                                 <div class="features_heading">RELIABLE</div>
+                                    <p class="features-text">
+                                        Your know you would be picked for office no matter what
+                                    </p>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container one-four-screen" id="feature-3">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 featureHead">
+                            <div class="col-xs-3">
+                                <a href="#feature-1"><i class="fa fa-gears fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-2"><i class="fa fa-clock-o fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-3"><i class="theme_color fa fa-database fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-4"><i class="fa fa-rupee fa-4x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="margin-top:100px">
                         <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
-                        	<p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
-                            </p>
+                            <div class="col-md-8 col-md-offset-3"  style="margin-top:60px">
+                                 <div class="features_heading">CONVINIENT</div>
+                                    <p class="features-text">
+                                        Your will pe picked up right from your door and dropped to your office
+                                    </p>
+                                   
+                            </div>
                            
                         </div>
                         <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
-
-                            
+                            <img class="feature-img" src="{{asset('assets/img/john_computer_work.png')}}">
                         </div>
                     </div>
                 </div>
-            </div>
-           
+
+                <div class="container one-four-screen" id="feature-4">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 featureHead">
+                            <div class="col-xs-3">
+                                <a href="#feature-1"><i class="fa fa-gears fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-2"><i class="fa fa-clock-o fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-3"><i class="fa fa-database fa-4x"></i></a>
+                            </div>
+                            <div class="col-xs-3">
+                                <a href="#feature-4"><i class="theme_color  fa fa-rupee fa-4x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="margin-top:80px">
+                        <div class="col-md-6 wow animated fadeInLeft text-right" data-wow-delay="0.3s">
+                            <img class="feature-img" src="{{asset('assets/img/john_money_saving.png')}}">
+                        </div>
+                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
+                            <div class="col-md-8 col-md-offset-3"  style="margin-top:100px">
+                                 <div class="features_heading">AFFORDABLE</div>
+                                    <p class="features-text">
+                                        Save more than 50% on your cab rides , book regular to save even more. No more surprise cost
+                                    </p>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
         </section>
-        <!--section services end here-->
+        <!--feature section end here-->
+
 
 
         <!--pricing table section start here-->
@@ -136,23 +234,26 @@
                 <div class="container">
                     <div class="row" id="book-body">
                         
-                        	@if(is_null(session("registered")))
+                        	@if(1||is_null(session("registered")))
                         	<div class="col-md-6 col-md-offset-3">
 	                            <div class="animated fadeInDown" data-wow-delay=".3s">
-	                            	<div class="col-md-10 col-md-offset-2 book_icon_set">
-				                        <div class="col-md-2 active" id="home_icon">
-				                       		<i class="fa fa-map-marker fa-3x"></i>
+	                            	<div class="col-md-10 col-md-offset-1 book_icon_set">
+				                        <div class="col-xs-2 active" id="home_icon">
+				                       		<i class="fa fa-home fa-3x"></i>
 				                        </div>
-				                        <div class="col-md-2" id="office_icon">
-				                            <i class="fa fa-map-marker fa-3x"></i>
+				                        <div class="col-xs-2" id="office_icon">
+				                            <i class="fa fa-building fa-3x"></i>
 				                        </div>
-				                        <div class="col-md-2" id="name_icon">
+				                        <div class="col-xs-2" id="name_icon">
 				                            <i class="fa fa-user fa-3x"></i>
 				                        </div>
-				                        <div class="col-md-2" id="email_icon">
+				                        <div class="col-xs-2" id="email_icon">
 				                            <i class="fa fa-envelope fa-3x"></i>
 				                        </div>
-				                        <div class="col-md-3" id="phone_icon">
+                                        <div class="col-xs-2" id="time_icon">
+                                            <i class="fa fa-clock-o fa-3x"></i>
+                                        </div>
+				                        <div class="col-xs-2" id="phone_icon">
 				                            <i class="fa fa-mobile-phone fa-3x"></i>
 				                        </div>
 				                    </div>
@@ -179,6 +280,23 @@
 				                                        <input tabindex="-1" type="email" id="email-input" name="email" class="colour-input"  placeholder="Enter your email id" autocomplete="false">
 				                                        <span id="email-error" class="error_text"></span>
 						                            </li>
+                                                    <li>
+                                                        <select tabindex="-1" placeholder="Select Time Slot" id="time-input" name="office_time" class="colour-input">
+                                                            <option value="">Select your office Timings</option>
+                                                            <option value="16:00:00">4:00 - 4:30</option>
+                                                            <option value="16:30:00">4:30 - 5:00</option>
+                                                            <option value="17:00:00">5:00 - 5:30</option>
+                                                            <option value="17:30:00">5:30 - 6:00</option>
+                                                            <option value="18:00:00">6:00 - 6:30</option>
+                                                            <option value="18:30:00">6:30 - 7:00</option>
+                                                            <option value="19:00:00">7:00 - 7:30</option>
+                                                            <option value="19:30:00">7:30 - 8:00</option>
+                                                            <option value="20:00:00">8:00 - 8:30</option>
+                                                            <option value="20:30:00">8:30 - 9:00</option>
+                                                            <option value="21:00:00">9:00 - 9:30</option>
+                                                        </select>
+                                                        <span id="time-error" class="error_text"></span>
+                                                    </li>
 						                            <li>
 				                                        <input tabindex="-1" type="text" id="phone-input" name="phone" class="phone-input colour-input"  placeholder="Enter your 10 digit mobile number" autocomplete="false">
 				                                        <span id="phone-error" class="phone-error error_text"></span>
@@ -188,10 +306,13 @@
 					                    	</div> 
 						                </form>
 		                            </div>
-		                            <div class=" col-md-12">
-		                                <div class="book_flex_next" id="book_flex_next">
-		                                    <i class="fa fa-angle-right fa-2x" id="book_next_icon"></i>
-		                                </div>
+		                            <div class=" col-md-12 text-center">
+		                                <span class="book_flex_next" id="book_flex_prev" style="display:none">
+		                                    <i class="fa fa-angle-left fa-2x" id="book_prev_icon"></i>
+		                                </span>
+                                        <span class="book_flex_next" id="book_flex_next">
+                                            <i class="fa fa-angle-right fa-2x" id="book_next_icon"></i>
+                                        </span>
 		                            </div>
 		                            <div class="col-md-12" id="book_server_msg">
 		                            </div>
@@ -364,6 +485,7 @@ function fillInAddress1() {
   }
   $('#home-error').html("");
    $('#home-location').val(place.geometry.location.G+","+place.geometry.location.K);
+   $('#book_flex_next').click();
 }
 function checkInPlace(place){
 	var check = false;
@@ -392,6 +514,7 @@ function fillInAddress2() {
   }
   	$('#office-error').html("");
    $('#office-location').val(place.geometry.location.G+","+place.geometry.location.K);
+   $('#book_flex_next').click();
 }
 // [END region_fillform]
 

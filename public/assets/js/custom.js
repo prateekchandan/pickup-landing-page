@@ -17,6 +17,7 @@ $(window).load(function() {
         slideshowSpeed: 200,
         after:function(){
           $('#book_flex_next').off("click").click(nextSlide);
+          $('#book_flex_prev').off("click").click(prevSlide);
         }
     });
     $("#home-input").on('keyup',function(){
@@ -26,6 +27,9 @@ $(window).load(function() {
     $("#office-input").on('keyup',function(){
         $("#office-location").val("");
     });
+    $("#name-input").on('keyup',function(){
+          $("#name-error").html("");
+    });
     $("#email-input").on('keyup',function(){
         if(IsEmail($("#email-input").val()))
           $("#email-error").html("");
@@ -34,13 +38,22 @@ $(window).load(function() {
         if(IsPhone($(this).val()))
           $(".phone-error").html("");
     });
+    $('#time-input').on('change',function(){
+         if($(this).val()==""){
+            $('#time-error').html("Please select a time");
+         }else{
+            $('#book_flex_next').click();
+         }
+    });
     bookSlider = $('.book-flex-slider').data('flexslider');
     var slide = 0;
     var submitData={};
     $('#book_flex_next').click(nextSlide);
+    $('#book_flex_prev').click(prevSlide);
 
     function nextSlide(){
       $('#book_flex_next').off("click");
+      $('#book_flex_prev').off("click");
       console.log(slide);
       if(slide==0){
         if($("#home-location").val()==""){
@@ -48,6 +61,7 @@ $(window).load(function() {
           $('#book_flex_next').click(nextSlide);
           return;
         }
+        $('#book_flex_prev').show();
         $('#home_icon').removeClass('active');
         $('#office_icon').addClass('active');
         submitData['home_text'] = $('#home-input').val();
@@ -82,12 +96,22 @@ $(window).load(function() {
           return;
         }
         $('#email_icon').removeClass('active');
-        $('#phone_icon').addClass('active');
-        $('#book_next_icon').removeClass('fa-angle-right');
-        $('#book_next_icon').addClass('fa-save');
+        $('#time_icon').addClass('active');
         submitData['email'] = email;
       }
       else if(slide==4){
+        if($('#time-input').val()==""){
+          $('#time-error').html("Please select a time");
+          $('#book_flex_next').click(nextSlide);
+          return;
+        }
+        submitData['office_time'] = $('#time-input').val();
+          $('#time_icon').removeClass('active');
+          $('#phone_icon').addClass('active');
+          $('#book_next_icon').removeClass('fa-angle-right');
+          $('#book_next_icon').addClass('fa-save');
+      }
+      else if(slide==5){
         var phone = $(".phone-input").last().val();
         if(!IsPhone(phone)){
           $('.phone-error').html("Invalid/Empty Phone Number");
@@ -103,11 +127,42 @@ $(window).load(function() {
       $('.book-flex-slider').flexslider('next');
       
       slide++;
-      slide = slide % 5;
+      slide = slide % 6;
     }
 
+    function prevSlide(){
+      $('#book_flex_prev').off("click");
+      $('#book_flex_next').off("click");
+      if(slide==5){
+          $('#time_icon').addClass('active');
+          $('#phone_icon').removeClass('active');
+          $('#book_next_icon').addClass('fa-angle-right');
+          $('#book_next_icon').removeClass('fa-save');
+      }
+      else if(slide==4){
+          $('#email_icon').addClass('active');
+          $('#time_icon').removeClass('active');
+      }
+      else if(slide==3){
+         $('#name_icon').addClass('active');
+        $('#email_icon').removeClass('active');
+      }
+      else if(slide==2){
+        $('#office_icon').addClass('active');
+        $('#name_icon').removeClass('active');
+      }
+      else if(slide==1){
+        $('#home_icon').addClass('active');
+        $('#office_icon').removeClass('active');
+        $('#book_flex_prev').hide();
+      }
+      $('.book-flex-slider').flexslider('previous');
+      slide--;
+      slide = slide % 6;
+    }
     function submitUser(){
       submitData['_token']=$("#_token").val();
+      console.log(submitData);
        $.ajax({
                 url: "./add-user",
                 type: "POST",
@@ -134,7 +189,9 @@ $(window).load(function() {
                     $('.book-flex-slider').flexslider(0);
                     $('#book_next_icon').addClass('fa-angle-right');
                     $('#book_next_icon').removeClass('fa-save');
+                    $('#book_flex_prev').hide();
                     $('#phone_icon').removeClass('active');
+                    $('#time_icon').removeClass('active');
                     $('#home_icon').addClass('active');
                     $('.error_text').html("");
                     $("#office-location").val("");
@@ -209,6 +266,20 @@ $(function() {
 	      }
 	    }
 	  });
+
+    $('.featureHead a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top - 100
+          }, 1000);
+          return false;
+        }
+      }
+    });
 	});
 
 

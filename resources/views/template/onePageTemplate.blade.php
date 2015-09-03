@@ -44,8 +44,6 @@
         <!--flex slider css-->
         <link href="{{asset('assets/css/flexslider.css')}}" rel="stylesheet">
         <!--google web fonts css-->
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,800' rel='stylesheet' type='text/css'>
-        
         <!-- icons css-->
         <link href="{{asset('assets/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
         <!--animated css-->

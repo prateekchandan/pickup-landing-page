@@ -75,7 +75,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <input type="hidden" name="journey_time" value="">
+                                <input type="hidden" name="journey_time" value="3-3-3 3:3:3">
+                                <input type="hidden" name="preference" value="1">
                                	<div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <button type="button" id="book_journey" class="btn btn-primary btn-sm">Book Ride </button>
@@ -113,6 +114,14 @@
 		$('input[name=margin_before]').val($('select[name=margin_after]').val());
 
 		notify("Yet to be implemented");
+		$.ajax({
+			url:"{{'http://pickup.prateekchandan.me/add_journey?prateek=1'}}",
+			method:"POST",
+			data:$('form').serialize(),
+			success:function(data){
+				console.log('data');
+			}
+		})
 	});
 </script>
 @endsection
