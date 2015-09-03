@@ -68,4 +68,26 @@ class AdminController extends Controller
     		'drivers'=>$drivers,
     	]);
     }
+
+    public function bookRide($id){
+    	$user = User::find($id);
+    	if(is_null($user)){
+    		return "Wrong User Id";
+    	}
+
+    	$home = explode(',', $user->home_location);
+    	if(sizeof($home)<2)
+    		return redirect()->back();
+    	$user->home_lat = $home[0];
+    	$user->home_long = $home[1];
+
+    	$office = explode(',', $user->office_location);
+    	if(sizeof($office)<2)
+    		return redirect()->back();
+    	$user->office_lat = $office[0];
+    	$user->office_long = $office[1];
+    	return view('admin.book_ride',[
+    		'user'=>$user
+    	]);
+    }
 }

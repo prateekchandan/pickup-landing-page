@@ -250,6 +250,7 @@
         <script src="{{asset('admin_assets/js/flot-charts/line-chart.js')}}"></script>
         <script src="{{asset('admin_assets/js/charts.js')}}"></script>
         <script src="{{asset('admin_assets/vendors/bootgrid/jquery.bootgrid.min.js')}}"></script>
+        <script src="{{asset('admin_assets/vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js')}}"></script>
         
         <script src="{{asset('admin_assets/js/charts.js')}}"></script>
         <script src="{{asset('admin_assets/js/functions.js')}}"></script>

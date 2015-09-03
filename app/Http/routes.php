@@ -33,4 +33,6 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
     Route::get('create_driver', ['as' => 'driver.add', 'uses'=>'AdminController@createDriverview']);
     Route::post('create_driver', ['as' => 'driver.add', 'uses'=>'AdminController@createDriver']);
     Route::get('driver', ['as' => 'driver', 'uses'=>'AdminController@allDriver']);
+    
+    Route::get('book-ride/{id}', ['uses'=>'AdminController@bookRide']);
 });

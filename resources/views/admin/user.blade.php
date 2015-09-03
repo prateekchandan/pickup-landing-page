@@ -2,7 +2,7 @@
 
 @section('content')
  <div class="card">
-                        <div class="card-header">
+        <div class="card-header">
                             <h2>All Users</h2>
                         </div>
                         
@@ -54,7 +54,8 @@
                         	var office_location = $(row.office_location).data('location');
 
                         	console.log(home_location);
-                            return "<button type=\"button\"  class=\"btn btn-icon command-delete\" data-row-id=\"" + row.id + "\"><span class=\"md md-delete\"></span></button>";
+                            return "<button type=\"button\"  class=\"btn btn-icon command-delete\" data-row-id=\"" + row.id + "\"><span class=\"md md-delete\"></span></button>"+
+                            "<a href=\"{{route('admin::home')}}/book-ride/"+row.id+"\" type=\"button\"  class=\"btn btn-icon command-edit\" data-row-id=\"" + row.id + "\"><span class=\"md md-send\"></span></a>";
                         }
                     }
                 });
