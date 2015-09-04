@@ -171,4 +171,53 @@ class AdminController extends Controller
         }
         return "Journey Successfully confirmed";
     }
+
+
+    private function get_group_data($status){
+        $groups = Group::where('event_status','=',$status)->orderBy('start_time', 'asc')->get();
+        foreach ($groups as $key => $group) {
+            $journeys = array();
+            foreach (json_decode($group->journey_ids) as $key1 => $jid) {
+                $journey = Journey::where('journey_id','=',$jid)->first();
+                if(is_null($journey))
+                    continue;
+                $journey->user=User::find($journey->id);
+                array_push($journeys, $journey);
+            }
+            $group->journeys = $journeys;
+            if(!is_null($group->driver_id))
+                $group->driver = Driver::where('driver_id','=',$group->driver_id)->first();
+            $groups[$key]=$group;
+        }
+        return $groups;
+    }
+
+    public function new_groups(){
+        $group_data=$this->get_group_data("confirmed");
+        return view('admin.show_group',[
+            'menu'=>'group',
+            'submenu'=>'group.new',
+            'groups'=>$group_data
+        ]);
+    }
+    public function active_groups(){
+        $group_data=$this->get_group_data("started");
+        $group_data=[];
+        return view('admin.show_group',[
+            'menu'=>'group',
+            'submenu'=>'group.active',
+            'groups'=>$group_data
+        ]);
+        
+    }
+    public function finished_groups(){
+        $group_data=$this->get_group_data("completed");
+        $group_data=[];
+        return view('admin.show_group',[
+            'menu'=>'group',
+            'submenu'=>'group.finished',
+            'groups'=>$group_data
+        ]);
+    }
+
 }

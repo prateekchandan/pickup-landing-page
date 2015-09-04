@@ -80,12 +80,11 @@
                                     <label for="inputEmail3" class="col-sm-2 control-label">Booking Time: </label>
                                     <div class="col-sm-10">
                                         <div class="fg-line">
-                                            <input type='text' class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click here..." data-value="{{$user->time_int}}">
+                                            <input type='text' name="alternate_journey_time" class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click here..." data-value="{{$user->time_int}}">
                                             <input type="hidden" name="margin_before" value="30">
                                         </div>
                                     </div>
                                 </div>
-                                <input type="hidden" name="journey_time" value="3-3-3 3:3:3">
                                 <input type="hidden" name="preference" value="1">
                                	<div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">

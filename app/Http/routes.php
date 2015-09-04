@@ -38,4 +38,8 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
 
     Route::post('get_best_match',['as'=>'api.get_best_match','uses'=>'AdminController@api_get_best_match']);
     Route::get('confirm_journey/{id}',['as'=>'api.confirm','uses'=>'AdminController@confirm']);
+    
+    Route::get('new_groups',['as'=>'group.new','uses'=>'AdminController@new_groups']);
+    Route::get('active_groups',['as'=>'group.active','uses'=>'AdminController@active_groups']);
+    Route::get('finished_groups',['as'=>'group.finished','uses'=>'AdminController@finished_groups']);
 });
