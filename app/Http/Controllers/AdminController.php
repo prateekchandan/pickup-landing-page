@@ -11,9 +11,29 @@ use Input;
 use Hash;;
 use App\User;
 use App\Driver;
+use App\Journey;
+use App\Group;
+use GuzzleHttp\Client;
 
 class AdminController extends Controller
 {
+    // The API CLient
+    protected $APIclient;
+    protected $AppKey;
+    
+    public function __construct()
+    {
+        $this->APIclient=new Client([
+            // Base URI is used with relative requests
+            'base_uri' => env('API_SERVER','http://pickup.prateekchandan.me/api'),
+            // You can set any number of default request options.
+            'timeout'  => 2.0,
+        ]);
+        $this->AppKey = env('API_KEY','wrong_string');
+    }
+
+
+
     public function home(){
     	return view('admin.home',[
     		'menu'=>'home'
@@ -80,7 +100,10 @@ class AdminController extends Controller
     		return redirect()->back();
     	$user->home_lat = $home[0];
     	$user->home_long = $home[1];
+        date_default_timezone_set('Asia/Kolkata');
 
+        $user->time = date("Y-m-d")." ".$user->leaving_office;
+        $user->time_int = strtotime($user->time)*1000;
     	$office = explode(',', $user->office_location);
     	if(sizeof($office)<2)
     		return redirect()->back();
@@ -89,5 +112,61 @@ class AdminController extends Controller
     	return view('admin.book_ride',[
     		'user'=>$user
     	]);
+    }
+
+   
+
+    private function sendPost($url,$data){
+        $data['key']=$this->AppKey;
+        $ret = $this->APIclient->post($url,[
+            'form_params'=>$data
+            ]);
+        return $ret;
+    }
+
+    private function sendGet($url){
+        return $this->APIclient->get($url);
+    }
+
+    public function api_get_best_match(){
+        $add_journey = $this->sendPost('/add_journey',Input::all());
+        $response = json_decode($add_journey->getBody());
+        if($response->error!=0){
+            abort(400);
+        } 
+        $best_match = json_decode($this->sendGet('/get_best_match/'.$response->journey_id.'?key='.$this->AppKey)->getBody());
+        if($best_match->error!=0){
+             abort(400);
+        }
+        $best_match=$best_match->best_match;
+        $details = [];
+        if(!isset($best_match->journey_ids))
+        {
+            return $details;
+        }
+        $journey_ids = json_decode($best_match->journey_ids);
+        foreach ($journey_ids as $key => $journey_id) {
+            $journey=Journey::where('journey_id','=',$journey_id)->first();
+            if(is_null($journey))
+                continue;
+            $data['start_text']=$journey->start_text;
+            $data['end_text']=$journey->end_text;
+            $user = User::find($journey->id);
+            $data['name']=$user->first_name;
+            $data['email']=$user->email;
+            $data['phone']=$user->phone;
+            array_push($details, $data);
+        }
+        $data['id']=$response->journey_id;
+        $data['data']=$details;
+        return json_encode($data);
+    }
+
+    public function confirm($journey_id){
+        $response = json_decode($this->sendGet('/confirm/'.$journey_id.'?key='.$this->AppKey)->getBody());
+        if($response->error!=0){
+            abort(400);
+        }
+        return "Journey Successfully confirmed";
     }
 }

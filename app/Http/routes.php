@@ -35,4 +35,7 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
     Route::get('driver', ['as' => 'driver', 'uses'=>'AdminController@allDriver']);
     
     Route::get('book-ride/{id}', ['uses'=>'AdminController@bookRide']);
+
+    Route::post('get_best_match',['as'=>'api.get_best_match','uses'=>'AdminController@api_get_best_match']);
+    Route::get('confirm_journey/{id}',['as'=>'api.confirm','uses'=>'AdminController@confirm']);
 });

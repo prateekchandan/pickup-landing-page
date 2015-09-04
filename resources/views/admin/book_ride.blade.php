@@ -26,9 +26,10 @@
 	 <div class="card" id="book-ride-form-card">
                         
                         <form class="form-horizontal" role="form">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                         	<input type="hidden" name="user_id" value="{{$user->id}}">
                             <div class="card-header">
-                                <h2>Horizontal Form <small>Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout by adding '.form-horizontal' to the form. Doing so changes '.form-groups' to behave as grid rows, so no need for '.row'.</small></h2>
+                                <h2>Book Ride </h2>
                             </div>
                             
                             <div class="card-body card-padding">
@@ -75,11 +76,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Booking Time: </label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                            <input type='text' class="form-control date-time-picker" data-toggle="dropdown" placeholder="Click here..." data-value="{{$user->time_int}}">
+                                            <input type="hidden" name="margin_before" value="30">
+                                        </div>
+                                    </div>
+                                </div>
                                 <input type="hidden" name="journey_time" value="3-3-3 3:3:3">
                                 <input type="hidden" name="preference" value="1">
                                	<div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="button" id="book_journey" class="btn btn-primary btn-sm">Book Ride </button>
+                                        <button type="button" id="book_journey" class="btn btn-primary btn-sm">Find Best Matches </button>
                                     </div>
                                 </div>
                             </div>
@@ -115,13 +125,55 @@
 
 		notify("Yet to be implemented");
 		$.ajax({
-			url:"{{'http://pickup.prateekchandan.me/add_journey?prateek=1'}}",
+			url:"{{route('admin::api.get_best_match')}}",
 			method:"POST",
+            dataType: "json",
 			data:$('form').serialize(),
 			success:function(data){
-				console.log('data');
-			}
+				confirm_with(data);
+			},
+            error:function(){
+                swal("Error!", "Some Mishap Happened while making this request!!", "error");
+            }
 		})
 	});
+
+    function confirm_with(details){
+        var data=details.data;
+        var id=details.id;
+        var htmlT="Matches are :<br><table class=\"table table-responsive\">"
+        for (var i = data.length - 1; i >= 0; i--) {
+            var temp = data[i];
+            htmlT+="<tr>";
+            htmlT+="<th>"+temp.name+"<th>";
+            htmlT+="<th>"+temp.email+"<th>";
+            htmlT+="</tr>";
+        };
+        htmlT+="</table>";
+        if(data.length==0)
+            htmlT="No Best Matches availbale right now";
+        console.log(data);
+        console.log(htmlT);
+        swal({
+            title: "Confirm Jourey?",
+            text: htmlT,
+            type: "info",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            html:true
+        }, function() {
+            $.ajax({
+                url:"{{route('admin::home').'/confirm_journey'}}/"+id,
+                method:"GET",
+                success:function(data){
+                    swal("Success!!",data,"success");
+                },
+                error:function(){
+                    swal("Error!", "Some Mishap Happened while confirming!!", "error");
+                }
+            })
+        });
+    }
 </script>
 @endsection

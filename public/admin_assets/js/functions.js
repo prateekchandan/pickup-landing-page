@@ -559,9 +559,16 @@ $(document).ready(function(){
      * Date Time Picker
      */
     
+
+
     //Date Time Picker
     if ($('.date-time-picker')[0]) {
-	   $('.date-time-picker').datetimepicker();
+        var d=new Date();
+        var today = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+	   $('.date-time-picker').datetimepicker({
+            format: 'YYYY-MM-DD HH:mm:ss',
+            defaultDate:new Date($('.date-time-picker').data('value'))
+       });
     }
     
     //Time
