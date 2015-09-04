@@ -142,7 +142,9 @@ class AdminController extends Controller
         $details = [];
         if(!isset($best_match->journey_ids))
         {
-            return $details;
+             $data['id']=$response->journey_id;
+            $data['data']=$details;
+            return json_encode($data);
         }
         $journey_ids = json_decode($best_match->journey_ids);
         foreach ($journey_ids as $key => $journey_id) {
