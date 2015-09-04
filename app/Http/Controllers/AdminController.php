@@ -202,7 +202,6 @@ class AdminController extends Controller
     }
     public function active_groups(){
         $group_data=$this->get_group_data("started");
-        $group_data=[];
         return view('admin.show_group',[
             'menu'=>'group',
             'submenu'=>'group.active',
@@ -212,7 +211,6 @@ class AdminController extends Controller
     }
     public function finished_groups(){
         $group_data=$this->get_group_data("completed");
-        $group_data=[];
         return view('admin.show_group',[
             'menu'=>'group',
             'submenu'=>'group.finished',
