@@ -123,7 +123,6 @@
 	$('#book_journey').click(function(){
 		$('input[name=margin_before]').val($('select[name=margin_after]').val());
 
-		notify("Yet to be implemented");
 		$.ajax({
 			url:"{{route('admin::api.get_best_match')}}",
 			method:"POST",
