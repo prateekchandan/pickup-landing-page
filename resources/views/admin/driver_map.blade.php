@@ -95,10 +95,10 @@ function updateMap(check){
     }
 
     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-    boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+   /* boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
         this.setZoom(10);
         google.maps.event.removeListener(boundsListener);
-    });
+    });*/
 }
 
 function periodicMap(){
