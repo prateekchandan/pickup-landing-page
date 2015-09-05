@@ -89,7 +89,7 @@ class AdminController extends Controller
     	]);
     }
 
-     public function allDriverMap(){
+    public function allDriverMap(){
         $drivers = Driver::all();
         $driver_markers = [];
         $driver_info = [];
@@ -218,7 +218,7 @@ class AdminController extends Controller
 
 
     private function get_group_data($status){
-        $groups = Group::where('event_status','=',$status)->orderBy('start_time', 'asc')->get();
+        $groups = Group::where('event_status','=',$status)->orderBy('start_time',($status=="completed"?'desc':'asc'))->get();
         foreach ($groups as $key => $group) {
             $journeys = array();
             foreach (json_decode($group->journey_ids) as $key1 => $jid) {
