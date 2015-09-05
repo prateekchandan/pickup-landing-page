@@ -49,7 +49,7 @@ class HomeController extends Controller {
 		if(env('APP_ENV', 'local')!="local"){
 			 Mail::send('email.contactus', array('name' => $name,'email'=>$email,'bmessage'=>$bmessage),   function($message) use ($email,$name){
 		        $message->to('support@getpickup.in',"Team Pickup")->
-		        ->replyTo($email, $name)
+		        replyTo($email, $name)->
 		        subject('[NEW] Contact Us Email');
 		    });
 		}
