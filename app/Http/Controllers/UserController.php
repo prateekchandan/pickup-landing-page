@@ -59,6 +59,7 @@ class UserController extends Controller
         return redirect()->route('login');
     }
     $gruser=$provider->user();
+    
     if(is_null($gruser)){
         $request->session()->flash('msg','Facebook Authetication Failed');
         return redirect()->route('login');

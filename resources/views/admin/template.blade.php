@@ -151,24 +151,25 @@
                                 <a href="#"><i class="md md-person"></i> Users</a>
 
                                 <ul>
-                                    <li><a {{($submenu=="user.all")?'class="active"':''}} href="{{route('admin::user')}}">See all Users</a></li>
+                                    <li><a {!!($submenu=="user.all")?'class="active"':''!!} href="{{route('admin::user')}}">See all Users</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu {{($menu=='driver')?'active toggled':''}}">
                                 <a href="#"><i class="md md-directions-car"></i> Drivers</a>
 
                                 <ul>
-                                    <li><a {{($submenu=="driver.add")?'class="active"':''}} href="{{route('admin::driver.add')}}">Add new Driver</a></li>
-                                    <li><a {{($submenu=="driver")?'class="active"':''}} href="{{route('admin::driver')}}">See Drivers</a></li>
+                                    <li><a {!!($submenu=="driver.add")?'class="active"':''!!} href="{{route('admin::driver.add')}}">Add new Driver</a></li>
+                                    <li><a {!!($submenu=="driver")?'class="active"':''!!} href="{{route('admin::driver')}}">See Drivers</a></li>
+                                    <li><a {!!($submenu=="driver_map")?'class="active"':''!!} href="{{route('admin::driver.map')}}">Show Driver Map</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu {{($menu=='group')?'active toggled':''}}">
                                 <a href="#"><i class="md md-group-work"></i> Ride Groups</a>
 
                                 <ul>
-                                    <li><a {{($submenu=="group.new")?'class="active"':''}} href="{{route('admin::group.new')}}">New Groups</a></li>
-                                    <li><a {{($submenu=="group.active")?'class="active"':''}} href="{{route('admin::group.active')}}">Active Groups</a></li>
-                                    <li><a {{($submenu=="group.finished")?'class="active"':''}} href="{{route('admin::group.finished')}}">Finished Groups</a></li>
+                                    <li><a {!!($submenu=="group.new")?'class="active"':''!!} href="{{route('admin::group.new')}}">New Groups</a></li>
+                                    <li><a {!!($submenu=="group.active")?'class="active"':''!!} href="{{route('admin::group.active')}}">Active Groups</a></li>
+                                    <li><a {!!($submenu=="group.finished")?'class="active"':''!!} href="{{route('admin::group.finished')}}">Finished Groups</a></li>
                                 </ul>
                             </li>
 

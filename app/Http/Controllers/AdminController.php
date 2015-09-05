@@ -89,6 +89,50 @@ class AdminController extends Controller
     	]);
     }
 
+     public function allDriverMap(){
+        $drivers = Driver::all();
+        $driver_markers = [];
+        $driver_info = [];
+        foreach ($drivers as $key => $driver) {
+            $loc = explode(',',$driver->current_pos);
+            array_push($driver_markers, [$driver->driver_name,floatval($loc[0]),floatval($loc[1]),($driver->phone_status=="dead"?0:1)]);
+            $html = array('
+                <div>
+                    <h4>Name:'.$driver->driver_name.'</h4>
+                    <div>Satus:<b>'.$driver->phone_status.'</b></div>
+                    <div>Occupancy:<b>'.$driver->driver_status.'</b></div>
+                </div>
+            ');
+            array_push($driver_info,$html);
+        }
+        return view('admin.driver_map',[
+            'menu'=>'driver',
+            'submenu'=>'driver_map',
+            'drivers'=>$drivers,
+            'markers'=>$driver_markers,
+            'info'=>$driver_info
+        ]);
+    }
+
+    public function allDriverMapUpdate(){
+        $drivers = Driver::all();
+        $driver_markers = [];
+        $driver_info = [];
+        foreach ($drivers as $key => $driver) {
+            $loc = explode(',',$driver->current_pos);
+            array_push($driver_markers, [$driver->driver_name,floatval($loc[0]),floatval($loc[1]),($driver->phone_status=="dead"?0:1)]);
+            $html = array('
+                <div>
+                    <h4>Name:'.$driver->driver_name.'</h4>
+                    <div>Satus:<b>'.$driver->phone_status.'</b></div>
+                    <div>Occupancy:<b>'.$driver->driver_status.'</b></div>
+                </div>
+            ');
+            array_push($driver_info,$html);
+        }
+        return array($driver_markers,$driver_info);
+    }
+
     public function bookRide($id){
     	$user = User::find($id);
     	if(is_null($user)){
