@@ -84,7 +84,6 @@ function updateMap(check){
         // Allow each marker to have an info window    
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-            	console.log(infoWindowContent[1][0]);
                 infoWindow.setContent(infoWindowContent[i][0]);
                 infoWindow.open(map, marker);
             }
