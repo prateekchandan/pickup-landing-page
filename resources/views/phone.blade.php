@@ -124,9 +124,9 @@
                     <div class="row">
                         <div class="col-md-12 wow animated fadeInLeft" data-wow-delay="0.3s">
                             <div class="col-md-8 col-md-offset-2"  style="margin-top:60px">
-                                 <div class="features_heading">CONVINIENT</div>
+                                 <div class="features_heading">CONVENIENT</div>
                                     <p class="features-text">
-                                        Your will pe picked up right from your door and dropped to your office
+                                        You will pe picked up right from your door and dropped to your office
                                     </p>
                                    
                             </div>
@@ -546,7 +546,7 @@ $('#submit-btn').click(function(){
                         localStorage.setItem("register", "1");
                         localStorage.setItem("email",submitData['email']);
                     }
-                    $('#book-body').html('<div class="animated fadeInDown text-center" data-wow-delay=".3s"><h2>Thankyou for registering '+submitData['name']+'</h2><p>You will be shortly contacted by us. Please contact us for further queries</p></div>');
+                    $('#book-body').html('<div class="animated fadeInDown text-center" data-wow-delay=".3s"><h2>Thank You for registering '+submitData['name']+'</h2><p>You will be shortly contacted by us. Please contact us for further queries</p></div>');
                 },
                 error: function(data) {
                     // Fail message
