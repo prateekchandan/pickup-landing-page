@@ -9,6 +9,12 @@
     .help-block{
         color: #f7505a;
     }
+    .header_second_text{
+        font-family: "Open Sans", sans-serif !important;
+        text-align: center;
+        font-size: 19px;
+        font-weight: bold;
+    }
 </style>
         <section id="home" class="full-screen-dem parallax" data-stellar-background-ratio="0.5">
             <div class="parallax-overlay">
@@ -25,7 +31,7 @@
                             </li>
                         </ul>
                     </div> 
-                    <h2 class="slide-btm-text">On Demand Affordable Shared Cabs</h2>
+                    <p class="header_second_text">On Demand Affordable Shared Cabs</p>
                     <div class="home-arrow-down text-center">
                         <p class="scrollto"><a href="#bookRide" class="btn btn-lg btn-theme-color">
                         <i class="fa fa-gift fa-2x"></i>
