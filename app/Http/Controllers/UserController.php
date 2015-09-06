@@ -65,12 +65,13 @@ class UserController extends Controller
         return redirect()->route('login');
     }
     if(is_null($gruser->getEmail())){
-        $request->session()->flash('msg','Unable to fetch your email from Facebook. Please check your facebook settings or ');
-        return redirect()->route('login');
+        $email=$gruser->getId().'@facebook.com';
+    }
+    else{
+        $email = $gruser->getEmail();        
     }
     $fbid = $gruser->getId();
     $name = $gruser->getName();
-    $email = $gruser->getEmail();
     $gender = $gruser->user['gender'];
 
     $user = User::where('email','=',$email)

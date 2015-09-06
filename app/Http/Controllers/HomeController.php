@@ -4,6 +4,7 @@ use App\User as User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Mail;
+use Agent;
 class HomeController extends Controller {
 
 	/*
@@ -34,6 +35,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		if(Agent::isMobile())
+		{
+			return view('phone');
+		}
 		return view('welcome');
 	}
 

@@ -146,6 +146,7 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 		'Laravel\Socialite\SocialiteServiceProvider',
+		'Jenssegers\Agent\AgentServiceProvider',
 
 	],
 
@@ -163,6 +164,7 @@ return [
 	'aliases' => [
 
 		'App'       => 'Illuminate\Support\Facades\App',
+		'Agent' => 'Jenssegers\Agent\Facades\Agent',
 		'Artisan'   => 'Illuminate\Support\Facades\Artisan',
 		'Auth'      => 'Illuminate\Support\Facades\Auth',
 		'Blade'     => 'Illuminate\Support\Facades\Blade',

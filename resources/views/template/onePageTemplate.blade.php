@@ -107,7 +107,7 @@
         <script src="{{asset('assets/js/isotope-custom.js')}}" type="text/javascript"></script>
         <script src="{{asset('assets/js/pace.min.js')}}" type="text/javascript"></script>
         
-
+        @yield('script')
 
     </body>
 </html>
