@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-md-3">
                             <i class="fa fa-user theme_color fa-4x"></i>
-                            <p class="main_page_text">Get picked up on your corner by a professionally chauffeured vehicle</p>
+                            <p class="main_page_text">Get picked up in our awesome AC cabs</p>
                         </div>
                         <div class="col-md-3">
                             <i class="fa fa-users theme_color fa-4x"></i>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-md-3">
                             <i class="fa fa-rupee theme_color fa-4x"></i>
-                            <p class="main_page_text">Save cash and reduce your carbon footprint</p>
+                            <p class="main_page_text">Get your cabs at flat  Rs.6/km, No waiting or surge charges</p>
                         </div>
                         
                     </div>
