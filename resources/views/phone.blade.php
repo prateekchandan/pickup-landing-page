@@ -28,8 +28,8 @@
                     <h2 class="slide-btm-text">On Demand Affordable Shared Cabs</h2>
                     <div class="home-arrow-down text-center">
                         <p class="scrollto"><a href="#bookRide" class="btn btn-lg btn-theme-color">
-                        <i class="fa fa-gift fa-lg"></i>
-                        Get your free ride
+                        <i class="fa fa-gift fa-2x"></i>
+                        <span style="font-size:2em">Get your free ride</span>
                         </a></p>
                     </div>
                     <div class="col-md-12">
