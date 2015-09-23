@@ -19,7 +19,7 @@ Route::get('/emailtest',function(){
     $email = "prateek@getpickup.in";
         if(env('APP_ENV', 'local')!="local"){
              Mail::send('email.papmlet', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
-                $message->to('prateekchandan5545@gmail.com',"Team Pickup")->
+                $message->to('y.soni08@gmail.com',"Team Pickup")->
                 replyTo($email, $name)->
                 subject('[NEW] TESTING EMAIL');
             });
