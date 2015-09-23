@@ -14,6 +14,19 @@
 Route::get('/', 'HomeController@index');
 Route::post('/add-user', 'UserController@addUser');
 
+Route::get('/emailtest',function(){
+    $name = "PRATEEK CHANDAN";
+    $email = "prateek@getpickup.in";
+        if(env('APP_ENV', 'local')!="local"){
+             Mail::send('email.papmlet', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
+                $message->to('prateekchandan5545@gmail.com',"Team Pickup")->
+                replyTo($email, $name)->
+                subject('[NEW] TESTING EMAIL');
+            });
+        }
+    return view('email.papmlet');
+});
+
 Route::group(['middleware'=>'guest'],function(){
 	Route::get('/login', array('as'=>'login','uses'=>'UserController@login_view'));
 	Route::get('/fblogin', array('as'=>'fblogin','uses'=>'UserController@fblogin'));
@@ -45,3 +58,5 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
     Route::get('active_groups',['as'=>'group.active','uses'=>'AdminController@active_groups']);
     Route::get('finished_groups',['as'=>'group.finished','uses'=>'AdminController@finished_groups']);
 });
+
+
