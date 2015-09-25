@@ -35,11 +35,12 @@
     <!-- Menu -->
     <nav class="menu" id="theMenu">
         <div class="menu-wrap">
-            <h1 class="logo"><a href="#home">THEME 12</a></h1>
+            <h1 class="logo"><a href="#home">PICKUP</a></h1>
             <i class="ion-android-close menu-close"></i>
             <a href="#home" class="smoothScroll">Home</a>
-            <a href="#about" class="smoothScroll">About</a>
-            <a href="#screen" class="smoothScroll">Screenshots</a>
+            <a href="#about" class="smoothScroll">What is Pickup</a>
+            <a href="#why_free" class="smoothScroll">Why Free Ride</a>
+            <a href="#how_to_book" class="smoothScroll">How to Book Ride</a>
             <a href="#testimonials" class="smoothScroll">Testimonials</a>
             <a href="#buy" class="smoothScroll">Buy Now</a>
         </div>
@@ -51,15 +52,27 @@
       <!-- ********** HEADER ********** -->
       <section id="home"></section>
       <div id="h">
+        <div class="row centered logo_bar">
+            <img src="{{asset('assets/img/pickup logo.png')}}">
+        </div>
+
         <div class="container">
             <div class="row centered">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1>LANDING SUMO</h1>
-                    <hr class="aligncenter">
-                    <h2>SHOW YOUR APP WITH STYLE</h2>
+                    <h2>Get Your First Cabpooling Experience <br>With Us For <b>Free</b>, Anywhere In Mumbai! </h2>
+                </div>
+                <img src="{{asset('assets/img/static.png')}}" id="bck-img">
+
+                <div class="phone-register centered">
+                    <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+                    <form role="form"  method="post"> 
+                        <input type="hidden" value="{{csrf_token()}}" name="_token">
+                        <input type="number" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required>
+                        <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+                    </form>
                 </div>
                 <div class="go aligncenter">
-                    <a href="#about" class="smoothScroll"><i class="ion-mouse"></i></a>
+                    <a href="#about" class="smoothScroll">What is PickUp? <i class="icon ion-arrow-down-b"></i></a>
                 </div>
             </div>
         </div><!--/container -->
@@ -69,115 +82,60 @@
     <section id="about"></section>
     <div id="g">  
         <div class="container">
-            <div class="row mtb centered">
-                <div class="col-md-3">
-                    <div class="circle-icon">
-                        <div class="icon ion-compass"></div>
-                    </div>
-                    <h3>COMPASS</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                </div><!--/col-md-3 -->
+            <img src="{{asset('assets/img/what.png')}}" class="full-width">
 
-                <div class="col-md-3">
-                    <div class="circle-icon">
-                        <div class="icon ion-images"></div>
-                    </div>
-                    <h3>IMAGES</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                </div><!--/col-md-3 -->
-                <div class="col-md-3">
-                    <div class="circle-icon">
-                        <div class="icon ion-beaker"></div>
-                    </div>
-                    <h3>BEAKER</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                </div><!--/col-md-3 -->
-                <div class="col-md-3">
-                    <div class="circle-icon">
-                        <div class="icon ion-help-buoy"></div>
-                    </div>
-                    <h3>SUPPORT</h3>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                </div><!--/col-md-3 -->
+            <div class="row mtb centered">
+                <div class="col-md-10 col-md-offset-1">
+                   <h2>What is Pickup?</h2>
+                    <p>Pickup is a cabpooling platform where you book a ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don't, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.</p>
+                    <br>
+                    <h3>GET AIR-CONDITIONED CABS AT JUST RS.99/-!</h3>
+                    <p>Thats right! We charge a mere Rs 99 for the first 12km and Rs. 6 per km thereafter. The more you ride with us, the better the perks get.</p>
+                </div>
             </div><!--/row -->
+            <div class="go aligncenter centered">
+                <a href="#why_free" class="smoothScroll">Why the free ride? <i class="icon ion-arrow-down-b"></i></a>
+            </div>
         </div><!--/container -->
     </div><!--/G -->
     
-    <!-- ********** PHONE & FEATURES ********** -->
-    <div class="container">
-        <div class="row mtb2">
-            <h1 class="centered">OUR APP FEATURES</h1>
-            <hr class="aligncenter mb">
-            
-            <div class="col-md-4">
-                <div class="features f-r">
-                    <h3>Design</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
-                </div>
-                <div class="features f-r">
-                    <h3>Valid HTML5</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-                <div class="features f-r">
-                    <h3>Bootstrap</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
-                </div>
-                <div class="features f-r">
-                    <h3>Awesome Bundle</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-            </div><!--/col-md-4-->
-            <div class="col-md-4 hidden-xs">
-                <img class="img-responsive aligncenter" src="assets/img/phone.png">
-            </div><!--col-md-4-->
-            <div class="col-md-4">
-                <div class="features f-l">
-                    <h3>Well Coded</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
-                </div>
-                <div class="features f-l">
-                    <h3>Documented</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-                <div class="features f-l">
-                    <h3>Free Support</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
-                </div>
-                <div class="features f-l">
-                    <h3>Developer</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-            </div><!--/col-md-4-->
-            
-        </div><!--/row -->
-    </div><!--/container -->
-    
+
     <!-- ********** SHOWCASE ********** -->
-    <section id="screen"></section>
-    <div id="showcase">
+    <section id="why_free"></section>
+    <div id="">
         <div class="container">
-            <div class="row mtb">
-            <h1 class="centered">SOME SCREENSHOTS</h1>
-            <hr class="aligncenter mb">
-                <div class="col-md-4 mb">
-                    <a href='assets/img/screen-1.png' class='item' data-lightbox-gallery="gallery1">
-                        <img src="assets/img/screen-1.png" class='img-responsive aligncenter' width="220" alt="">
-                    </a>
-                </div><!--/col-md-4-->
+            <img src="{{asset('assets/img/why.png')}}" class="full-width">
 
-                <div class="col-md-4 mb">
-                    <a href='assets/img/screen-2.png' class='item' data-lightbox-gallery="gallery1">
-                        <img src="assets/img/screen-2.png" width="220" class='img-responsive aligncenter' alt="">
-                    </a>
-                </div><!--/col-md-4-->
-
-                <div class="col-md-4 mb">
-                    <a href='assets/img/screen-3.png' class='item' data-lightbox-gallery="gallery1">
-                        <img src="assets/img/screen-3.png" class='img-responsive aligncenter' width="220" alt="">
-                    </a>
-                </div><!--/col-md-4-->
-
+            <div class="row mtb centered">
+                <div class="col-md-10 col-md-offset-1">
+                   <h2>Why The Free Ride?</h2>
+                    <p>Why Not! While daily office commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in cabpooling.<br>
+                    Let's build a trusted community wherein people can share a ride with comfort and ease; a community that not just shares but also gives back to environment. Give us a shot in bringing about a change in your daily commute.</p>
+                    
+                </div>
             </div><!--/row -->
+            <div class="go aligncenter centered">
+                <a href="#how_to_book" class="smoothScroll">Here's how you can book your next ride? <i class="icon ion-arrow-down-b"></i></a>
+            </div>
+        </div><!--/container -->
+    </div><!--/slides -->
+
+    <section id="how_to_book"></section>
+    <div id="">
+        <div class="container">
+            <img src="{{asset('assets/img/why.png')}}" class="full-width">
+
+            <div class="row mtb centered">
+                <div class="col-md-10 col-md-offset-1">
+                   <h2>Why The Free Ride?</h2>
+                    <p>Why Not! While daily office commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in cabpooling.<br>
+                    Let's build a trusted community wherein people can share a ride with comfort and ease; a community that not just shares but also gives back to environment. Give us a shot in bringing about a change in your daily commute.</p>
+                    
+                </div>
+            </div><!--/row -->
+            <div class="go aligncenter centered">
+                <a href="#why_free" class="smoothScroll">Here's how you can book your next ride? <i class="icon ion-arrow-down-b"></i></a>
+            </div>
         </div><!--/container -->
     </div><!--/slides -->
     
@@ -230,23 +188,6 @@
             </div><!--/row -->
         </div><!--/container -->
     </div><!--/G -->
-
-    <!-- ********** SUBSCRIBE ********** -->
-    <div id="f">
-        <div class="container">
-            <div class="row">
-                <h1 class="centered">Subscribe To Our Newsletter</h1>
-                <hr class="aligncenter mb">
-                <div class="col-md-6 col-md-offset-3">
-                    <form role="form" action="http://www.landingsumo.com/demos/Theme%2012/register.php" method="post" enctype="plain"> 
-                        <input type="email" name="email" class="subscribe-input" placeholder="Enter your e-mail address..." required>
-                        <button class='btn btn-submit subscribe-submit' type="submit">Subscribe</button>
-                    </form>
-    
-                </div>
-            </div><!--/row -->
-        </div><!--/container -->
-    </div>
     
     
     <!-- Bootstrap core JavaScript

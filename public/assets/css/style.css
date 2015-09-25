@@ -23,6 +23,7 @@ body {
 	background: #FFBF47; 
 	margin: 0; 
 	color: #532865;
+	overflow-x:hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,7 +39,7 @@ p {
 	font-weight: 300;
 	font-size: 18px; 
 	line-height: 28px;
-	color: #666; 
+	color: #532865; 
 	margin-top: 10px; 
 }
 
@@ -276,7 +277,7 @@ hr {
 
 /* HEADER SECTION */
 #h {
-	padding-top: 200px;
+	
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
@@ -293,7 +294,25 @@ hr {
     -o-background-size: cover;
     background-size: cover;
 }
-
+.container{
+	padding-top: 50px;
+	width: 100% !important;
+}
+#h .logo_bar{
+	padding-top: 40px;
+}
+#bck-img{
+	width: 100%;
+	margin-top: -50px;
+}
+.full-width{
+	width: 100%;
+}
+#h .phone-register{
+	width: 100%;
+	background: #FDB239;
+	padding: 30px;
+}
 #h hr {
 	border: 2px solid white;
 	width: 120px;
@@ -302,22 +321,20 @@ hr {
 #h h1 {
 	font-weight: 900;
 	font-size: 60px;
-	color: white;
+	color: #532865;
 }
 
 #h h2 {
-	color: white;
+	color: #532865;
 }
 
 .go { 
-	height: 60px; 
-	width: 60px; 
 	display: block; 
 	transition: all 1s ease; 
 	-moz-transition: all 1s ease; 
 	-webkit-transition: all 1s ease;
 	-o-transition: all 1s ease;
-	padding-top: 170px;
+	padding-top: 50px;
 	padding-bottom: 15px;
 }
 
@@ -328,14 +345,13 @@ hr {
 	-moz-transform: translate(0, -15px); 
 }
 
-.go i {
-	color: white;
-	font-size: 40px;
+.go a , .go i {
+	color: #100049;
+	font-size: 20px;
 }
 
 /* Grey Section */
 #g {
-	background: #f2f2f2;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
@@ -411,19 +427,6 @@ hr {
 	color: #D2527F;
 }
 
-/* Showcase Conf */
-#showcase {
-	padding-bottom: 50px;
-	padding-top: 50px;
-	background: #D2527F;
-	color: white;
-}
-
-#showcase hr {
-	border: 1px solid #fff;
-	width: 120px;
-}
-
 /* Testimonial Section */
 #t {
 	background: url(../img/testimonials.jpg) no-repeat center top;
@@ -462,10 +465,9 @@ hr {
 	background: white;
 }
 
-#f input {
+#f input , #h input{ 
 	font-size: 18px;
 	min-height: 60px;
-	border-radius: 40px;
 	line-height: 24px;
 	padding: 16px 30px 20px;
 	border: none;
@@ -489,10 +491,9 @@ hr {
 
 /* Button used in the footer - contact form */
 .btn-submit {
-	color: #fff;
+	color: #FFBF47;
 	font-size: 18px;
 	min-height: 60px;
-	border-radius: 40px;
 	text-decoration: none;
 	display: inline-block;
 	line-height: 24px;
@@ -500,9 +501,12 @@ hr {
 	z-index: 1;
 	position: relative;
 	border: none;
-	background: #D2527F;
+	background: #532865;
+	margin-left: -10px;
 }
-
+.btn-submit:hover{
+	color: #FFBF47;
+}
 @media screen and (max-width: 740px){ 
 .f-r {
 	text-align: center;
