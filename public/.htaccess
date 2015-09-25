@@ -25,13 +25,13 @@
   ExpiresByType image/x-icon              "access plus 100 week"
 
 #for javascript
-  ExpiresByType text/javascript           "access plus 1 day"
-  ExpiresByType application/javascript    "access plus 1 day"
-  ExpiresBYType application/x-javascript  "access plus 1 day"
-  ExpiresByType text/js                   "access plus 1 day"
+  ExpiresByType text/javascript           "access plus 2 day"
+  ExpiresByType application/javascript    "access plus 2 day"
+  ExpiresBYType application/x-javascript  "access plus 2 day"
+  ExpiresByType text/js                   "access plus 2 day"
 
 #for css,map and js files
-  ExpiresByType text/css                  "access plus 1 day"
+  ExpiresByType text/css                  "access plus 2 day"
   ExpiresByType text/map                  "access plus 100 week"
 
 # media: images, video, audio
