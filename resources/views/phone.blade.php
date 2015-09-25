@@ -21,7 +21,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="pickup , ride" />
         <!--custom css-->
-        <link href="{{asset('assets/css/style-phone.css')}}" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -97,7 +96,8 @@
             <div>CAREERS</div>
             <div>ABOUT US</div>
         </section-->
-
+        <link href="{{asset('assets/css/style-phone.css')}}" rel="stylesheet" type="text/css">
+        
         <script type="text/javascript" src="{{asset('assets/js/script-phone.js')}}"></script>
     </body>
 </html>
