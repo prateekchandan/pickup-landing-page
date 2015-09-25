@@ -1,0 +1,127 @@
+body{
+	height: 100%;
+	background: #FFBF47;
+	color:#372F5E;
+	font-family: "Open Sans", sans-serif;
+}
+
+.head-logo{
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.head-text{
+	font-size: 1.6em;
+	margin: 30px;
+}
+.sketches{
+	max-height: 20%;
+}
+.body{
+	padding: 20px;
+}
+.mobile-num-block{
+	background: #F5BA42;
+	padding-bottom: 20px;
+	padding-top: 30px;
+	margin-top: -10px;
+	overflow: auto;
+}
+.text-head{
+	font-weight: bold;
+	font-size: 1.3em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.11);
+	cursor: pointer;
+}
+.text-head img{
+	float: right;
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+.text-head-answer{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	display: none;
+	height: 0px;
+	-webkit-transition: height 1s; /* Safari */
+    transition: height 1s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+    overflow: hidden;
+ }   
+
+.show {
+  display: block !important;
+  height: inherit !important;
+}
+
+.rotate {
+    -ms-transform: rotate(0deg) !important; /* IE 9 */
+    -webkit-transform: rotate(0deg) !important; /* Chrome, Safari, Opera */
+    transform: rotate(0deg) !important;
+}
+
+.footer{
+	padding: 20px;
+}
+.footer div{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+#phone,#phone-text{
+	display: inline;
+}
+#phone{
+	height: 40px;
+}
+
+#phone-text{
+	padding: 10px;
+	background: rgba(83, 40, 101, 1);
+	color: rgba(255, 191, 71, 1);
+	font-size: 1.2em;
+	margin-left: -5px;
+	margin-bottom: -2px;
+	padding-bottom: 14px;
+    padding-top: 10px;
+}
+
+
+/* Some bootstrap classes */
+.wrapper input,
+.wrapper button {
+    float: left;
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+input {
+    float: left;
+    box-sizing: border-box;
+    padding-right: 45%;
+    width: 100%;
+    height: 45px;
+    padding-left: 10px;
+    font-size: 1.1em;
+}
+
+button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 45px;
+    background: rgba(83, 40, 101, 1);
+    color: rgba(255, 191, 71, 1);
+    border: 0px;
+    font-size: 1.1em;
+}

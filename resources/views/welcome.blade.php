@@ -1,744 +1,274 @@
-@extends('template.onePageTemplate')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://www.landingsumo.com/demos/Theme%2012/assets/img/favicon.ico">
 
-@section('meta')
-<meta name="keywords" content="pickup , ride" />
-@endsection
+    <title>Pickup</title>
 
-@section('body')
-        <section id="home" class="full-screen-dem parallax" data-stellar-background-ratio="0.5">
-            <div class="parallax-overlay">
-                <img src="{{asset('assets/img/logo1.png')}}" id="site-header-logo">
-            </div>
-            <div class="home-content text-center">
-                <div class="container" style="margin-top: 150px;">
-                    <div class="main-flex-slider">
-                        <ul class="slides">
-                            <li>
-                                <h1>DAILY COMMUTE PERFECTED</h1>
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
 
-                            </li>
-                        </ul>
-                    </div> 
-                    <h2 class="slide-btm-text">On Demand Affordable Shared Cabs</h2>
-                    <div class="home-arrow-down text-center">
-                        <p class="scrollto"><a href="#bookRide" class="btn btn-lg btn-theme-color">
-                        <i class="fa fa-gift fa-lg"></i>
-                        Get your free ride
-                        </a></p>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="col-md-3">
-                            <i class="fa fa-cab theme_color fa-5x"></i>
-                            <p class="main_page_text">Book a ride on your phone</p>
-                        </div>
-                        <div class="col-md-3">
-                            <i class="fa fa-user theme_color fa-5x"></i>
-                            <p class="main_page_text">Get picked up in our awesome AC cabs</p>
-                        </div>
-                        <div class="col-md-3">
-                            <i class="fa fa-users theme_color fa-5x"></i>
-                            <p class="main_page_text">Share your ride with others going the same way</p>
-                        </div>
-                        <div class="col-md-3">
-                            <i class="fa fa-rupee theme_color fa-5x"></i>
-                            <p class="main_page_text">Get your cabs at flat  Rs.6/km, No waiting or surge charges</p>
-                        </div>
-                        
-                    </div>
+    <!-- Custom styles for this template -->
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/ionicons.min.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('assets/css/nivo-lightbox.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/nivo-themes/default/default.css')}}" type="text/css">
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{asset('assets/js/ie10-viewport-bug-workaround.js')}}"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+    <!-- Menu -->
+    <nav class="menu" id="theMenu">
+        <div class="menu-wrap">
+            <h1 class="logo"><a href="#home">THEME 12</a></h1>
+            <i class="ion-android-close menu-close"></i>
+            <a href="#home" class="smoothScroll">Home</a>
+            <a href="#about" class="smoothScroll">About</a>
+            <a href="#screen" class="smoothScroll">Screenshots</a>
+            <a href="#testimonials" class="smoothScroll">Testimonials</a>
+            <a href="#buy" class="smoothScroll">Buy Now</a>
+        </div>
+        
+        <!-- Menu button -->
+        <div id="menuToggle"><i class="ion-navicon"></i> Menu</div>
+    </nav>
+
+      <!-- ********** HEADER ********** -->
+      <section id="home"></section>
+      <div id="h">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>LANDING SUMO</h1>
+                    <hr class="aligncenter">
+                    <h2>SHOW YOUR APP WITH STYLE</h2>
+                </div>
+                <div class="go aligncenter">
+                    <a href="#about" class="smoothScroll"><i class="ion-mouse"></i></a>
                 </div>
             </div>
-        </section>
-        <section id="navigation">
-            <div class="navbar navbar-default navbar-static-top sticky" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <img class="navbar-brand" src="{{asset('assets/img/logo.png')}}">
+        </div><!--/container -->
+      </div><!--/H -->
+
+    <!-- ********** ICONS ********** -->    
+    <section id="about"></section>
+    <div id="g">  
+        <div class="container">
+            <div class="row mtb centered">
+                <div class="col-md-3">
+                    <div class="circle-icon">
+                        <div class="icon ion-compass"></div>
                     </div>
-                    <div class="navbar-collapse collapse">
+                    <h3>COMPASS</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div><!--/col-md-3 -->
 
-                        <ul class="nav navbar-nav navbar-right scrollto">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#features">Features</a></li>
-                            <li><a href="#bookRide">Book Your Ride</a></li>
-
-                            <li><a href="#contact">Contact</a></li>
-
-                        </ul>
-
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container -->
-            </div>
-        </section><!--navigation section end here-->
-        <section id="features" class="padding-80" style="height:400%">
- 			
-                <div class="container one-four-screen" id="feature-1">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 featureHead">
-                            <div class="col-xs-3">
-                                <a href="#feature-1"><i class=" theme_color fa fa-gears fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-2"><i class="fa fa-clock-o fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-3"><i class="fa fa-database fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-4"><i class="fa fa-rupee fa-4x"></i></a>
-                            </div>
-                        </div>
+                <div class="col-md-3">
+                    <div class="circle-icon">
+                        <div class="icon ion-images"></div>
                     </div>
-                    <div class="row"  style="margin-top:100px">
-                        <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
-                            <div class="col-md-8 col-md-offset-3"  style="margin-top:60px">
-                                 <div class="features_heading">COMFORTABLE</div>
-                                    <p class="features-text">
-                                        Your comfortable cab ride is now available for daily use
-                                    </p>
-                                   
-                            </div>
-                           
-                        </div>
-                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
-                            <img class="feature-img" src="{{asset('assets/img/john_relaxing.png')}}">
-                        </div>
+                    <h3>IMAGES</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div><!--/col-md-3 -->
+                <div class="col-md-3">
+                    <div class="circle-icon">
+                        <div class="icon ion-beaker"></div>
                     </div>
+                    <h3>BEAKER</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div><!--/col-md-3 -->
+                <div class="col-md-3">
+                    <div class="circle-icon">
+                        <div class="icon ion-help-buoy"></div>
+                    </div>
+                    <h3>SUPPORT</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div><!--/col-md-3 -->
+            </div><!--/row -->
+        </div><!--/container -->
+    </div><!--/G -->
+    
+    <!-- ********** PHONE & FEATURES ********** -->
+    <div class="container">
+        <div class="row mtb2">
+            <h1 class="centered">OUR APP FEATURES</h1>
+            <hr class="aligncenter mb">
+            
+            <div class="col-md-4">
+                <div class="features f-r">
+                    <h3>Design</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
                 </div>
-
-                <div class="container one-four-screen" id="feature-2">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 featureHead">
-                            <div class="col-xs-3">
-                                <a href="#feature-1"><i class="fa fa-gears fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-2"><i class="theme_color fa fa-clock-o fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-3"><i class="fa fa-database fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-4"><i class="fa fa-rupee fa-4x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row"  style="margin-top:80px">
-                        <div class="col-md-6 wow animated fadeInLeft text-right" data-wow-delay="0.3s">
-                            <img class="feature-img" src="{{asset('assets/img/john_computer_time.png')}}">
-                        </div>
-                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
-                            <div class="col-md-8 col-md-offset-3"  style="margin-top:100px">
-                                 <div class="features_heading">RELIABLE</div>
-                                    <p class="features-text">
-                                        Your know you would be picked for office no matter what
-                                    </p>
-                            </div>
-                           
-                        </div>
-                    </div>
+                <div class="features f-r">
+                    <h3>Valid HTML5</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
-                
-                <div class="container one-four-screen" id="feature-3">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 featureHead">
-                            <div class="col-xs-3">
-                                <a href="#feature-1"><i class="fa fa-gears fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-2"><i class="fa fa-clock-o fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-3"><i class="theme_color fa fa-database fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-4"><i class="fa fa-rupee fa-4x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row"  style="margin-top:100px">
-                        <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
-                            <div class="col-md-8 col-md-offset-3"  style="margin-top:60px">
-                                 <div class="features_heading">CONVENIENT</div>
-                                    <p class="features-text">
-                                        You will pe picked up right from your door and dropped to your office
-                                    </p>
-                                   
-                            </div>
-                           
-                        </div>
-                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
-                            <img class="feature-img" src="{{asset('assets/img/john_computer_work.png')}}">
-                        </div>
-                    </div>
+                <div class="features f-r">
+                    <h3>Bootstrap</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
                 </div>
-
-                <div class="container one-four-screen" id="feature-4">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 featureHead">
-                            <div class="col-xs-3">
-                                <a href="#feature-1"><i class="fa fa-gears fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-2"><i class="fa fa-clock-o fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-3"><i class="fa fa-database fa-4x"></i></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a href="#feature-4"><i class="theme_color  fa fa-rupee fa-4x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row"  style="margin-top:80px">
-                        <div class="col-md-6 wow animated fadeInLeft text-right" data-wow-delay="0.3s">
-                            <img class="feature-img" src="{{asset('assets/img/john_money_saving.png')}}">
-                        </div>
-                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
-                            <div class="col-md-8 col-md-offset-3"  style="margin-top:100px">
-                                 <div class="features_heading">AFFORDABLE</div>
-                                    <p class="features-text">
-                                        Save more than 50% on your cab rides , book regular to save even more. No more surprise cost
-                                    </p>
-                            </div>
-                           
-                        </div>
-                    </div>
+                <div class="features f-r">
+                    <h3>Awesome Bundle</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
-        </section>
-        <!--feature section end here-->
-
-
-
-        <!--pricing table section start here-->
-
-
-        <section id="bookRide" class="padding-80 full-screen-section">
-
-
-
-            <div class="bookRide-section">
-                <div class="container">
-                    <div class="section-heading text-center">
-                        <h4 class="small section-title">
-                        	<i class="fa fa-gift fa-7x"></i>
-                        </h4>
-                        <h2 class="large section-title">BOOK YOUR FREE RIDE</h2>
-                    </div><!--section heading-->
-                </div><!--section heading-->
-                <div class="container">
-                    <div class="row" id="book-body">
-                        
-                        	@if(is_null(session("registered")))
-                        	<div class="col-md-6 col-md-offset-3">
-	                            <div class="animated fadeInDown" data-wow-delay=".3s">
-	                            	<div class="col-md-10 col-md-offset-1 book_icon_set">
-				                        <div class="col-xs-2 active" id="home_icon">
-				                       		<i class="fa fa-home fa-3x"></i>
-				                        </div>
-				                        <div class="col-xs-2" id="office_icon">
-				                            <i class="fa fa-building fa-3x"></i>
-				                        </div>
-				                        <div class="col-xs-2" id="name_icon">
-				                            <i class="fa fa-user fa-3x"></i>
-				                        </div>
-				                        <div class="col-xs-2" id="email_icon">
-				                            <i class="fa fa-envelope fa-3x"></i>
-				                        </div>
-                                        <div class="col-xs-2" id="time_icon">
-                                            <i class="fa fa-clock-o fa-3x"></i>
-                                        </div>
-				                        <div class="col-xs-2" id="phone_icon">
-				                            <i class="fa fa-mobile-phone fa-3x"></i>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-12">
-				                    	<form id="user_add_form">
-				                    		<input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
-				                    		<div class="book-flex-slider">
-						                        <ul class="slides">
-						                            <li>
-			                                            <input tabindex="-1" type="text" name="home_text" id="home-input" class="colour-input"  placeholder="Enter your Home Address" autocomplete="false">
-			                                            <span id="home-error" class="error_text"></span>
-			                                            <input type="hidden" id="home-location" name="home_location">
-						                            </li>
-						                            <li>
-				                                            <input tabindex="-1" type="text" id="office-input" name="office_text" class="colour-input"  placeholder="Enter your Office Address" autocomplete="false">
-				                                            <span id="office-error" class="error_text"></span>
-				                                            <input type="hidden" id="office-location" name="office_location">
-						                            </li>
-						                            <li>
-				                                        <input tabindex="-1" type="text" id="name-input" name="name" class="colour-input"  placeholder="Enter your name" autocomplete="false">
-				                                        <span id="name-error" class="error_text"></span>
-						                            </li>
-						                            <li>
-				                                        <input tabindex="-1" type="email" id="email-input" name="email" class="colour-input"  placeholder="Enter your email id" autocomplete="false">
-				                                        <span id="email-error" class="error_text"></span>
-						                            </li>
-                                                    <li>
-                                                        <select tabindex="-1" placeholder="Select Time Slot" id="time-input" name="office_time" class="colour-input">
-                                                            <option value="">Select your office Timings</option>
-                                                            <option value="16:00:00">4:00 - 4:30</option>
-                                                            <option value="16:30:00">4:30 - 5:00</option>
-                                                            <option value="17:00:00">5:00 - 5:30</option>
-                                                            <option value="17:30:00">5:30 - 6:00</option>
-                                                            <option value="18:00:00">6:00 - 6:30</option>
-                                                            <option value="18:30:00">6:30 - 7:00</option>
-                                                            <option value="19:00:00">7:00 - 7:30</option>
-                                                            <option value="19:30:00">7:30 - 8:00</option>
-                                                            <option value="20:00:00">8:00 - 8:30</option>
-                                                            <option value="20:30:00">8:30 - 9:00</option>
-                                                            <option value="21:00:00">9:00 - 9:30</option>
-                                                        </select>
-                                                        <span id="time-error" class="error_text"></span>
-                                                    </li>
-						                            <li>
-				                                        <input tabindex="-1" type="text" id="phone-input" name="phone" class="phone-input colour-input"  placeholder="Enter your 10 digit mobile number" autocomplete="false">
-				                                        <span id="phone-error" class="phone-error error_text"></span>
-						                            </li>
-
-						                        </ul>
-					                    	</div> 
-						                </form>
-		                            </div>
-		                            <div class=" col-md-12 text-center">
-		                                <span class="book_flex_next" id="book_flex_prev" style="display:none">
-		                                    <i class="fa fa-angle-left fa-2x" id="book_prev_icon"></i>
-		                                </span>
-                                        <span class="book_flex_next" id="book_flex_next">
-                                            <i class="fa fa-angle-right fa-2x" id="book_next_icon"></i>
-                                        </span>
-		                            </div>
-		                            <div class="col-md-12" id="book_server_msg">
-		                            </div>
-	                                
-	                            </div><!--pricing wrapper-->
-	                        </div><!--price col-->
-                            @else
-                            <div class="animated fadeInDown text-center" data-wow-delay=".3s">
-                            	<h2>You are already registered from {{session("email")}}</h2>
-                            	<p>Please <a href="#contact">contact us</a> for any queries</p>
-                            </div>
-                            @endif
-                       
-                    </div>
+            </div><!--/col-md-4-->
+            <div class="col-md-4 hidden-xs">
+                <img class="img-responsive aligncenter" src="assets/img/phone.png">
+            </div><!--col-md-4-->
+            <div class="col-md-4">
+                <div class="features f-l">
+                    <h3>Well Coded</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
                 </div>
-            </div><!--price section one end here-->
-
-
-           
-
-        </section> <!--pricing table section end here-->
-
-
-
-
-     
-
-
-        <section id="contact" class="padding-80">
-
-
-            <div class="contact-sec-1">
-                <div class="container">
-                    <div class="section-heading text-center">
-                        <h4 class="small section-title"><span>we Love to here from you  </span></h4>
-                        <h2 class="large section-title">Contact Us</h2>
-                    </div><!--section heading-->
-                </div><!--.container-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Get in touch</h4>
-                            <form name="sentMessage" id="contactForm" method="post" novalidate>
-                            	<input type="hidden" name="_token" id="_token1" value="{{ csrf_token() }}">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row control-group">
-                                            <div class="form-group col-xs-12 controls">
-                                                <label>Name<span>*</span></label>
-                                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                                <p class="help-block"></p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="row control-group">
-                                            <div class="form-group col-xs-12 controls">
-                                                <label>Email Address<span>*</span></label>
-                                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                                <p class="help-block"></p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                                <div class="row control-group">
-                                    <div class="form-group col-xs-12 controls">
-                                        <label>Message<span>*</span></label>
-                                        <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                        <p class="help-block"></p>
-                                    </div>
-                                </div>
-                                <br>
-                                <div id="success"></div>
-                                <div class="row">
-                                    <div class="form-group col-xs-12">
-                                        <button type="submit" class="btn btn-theme-color btn-lg">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!--contact form-->
-                        </div>
-                       
-                    </div>
+                <div class="features f-l">
+                    <h3>Documented</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
-            </div><!--Contact-sec-1 end-->
-
-        </section><!--contact section end-->
-        <div class="contact-sec-2">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="contact-col wow animated flipInY" data-wow-delay=".3s">
-                            <i class="fa fa-phone"></i>
-                            <p>+91 8268430474</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="contact-col wow animated flipInY" data-wow-delay=".3s">
-                            <i class="fa fa-envelope"></i>
-                            <p>support@getpickup.in</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="contact-col wow animated flipInY" data-wow-delay=".3s">
-                            <i class="fa fa-home"></i>
-                            <p>Powai , Mumbai<br>40076, India</p>
-                        </div>
-                    </div>
+                <div class="features f-l">
+                    <h3>Free Support</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries.</p>
                 </div>
-            </div>
-        </div><!--Contact-sec-1 end-->
-
-
-        <section id="footer" class="padding-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 copyright">
-                        <span>&copy;2015.Pickup. All right reserved</span>
-                    </div>
-                    <div class="col-md-6 col-sm-6 footer-nav">
-                        <ul class="list-inline">
-                        </ul>
-                    </div>
+                <div class="features f-l">
+                    <h3>Developer</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
-            </div>
-        </section><!--footer end-->
+            </div><!--/col-md-4-->
+            
+        </div><!--/row -->
+    </div><!--/container -->
+    
+    <!-- ********** SHOWCASE ********** -->
+    <section id="screen"></section>
+    <div id="showcase">
+        <div class="container">
+            <div class="row mtb">
+            <h1 class="centered">SOME SCREENSHOTS</h1>
+            <hr class="aligncenter mb">
+                <div class="col-md-4 mb">
+                    <a href='assets/img/screen-1.png' class='item' data-lightbox-gallery="gallery1">
+                        <img src="assets/img/screen-1.png" class='img-responsive aligncenter' width="220" alt="">
+                    </a>
+                </div><!--/col-md-4-->
 
-       
-@endsection
+                <div class="col-md-4 mb">
+                    <a href='assets/img/screen-2.png' class='item' data-lightbox-gallery="gallery1">
+                        <img src="assets/img/screen-2.png" width="220" class='img-responsive aligncenter' alt="">
+                    </a>
+                </div><!--/col-md-4-->
 
-@section('script')
-  <script>
-// This example displays an address form, using the autocomplete feature
-// of the Google Places API to help users fill in the information.
+                <div class="col-md-4 mb">
+                    <a href='assets/img/screen-3.png' class='item' data-lightbox-gallery="gallery1">
+                        <img src="assets/img/screen-3.png" class='img-responsive aligncenter' width="220" alt="">
+                    </a>
+                </div><!--/col-md-4-->
 
-var placeSearch, autocomplete1, autocomplete2;
+            </div><!--/row -->
+        </div><!--/container -->
+    </div><!--/slides -->
+    
+    <!-- ********** TESTIMONIALS ********** -->
+    <section id="testimonials"></section>
+    <div id="t">
+        <div class="container">
+            <div class="row mt">
+                <div class="col-lg-8 col-lg-offset-2 centered">
+                    <!-- Carousel
+                    ================================================== -->
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="item active">
+                          <img src="assets/img/ui-01.jpg" class="img-circle aligncenter" width="120" alt="First slide">
+                          <h3>Mark Turin</h3>
+                          <hr class="aligncenter">
+                          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        </div>
+                        <div class="item">
+                          <img src="assets/img/ui-02.jpg" class="img-circle aligncenter" width="120"  alt="Second slide">
+                          <h3>Sarah Schmidt</h3>
+                          <hr class="aligncenter">
+                          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        </div>
+                        <div class="item">
+                          <img src="assets/img/ui-03.jpg" width="120" class="img-circle aligncenter" alt="Third slide">
+                          <h3>Phil Carsons</h3>
+                          <hr class="aligncenter">
+                          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        </div>
+                      </div>
+                    </div><!-- /.carousel -->
+                </div><!--/col-lg-8 -->
+            </div><!--/row -->
+        </div><!--/container -->
+    </div><!--/T -->
+    
+    <!-- ********** DOWNLOAD APP ********** -->
+      <section id="buy"></section>
+    <div id="g">
+        <div class="container">
+            <div class="row mtb">
+                <h1 class="centered">Download Our App</h1>
+                <hr class="aligncenter">
+                <p class="centered">Lorem Ipsum is simply dummy text of the<br/>printing and typesetting industry.</p>
+                <div class="col-md-6 col-md-offset-3 mt centered">
+                    <button class="btn btn-lg btn-apple">App Store</button><button class="btn btn-lg btn-android">Play Store</button>
+                </div>
+            </div><!--/row -->
+        </div><!--/container -->
+    </div><!--/G -->
 
-function initAutocomplete() {
-  // Create the autocomplete object, restricting the search to geographical
-  // location types.
-  autocomplete1 = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('home-input')),
-      {types: ['geocode']});
-
-  // When the user selects an address from the dropdown, populate the address
-  // fields in the form.
-  autocomplete1.addListener('place_changed', fillInAddress1);
-
-  autocomplete2 = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('office-input')),
-      {types: ['geocode']});
-
-  // When the user selects an address from the dropdown, populate the address
-  // fields in the form.
-  autocomplete2.addListener('place_changed', fillInAddress2);
-
-  geolocate();
-}
-
-// [START region_fillform]
-function fillInAddress1() {
-    $('#home-location').val("");
-  // Get the place details from the autocomplete object.
-  var place = autocomplete1.getPlace();
-  console.log(place);
-  var check = checkInPlace(place);
-  
-  if(!check){
-    $('#home-error').html("Sorry! We are only supporting in Bombay Now");
-    $('#home-input').val("");
-    return;
-  }
-  $('#home-error').html("");
-   $('#home-location').val(place.geometry.location.G+","+place.geometry.location.K);
-   $('#book_flex_next').click();
-}
-function checkInPlace(place){
-    var check = false;
-    for (var i = place.address_components.length - 1; i >= 0; i--) {
-    var part = place.address_components[i];
-    if(part.types[0]=="administrative_area_level_2")
-    {
-        if(part.short_name=="Mumbai Suburban"||part.short_name=="Thane"||part.short_name=="Kalyan"||part.short_name=="Mumbai")
-            check=true;
-        break;
-    }
-  };
-  return check;
-}
-function fillInAddress2() {
-  // Get the place details from the autocomplete object.
-  $('#office-location').val("");
-  var place = autocomplete2.getPlace();
- 
-  var check = checkInPlace(place);
-  
-  if(!check){
-    $('#office-input').val("");
-    $('#office-error').html("Sorry! We are only supporting in Bombay Now");
-    return;
-  }
-    $('#office-error').html("");
-   $('#office-location').val(place.geometry.location.G+","+place.geometry.location.K);
-   $('#book_flex_next').click();
-}
-// [END region_fillform]
-
-// [START region_geolocation]
-// Bias the autocomplete object to the user's geographical location,
-// as supplied by the browser's 'navigator.geolocation' object.
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy
-      });
-      console.log(position);
-      autocomplete1.setBounds(circle.getBounds());
-      autocomplete2.setBounds(circle.getBounds());
-    });
-  }
-}
-// [END region_geolocation]
-$(window).load(function() {
-    $('.book-flex-slider').flexslider({
-        slideshow: false,
-        directionNav: false,
-        animation: "slide",
-        controlNav:false,
-        slideshowSpeed: 200,
-        after:function(){
-          $('#book_flex_next').off("click").click(nextSlide);
-          $('#book_flex_prev').off("click").click(prevSlide);
-        }
-    });
-    $("#home-input").on('keyup',function(){
-      $('#book_server_msg').html("");
-        $("#home-location").val("");
-    });
-    $("#office-input").on('keyup',function(){
-        $("#office-location").val("");
-    });
-    $("#name-input").on('keyup',function(){
-          $("#name-error").html("");
-    });
-    $("#email-input").on('keyup',function(){
-        if(IsEmail($("#email-input").val()))
-          $("#email-error").html("");
-    });
-    $(".phone-input").on('keyup',function(){
-        if(IsPhone($(this).val()))
-          $(".phone-error").html("");
-    });
-    $('#time-input').on('change',function(){
-         if($(this).val()==""){
-            $('#time-error').html("Please select a time");
-         }else{
-            $('#book_flex_next').click();
-         }
-    });
-    bookSlider = $('.book-flex-slider').data('flexslider');
-    var slide = 0;
-    var submitData={};
-    $('#book_flex_next').click(nextSlide);
-    $('#book_flex_prev').click(prevSlide);
-
-    function nextSlide(){
-      $('#book_flex_next').off("click");
-      $('#book_flex_prev').off("click");
-      console.log(slide);
-      if(slide==0){
-        if($("#home-location").val()==""){
-          $('#home-error').html("Invalid/Empty Home Location");
-          $('#book_flex_next').click(nextSlide);
-          return;
-        }
-        $('#book_flex_prev').show();
-        $('#home_icon').removeClass('active');
-        $('#office_icon').addClass('active');
-        submitData['home_text'] = $('#home-input').val();
-        submitData['home_location'] = $('#home-location').val();
-      }
-      else if(slide==1){
-        if($("#office-location").val()==""){
-          $('#office-error').html("Invalid/Empty Office Location");
-          $('#book_flex_next').click(nextSlide);
-          return;
-        }
-        $('#office_icon').removeClass('active');
-        $('#name_icon').addClass('active');
-        submitData['office_text'] = $('#office-input').val();
-        submitData['office_location'] = $('#office-location').val();
-      }
-      else if(slide==2){
-        if($('#name-input').val()==""){
-          $('#name-error').html("Empty Name Not allowed");
-          $('#book_flex_next').click(nextSlide);
-          return;
-        }
-        submitData['name'] = $('#name-input').val();
-        $('#name_icon').removeClass('active');
-        $('#email_icon').addClass('active');
-      }
-      else if(slide==3){
-        var email = $("#email-input").val();
-        if(!IsEmail(email)){
-          $('#email-error').html("Invalid/Empty Email");
-          $('#book_flex_next').click(nextSlide);
-          return;
-        }
-        $('#email_icon').removeClass('active');
-        $('#time_icon').addClass('active');
-        submitData['email'] = email;
-      }
-      else if(slide==4){
-        if($('#time-input').val()==""){
-          $('#time-error').html("Please select a time");
-          $('#book_flex_next').click(nextSlide);
-          return;
-        }
-        submitData['office_time'] = $('#time-input').val();
-          $('#time_icon').removeClass('active');
-          $('#phone_icon').addClass('active');
-          $('#book_next_icon').removeClass('fa-angle-right');
-          $('#book_next_icon').addClass('fa-save');
-      }
-      else if(slide==5){
-        var phone = $(".phone-input").last().val();
-        if(!IsPhone(phone)){
-          $('.phone-error').html("Invalid/Empty Phone Number");
-          $('#book_flex_next').click(nextSlide);
-          return;
-        }
-        submitData['phone'] = phone;
-
-        submitUser();
-        $('#book_flex_next').click(nextSlide);
-        return;
-      }
-      $('.book-flex-slider').flexslider('next');
-      
-      slide++;
-      slide = slide % 6;
-    }
-
-    function prevSlide(){
-      $('#book_flex_prev').off("click");
-      $('#book_flex_next').off("click");
-      if(slide==5){
-          $('#time_icon').addClass('active');
-          $('#phone_icon').removeClass('active');
-          $('#book_next_icon').addClass('fa-angle-right');
-          $('#book_next_icon').removeClass('fa-save');
-      }
-      else if(slide==4){
-          $('#email_icon').addClass('active');
-          $('#time_icon').removeClass('active');
-      }
-      else if(slide==3){
-         $('#name_icon').addClass('active');
-        $('#email_icon').removeClass('active');
-      }
-      else if(slide==2){
-        $('#office_icon').addClass('active');
-        $('#name_icon').removeClass('active');
-      }
-      else if(slide==1){
-        $('#home_icon').addClass('active');
-        $('#office_icon').removeClass('active');
-        $('#book_flex_prev').hide();
-      }
-      $('.book-flex-slider').flexslider('previous');
-      slide--;
-      slide = slide % 6;
-    }
-    function submitUser(){
-      submitData['_token']=$("#_token").val();
-      console.log(submitData);
-       $.ajax({
-                url: "./add-user",
-                type: "POST",
-                data: submitData,
-                cache: false,
-                success: function(data) {
-                    console.log(data);
-                    if(typeof(Storage) !== "undefined") {
-                        localStorage.setItem("register", "1");
-                        localStorage.setItem("email",submitData['email']);
-                    }
-                    $('#book-body').html('<div class="animated fadeInDown text-center" data-wow-delay=".3s"><h2>Thank You for registering '+submitData['name']+'</h2><p>You will be shortly contacted by us. Please contact us for further queries</p></div>');
-                },
-                error: function(data) {
-                    // Fail message
-                    $('#book_server_msg').html("<div class='alert alert-danger'>");
-                    $('#book_server_msg > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#book_server_msg > .alert-danger').append("<strong>Sorry , it seems that the user is already registered.");
-                    $('#book_server_msg > .alert-danger').append('</div>');
-                    //clear all fields
-                    submitData={};
-                    $('#user_add_form').trigger("reset");
-                    $('.book-flex-slider').flexslider(0);
-                    $('#book_next_icon').addClass('fa-angle-right');
-                    $('#book_next_icon').removeClass('fa-save');
-                    $('#book_flex_prev').hide();
-                    $('#phone_icon').removeClass('active');
-                    $('#time_icon').removeClass('active');
-                    $('#home_icon').addClass('active');
-                    $('.error_text').html("");
-                    $("#office-location").val("");
-                    $("#home-location").val("");
-                    slide = 0;
-                },
-            })
-    }
-});
-
+    <!-- ********** SUBSCRIBE ********** -->
+    <div id="f">
+        <div class="container">
+            <div class="row">
+                <h1 class="centered">Subscribe To Our Newsletter</h1>
+                <hr class="aligncenter mb">
+                <div class="col-md-6 col-md-offset-3">
+                    <form role="form" action="http://www.landingsumo.com/demos/Theme%2012/register.php" method="post" enctype="plain"> 
+                        <input type="email" name="email" class="subscribe-input" placeholder="Enter your e-mail address..." required>
+                        <button class='btn btn-submit subscribe-submit' type="submit">Subscribe</button>
+                    </form>
+    
+                </div>
+            </div><!--/row -->
+        </div><!--/container -->
+    </div>
+    
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/retina-1.1.0.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nivo-lightbox.min.js"></script>
+    
+    <script>
+    /*
+        // Nivo Lightbox initialization
+        $('#showcase a').nivoLightbox({
+            effect: 'fadeScale',
+            keyboardNav: true,
+        });*/
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete"
-        async defer></script>
-
-@endsection
+    
+    
+  </body>
+</html>
