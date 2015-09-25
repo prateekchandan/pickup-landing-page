@@ -52,6 +52,7 @@
     Header append Cache-Control "public"
   </IfModule>
 
+  ExpiresDefault "access 2 days"
 </IfModule>
 
 #telling server to send files in gzip format to speedup site
