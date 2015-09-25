@@ -26,12 +26,12 @@
     <body>
         <section class="head">
             <div class="head-logo">
-                <img src="{{asset('assets/img/pickup logo.png')}}">
+                <img src="{{asset('assets/img/pickup logo-compress.png')}}">
                 <p class="head-text">
                    Get Your First<br> Cabpooling Experience<br> With Us For <b>Free</b>,<br> Anywhere In Mumbai!
                 </p>
                 <div class="sketches">
-                    <img src="{{asset('assets/img/cab.png')}}" style="height:60px;vertical-align:bottom">
+                    <img src="{{asset('assets/img/cab-compress.png')}}" style="height:60px;vertical-align:bottom">
                     <img src="{{asset('assets/img/boy.png')}}" style="height:130px">
                 </div>
             </div>
@@ -97,7 +97,7 @@
             <div>ABOUT US</div>
         </section-->
         <link href="{{asset('assets/css/style-phone.css')}}" rel="stylesheet" type="text/css">
-        
+
         <script type="text/javascript" src="{{asset('assets/js/script-phone.js')}}"></script>
     </body>
 </html>
