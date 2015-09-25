@@ -29,7 +29,7 @@
                 <img src="{{asset('assets/img/pickup logo-compress.png')}}">
                 <div class="head-text-wrapper">
                     <p class="head-text" >
-                       Get Your First<br> Cabpooling Experience<br> With Us For <b>Free</b>,<br> Anywhere In Mumbai!
+                       Get Your First<br> Cabpooling Experience<br> With Us For <b><span  id="free">Free</span></b>,<br> Anywhere In Mumbai!
                     </p>
                     <img src="{{asset('assets/img-phone/group.png')}}" class="back-img">
                 </div>
@@ -96,7 +96,7 @@
         <div class="mobile-num-block">
             <form class="wrapper" method="POST">
                 <input type="hidden" value="{{csrf_token()}}" name="_token">
-                <input placeholder="Enter Your Mobile No." type="number" name="phone"  required/>
+                <input placeholder="Enter Your Mobile No." type="number" name="phone" id="phone_num" required/>
                 <button>Get My Free Ride</button>
             </form>
             @if(session()->has('error'))
@@ -116,11 +116,13 @@
         <!--section class="footer">
             <div>HELP</div>
             <div>CENTER</div>
-            <div>CAREERS</div>
             <div>ABOUT US</div>
         </section-->
         <link href="{{asset('assets/css/style-phone.css')}}" rel="stylesheet" type="text/css">
 
         <script type="text/javascript" src="{{asset('assets/js/script-phone.js')}}"></script>
+
+        <div class="body-padding">
+        </div>
     </body>
 </html>

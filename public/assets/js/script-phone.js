@@ -13,6 +13,10 @@ window.onload = function() {
 	            }
             }(i);
         }
+        function focus(){
+			document.getElementById('phone_num').focus();
+		}
+         document.getElementById('free').addEventListener('click', focus);
 }
 
 
@@ -31,3 +35,4 @@ function toggleClass(element, className){
     }
     element.className = classString;
 }
+
