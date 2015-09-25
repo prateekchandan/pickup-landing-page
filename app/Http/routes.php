@@ -12,27 +12,14 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::post('/add-user', 'UserController@addUser');
+Route::post('/', 'UserController@addUser');
 
-Route::get('/emailtest',function(){
-    $name = "PRATEEK CHANDAN";
-    $email = "prateek@getpickup.in";
-        if(env('APP_ENV', 'local')!="local"){
-             Mail::send('email.papmlet', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
-                $message->to('y.soni08@gmail.com',"Team Pickup")->
-                replyTo($email, $name)->
-                subject('[NEW] TESTING EMAIL');
-            });
-        }
-    return view('email.papmlet');
-});
 
 Route::group(['middleware'=>'guest'],function(){
 	Route::get('/login', array('as'=>'login','uses'=>'UserController@login_view'));
 	Route::get('/fblogin', array('as'=>'fblogin','uses'=>'UserController@fblogin'));
 	Route::get('/fblogin_callback', array('as'=>'fblogin_callback','uses'=>'UserController@fblogin_callback'));
 });
-Route::post('/contact-us',array('as'=>'contact-us','uses'=>'HomeController@contact'));
 
 Route::get('/logout', array('as'=>'logout','middleware'=>'auth','uses'=>'UserController@logout'));
 

@@ -1,4 +1,4 @@
-body{
+html,body{
 	height: 100%;
 	background: #FFBF47;
 	color:#372F5E;
@@ -11,22 +11,32 @@ body{
 	text-align: center;
 }
 
+.head-text-wrapper{
+	width: 100%;
+	margin-top: -100px;
+}
+.back-img{
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
 .head-text{
 	font-size: 1.6em;
-	margin: 30px;
+	width: 100%;
+	text-align: left;
+	position:relative;
+	top:100px;
+	z-index: 2;
 }
 .sketches{
 	max-height: 20%;
 }
 .body{
 	padding: 20px;
-}
-.mobile-num-block{
-	background: #F5BA42;
-	padding-bottom: 20px;
-	padding-top: 30px;
-	margin-top: -10px;
-	overflow: auto;
+	padding-bottom: 90px;
 }
 .text-head{
 	font-weight: bold;
@@ -35,6 +45,7 @@ body{
 	padding-bottom: 15px;
 	border-bottom: 1px dashed rgba(0, 0, 0, 0.11);
 	cursor: pointer;
+
 }
 .text-head img{
 	float: right;
@@ -54,8 +65,15 @@ body{
     transition-timing-function: linear;
     -webkit-transition-timing-function: linear;
     overflow: hidden;
+    text-align: center;
  }   
-
+.text-head-answer p{
+	text-align: left;
+}
+.text-head-answer img{
+	min-height: 120px;
+	max-width: 100%;
+}
 .show {
   display: block !important;
   height: inherit !important;
@@ -95,7 +113,18 @@ body{
 }
 
 
-/* Some bootstrap classes */
+.mobile-num-block{
+	background: #F5BA42;
+	padding: 10px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	overflow: auto;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	z-index: 10;
+}
+
 .wrapper input,
 .wrapper button {
     float: left;
@@ -103,12 +132,14 @@ body{
 .wrapper {
     position: relative;
     width: 100%;
+     display: flex;
+
 }
 input {
     float: left;
     box-sizing: border-box;
-    padding-right: 45%;
-    width: 100%;
+    padding-right: 38%;
+    width: 90%;
     height: 45px;
     padding-left: 10px;
     font-size: 1.1em;
@@ -117,11 +148,26 @@ input {
 button {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 45%;
+    right: 8%;
+    width: 40%;
     height: 45px;
     background: rgba(83, 40, 101, 1);
     color: rgba(255, 191, 71, 1);
     border: 0px;
-    font-size: 1.1em;
+    font-size: 1em;
+}
+.head-bg-img{
+	width: 100%;
+	height: auto;
+}
+
+#help-text{
+	width: 100%;
+	font-size: 0.9em;
+}
+.error{
+	color: #F11717;
+}
+.success{
+	color: #3c763d;
 }

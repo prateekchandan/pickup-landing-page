@@ -13,31 +13,31 @@ class UserController extends Controller
 {
   public function addUser(Request $request)
   {
-    $u = User::where('email','=', $request->input('email'))
-                ->orWhere('phone','=',$request->input('phone'))->first();
+    $phone = $request->input('phone');
+    if(is_null($phone) || !preg_match("/^[7-9][0-9]{9}$/", $phone)){
+        return redirect()->back()->with('error', 'Please Enter a valid 10 digit phone number');
+    }
+    $u = User::where('phone','=',$request->input('phone'))->first();
+    $message = "You are already registered";
     if(is_null($u)){
         $u = new User();    
         $u->company = "";
         $u->second_name="";
+        $u->first_name = "";
         $u->gender ="";
         $u->age = 0;
         $u->fbid ="";
         $u->device_id =uniqid();  
+        $message = 'You have successfully registered';
+        $u->email = $request->input('phone');
     }
     
-    $u->email = $request->input('email');
-    $u->home_text = $request->input('home_text');
-    $u->home_location = $request->input('home_location');
-    $u->office_text = $request->input('office_text');
-    $u->office_location = $request->input('office_location');
-    $u->first_name = $request->input('name');
     $u->phone = $request->input('phone');
-    $u->leaving_office = $request->input('office_time');
 
     $u->save();
     
-    session(['registered'=>'1','email'=>$u->email]);
-    return $u;
+    session(['registered'=>'1','phone'=>$u->phone]);
+    return redirect()->back()->with('msg', $message);
   }
 
   /*

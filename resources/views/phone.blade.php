@@ -27,19 +27,13 @@
         <section class="head">
             <div class="head-logo">
                 <img src="{{asset('assets/img/pickup logo-compress.png')}}">
-                <p class="head-text">
-                   Get Your First<br> Cabpooling Experience<br> With Us For <b>Free</b>,<br> Anywhere In Mumbai!
-                </p>
-                <div class="sketches">
-                    <img src="{{asset('assets/img/cab-compress.png')}}" style="height:60px;vertical-align:bottom">
-                    <img src="{{asset('assets/img/boy.png')}}" style="height:130px">
+                <div class="head-text-wrapper">
+                    <p class="head-text" >
+                       Get Your First<br> Cabpooling Experience<br> With Us For <b>Free</b>,<br> Anywhere In Mumbai!
+                    </p>
+                    <img src="{{asset('assets/img-phone/group.png')}}" class="back-img">
                 </div>
-            </div>
-            <div class="mobile-num-block">
-               <div class="wrapper">
-                    <input placeholder="Enter Your Mobile No."/>
-                    <button>Get My Free Ride</button>
-                </div>
+                
             </div>
         </section>
         <section class="body">
@@ -48,7 +42,10 @@
                <img src="{{asset('assets/img/down arrow.png')}}" id="what_img"/>
            </div>
            <div class="text-head-answer" id="what_is_pickup_ans">
-               PickUp is a cabpooling platform where you book an air-conditioned ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don’t, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.
+                <img src="{{asset('assets/img-phone/what.png')}}">
+                <p>
+                    PickUp is a cabpooling platform where you book an air-conditioned ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don’t, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.
+                </p>
            </div>
 
            <div class="text-head" data-targetid="why_ans" data-img="why_img">
@@ -56,7 +53,10 @@
                <img src="{{asset('assets/img/down arrow.png')}}" id="why_img"/>
            </div>
            <div class="text-head-answer" id="why_ans">
-               Why not! While daily commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in carpooling. Let’s build a trusted community wherein people can share a ride with comfort and ease; a community that not just shares but also gives back to the environment. Give us a shot in bringing about a change in your daily commute. We are hoping this free ride could be that change.
+                <img src="{{asset('assets/img-phone/why.png')}}">
+                <p>
+                    Why not! While daily commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in carpooling. Let’s build a trusted community wherein people can share a ride with comfort and ease; a community that not just shares but also gives back to the environment. Give us a shot in bringing about a change in your daily commute. We are hoping this free ride could be that change.
+                </p>
            </div>
 
            <div class="text-head" data-targetid="how_ans" data-img="how_img">
@@ -64,7 +64,8 @@
                <img src="{{asset('assets/img/down arrow.png')}}" id="how_img"/>
            </div>
            <div class="text-head-answer" id="how_ans">
-               <br>Step 1: Request a Pick Up<br>
+                <p>
+               Step 1: Request a Pick Up<br>
                 -      Select the destination on our app. Within minutes, we’ll match you with a ride and the app will notify you with the price based on km and the estimated time for your pickup.<br>
 
                 <br>Step 2: Get Picked Up<br>
@@ -72,7 +73,7 @@
 
                 <br>Step 3: Review Your Co-Passengers<br>
                 -      Rate your co-passengers on the app based on your experience to help us build a better community.
-
+                </p>
            </div>
 
            <div class="text-head" data-targetid="chose_ans" data-img="chose_img">
@@ -80,16 +81,38 @@
                <img src="{{asset('assets/img/down arrow.png')}}" id="chose_img"/>
            </div>
            <div class="text-head-answer" id="chose_ans">
-               <br><br>-      Save Money – Our competitive pricing module allows us to give you a bang for your buck. We charge a highly affordable flat fee of  ₹ 100 for the first 12 km followed by  ₹ 6 per km.
-        
-            <br><br>-      Convenience  – Get a ride for yourself with just 2 clicks in our app.  Using our 3-people-per-car policy we deliver a comfortable and stress free travelling experience.
+                <p>
+               -      Save Money – Our competitive pricing module allows us to give you a bang for your buck. We charge a highly affordable flat fee of  ₹ 100 for the first 12 km followed by  ₹ 6 per km.
+            
+                <br><br>-      Convenience  – Get a ride for yourself with just 2 clicks in our app.  Using our 3-people-per-car policy we deliver a comfortable and stress free travelling experience.
 
-            <br><br>-      Secure – It is important for us to make you feel safe while travelling. Our drivers are selected after a rigorous background check and every passenger’s rating is provided seamlessly.
- 
-            <br><br>-       Eco-friendly – Greenify the surroundings with us by decreasing fuel consumption and curbing air and noise pollution.
+                <br><br>-      Secure – It is important for us to make you feel safe while travelling. Our drivers are selected after a rigorous background check and every passenger’s rating is provided seamlessly.
+     
+                <br><br>-       Eco-friendly – Greenify the surroundings with us by decreasing fuel consumption and curbing air and noise pollution.
+                </p>
            </div>
           
         </section>
+        <div class="mobile-num-block">
+            <form class="wrapper" method="POST">
+                <input type="hidden" value="{{csrf_token()}}" name="_token">
+                <input placeholder="Enter Your Mobile No." type="number" name="phone"  required/>
+                <button>Get My Free Ride</button>
+            </form>
+            @if(session()->has('error'))
+                <div id="help-text" class="error">
+                    {{session('error')}}
+                </div>
+            @elseif(session()->has('registered'))
+                 <div id="help-text" class="success">
+                    @if(session()->has('msg'))
+                        {{session('msg')}}
+                    @else
+                    You have already registered
+                    @endif
+                </div>
+            @endif
+        </div>
         <!--section class="footer">
             <div>HELP</div>
             <div>CENTER</div>
