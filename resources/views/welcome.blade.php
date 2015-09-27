@@ -329,7 +329,6 @@
     <script src="assets/js/nivo-lightbox.min.js"></script>
     <script src="{{asset('admin_assets/vendors/sweet-alert/sweet-alert.min.js')}}"></script>
     <script>
-    document.getElementById('input-phone').focus();
    @if(session()->has('registered'))
         @if(session()->has('msg'))
             swal("{{session('msg')}}", "We will be soon contacting you to get your ride details and about more imformation", "success")
