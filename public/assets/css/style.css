@@ -388,13 +388,15 @@ hr {
 }
 
 .btn-android {
-	background: #52B3D9;
+	background: #532865;
 	border-radius: 30px;
 	padding: 16px 32px 20px;
-	color: white;
+	color: #FFBF47;
 	margin: 10px;
 }
-
+.btn-android:hover,.btn-android:focus{
+	color:#FFBF47
+}
 
 
 /* features */
@@ -515,4 +517,29 @@ hr {
 .f-l {
 	text-align: center;
 }
+}
+
+.ind-item{
+	display: inline-block;
+	cursor: pointer;
+}
+.ind-item span{
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	font-size: 2em;
+	border-radius: 50%;
+	color: #FFBF47;
+	vertical-align: middle;
+	background-color: #DDA04D;
+	margin: 10px;
+}
+.ind-item-active span{
+	background-color: #532865;
+}
+
+footer{
+	padding: 20px;
+	text-align: center;
+	background-color: #FDB239;
 }

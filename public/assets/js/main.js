@@ -7,5 +7,14 @@
 				$('#theMenu').toggleClass('menu-open');
 			});
 
+			$("#how-carousel").carousel('pause');
+
 
 })(jQuery)
+
+function gotoSlide(ind){
+	$("#how-carousel").carousel(ind);
+}
+
+
+

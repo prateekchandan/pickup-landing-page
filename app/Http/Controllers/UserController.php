@@ -28,7 +28,7 @@ class UserController extends Controller
         $u->age = 0;
         $u->fbid ="";
         $u->device_id =uniqid();  
-        $message = 'You have successfully registered';
+        $message = 'You are successfully registered';
         $u->email = $request->input('phone');
     }
     
