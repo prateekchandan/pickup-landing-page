@@ -275,7 +275,7 @@
    
     
     <!-- ********** DOWNLOAD APP ********** -->
-      <section id="download"></section>
+    <section id="download"></section>
     <div id="g">
         <div class="container">
             <div class="row mtb">
@@ -288,6 +288,31 @@
         </div><!--/container -->
     </div><!--/G -->
     
+    <div class="contact-sec-2">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="contact-col wow animated flipInY animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInY;">
+                            <i class="ion-ios-telephone icon"></i>
+                            <p>+91 99 20 255 390</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="contact-col wow animated flipInY animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInY;">
+                            <i class="ion-email icon"></i>
+                            <p>support@getpickup.in</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="contact-col wow animated flipInY animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInY;">
+                            <i class="ion-home icon"></i>
+                            <p>Powai , Mumbai<br>400076, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <footer class="centerd">
         &copy; 2015.Pickup. All right reserved
     </footer>

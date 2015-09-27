@@ -295,15 +295,15 @@ hr {
     background-size: cover;
 }
 .container{
-	padding-top: 50px;
+	padding-top: 30px;
 	width: 100% !important;
 }
 #h .logo_bar{
-	padding-top: 40px;
+	padding-top: 20px;
 }
 #bck-img{
 	width: 100%;
-	margin-top: -50px;
+	margin-top: -70px;
 }
 .full-width{
 	width: 100%;
@@ -541,5 +541,9 @@ hr {
 footer{
 	padding: 20px;
 	text-align: center;
+	background-color: #FDB239;
+}
+
+.contact-sec-2{
 	background-color: #FDB239;
 }
