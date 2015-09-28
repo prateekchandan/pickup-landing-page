@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::post('/', 'UserController@addUser');
 
 Route::get('campaign_email',function(){
-    return view('aemail');
+    return view('webmail');
 });
 
 Route::get('send_email',function(){
@@ -25,10 +25,14 @@ Route::get('send_email',function(){
              Mail::send('aemail', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
                 $message->to('prateekchandan5545@gmail.com',"Team Pickup")->
                 replyTo($email, $name)->
-                subject('PICKUP LAUNCH');
+                subject('Free cab rides for ICICI employees: Pickup');
+
+                $message->to('y.soni08@gmail.com',"Team Pickup")->
+                replyTo($email, $name)->
+                subject('Free cab rides for ICICI employees: Pickup');
             });
         }
-    return view('aemail');
+    return view('webmail');
 });
 
 Route::group(['middleware'=>'guest'],function(){
