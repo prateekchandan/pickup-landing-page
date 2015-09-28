@@ -117,11 +117,14 @@ a.normal:hover,a.normal:focus{
                                                             <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img2.jpg')}}" alt="img2" style=";" width="100" /></p>
                                                             <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">Visit Website</h4>
                                                             </a>
+                                                            <p style="color: #FFBF47;margin:0px;line-height:0px">Visit the Pickup website to know more about it and to book your ride</p>
                                                         </td> 
                                                         <td valign="top" style="text-align:center;background-color: #FFBF47;/* margin: 10px; */border: 5px solid #fff;">
                                                             <a style="color:fff" class="normal" href="mailto:support@getpickup.in">
                                                             <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img3.jpg')}}" alt="img2" style=";" width="100" /></p>
                                                             <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">Send Mail</h4>
+                                                             <p style="color: #FFBF47;margin:0px;line-height:0px">
+                                                             For any queries regarding pickup, send us a mail to this email</p>
                                                             </a>
                                                         </td> 
                                                         
