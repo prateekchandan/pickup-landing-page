@@ -19,15 +19,15 @@ Route::get('campaign_email',function(){
 });
 
 Route::get('send_email',function(){
-    $name = "PRATEEK CHANDAN";
-    $email = "prateek@getpickup.in";
+    $name = "Team Pickup";
+    $email = "support@getpickup.in";
         if(env('APP_ENV', 'local')!="local"){
              Mail::send('aemail', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
-                $message->to('prateekchandan5545@gmail.com',"Team Pickup")->
+                $message->to('prateekchandan5545@gmail.com',"Prateek Chandan")->
                 replyTo($email, $name)->
                 subject('Free cab rides for ICICI employees: Pickup');
 
-                $message->to('y.soni08@gmail.com',"Team Pickup")->
+                $message->to('y.soni08@gmail.com',"Yogesh Soni")->
                 replyTo($email, $name)->
                 subject('Free cab rides for ICICI employees: Pickup');
             });
