@@ -44,7 +44,7 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td valign="top" width="624">
-                                                <p><img src="{{asset('email/images/line-break.jpg')}}" height="10" width="624" /></p>
+                                                <p style="height:10px;margin:0px"></p>
                                             </td>
                                         </tr>
                                     </table>
@@ -52,13 +52,14 @@ a.normal:hover,a.normal:focus{
                                     <!--header content-->
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
-                                            <td>
-                                                <h1 style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 1.3em; font-family: Helvetica, Arial, sans-serif;background-color:#0D052E;padding:10px">NOW GO HOME IN A CAB FOR JUST INR 99!<br><br>JUST <a style="color:fff" class="normal" href="http://getpickup.in"><u>CLICK</u></a> AND BOOK YOUR FIRST RIDE FOR FREE!</h1>
-                                                
-                                            </td>
-                                            <td id="issue" valign="top" style="width: 109px; height: 109px;" bgcolor="#FFFFFF">
+                                            <td id="issue" valign="top" style="width: 109px; height: 109px;vertical-align: middle;" bgcolor="#FFFFFF">
                                                 <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" style="width: 100%;margin: auto;max-height: 100px;"></a></td>
                                             </td>
+                                            <td style="background-color:#0D052E;padding:10px;min-height:120px;vertical-align:middle">
+                                                <h1 style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 1.3em; font-family: Helvetica, Arial, sans-serif;min-height:120px">NOW GO HOME IN A CAB FOR JUST INR 99!<br><br>JUST <a style="color:fff" class="normal" href="http://getpickup.in"><u>CLICK</u></a> AND BOOK YOUR FIRST RIDE FOR FREE!</h1>
+                                                
+                                            </td>
+                                           
                                         </tr>
                                     </table>
                                     <!--/header content-->
@@ -69,7 +70,7 @@ a.normal:hover,a.normal:focus{
                         <!--line break-->
                         <table cellspacing="0" border="0" cellpadding="0" width="624">
                             <tr>
-                                <td height="50" valign="middle" width="624"><img src="{{asset('email/images/line-break.jpg')}}" height="13" width="624" /></td>
+                                <td valign="middle" width="624"><p style="height:10px;margin:0px"></p></td>
                             </tr>
                         </table>
                         <!--/line break-->
@@ -82,7 +83,7 @@ a.normal:hover,a.normal:focus{
                                         <tr>
                                             <td>
                                                 <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><a style="color:fff" class="normal" href="http://getpickup.in"><img src="{{asset('email/images/img1.jpg')}}" height="286" alt="image dsc" style="" width="622" /></a></p>
-                                                <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/spacer-ten.jpg')}}" height="10" width="624" /></p>
+                                                <p style="height:5px;margin:0px"></p>
                                                 <div style="font-family: Helvetica, Arial, sans-serif;padding:10px;background-color:#FFBF47;color:#0D052E;text-align:center;line-height: 25px;padding-left: 30px;padding-right: 30px;">
                                                     <p>Most times, going home after a long day at work can be tiring, or expensive, or both. </p>
                                                     <p>At Pickup, we believe that public transport, being economical and eco-friendly, would be the best way to travel</p>
@@ -100,7 +101,7 @@ a.normal:hover,a.normal:focus{
                                     <!--line break-->
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
-                                            <td height="30" valign="middle" width="624"><img src="{{asset('email/images/line-break.jpg')}}" height="13" width="624" /></td>
+                                            <td  valign="middle" width="624"><p style="height:10px;margin:0px"></p></td>
                                         </tr>
                                     </table>
                                     <!--/line break-->
@@ -108,18 +109,18 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td>
-                                                <h3 style="font-size: 1.2em; font-family: Helvetica, Arial, sans-serif; color: #000000 !important; margin: 0px;background-color:#FFBF47;padding:20px">FOR ICICI EMPLOYEES, THE <a style="color:fff" class="normal" href="http://getpickup.in">FIRST RIDE IS FREE</a>.</h3>
-                                                <img src="{{asset('email/images/line-break.jpg')}}" height="10" width="624" />
-                                                <table cellspacing="0" border="0" cellpadding="8" width="100%" style="margin-top: 10px;">
+                                                <h3 style="font-size: 1.2em; font-family: Helvetica, Arial, sans-serif; color: #000000 !important; margin: 0px;background-color:#FFBF47;padding:20px;text-align:center">FOR ICICI EMPLOYEES, THE <a style="color:fff" class="normal" href="http://getpickup.in">FIRST RIDE IS FREE</a>.</h3>
+                                                <p style="height:10px;margin:0px"></p>
+                                                <table cellspacing="0" border="0" cellpadding="8" width="100%">
                                                     <tr>
-                                                        <td valign="top" style="text-align:center;background-color: #FFBF47;/* margin: 10px; */border: 5px solid #fff;">
+                                                        <td valign="top" style="text-align:center;background-color: #FFBF47;border-right: 5px solid #fff">
                                                             <a style="color:fff" class="normal" href="http://getpickup.in">
                                                             <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img2.jpg')}}" alt="img2" style=";" width="100" /></p>
                                                             <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">Visit Website</h4>
                                                             </a>
                                                             <p style="color: #FFBF47;margin:0px;line-height:0px">Visit the Pickup website to know more about it and to book your ride</p>
                                                         </td> 
-                                                        <td valign="top" style="text-align:center;background-color: #FFBF47;/* margin: 10px; */border: 5px solid #fff;">
+                                                        <td valign="top" style="text-align:center;background-color: #FFBF47;border-left: 5px solid #fff;">
                                                             <a style="color:fff" class="normal" href="mailto:support@getpickup.in">
                                                             <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img3.jpg')}}" alt="img2" style=";" width="100" /></p>
                                                             <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">Send Mail</h4>
@@ -137,7 +138,7 @@ a.normal:hover,a.normal:focus{
                                     <!--line break-->
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
-                                            <td height="30" valign="middle" width="624"><img src="{{asset('email/images/line-break-2.jpg')}}" height="13" width="624" /></td>
+                                            <td valign="middle" width="624"><p style="height:10px;margin:0px"></p></td>
                                         </tr>
                                     </table>
                                    
