@@ -18,7 +18,7 @@ Route::get('campaign_email',function(){
     return view('webmail');
 });
 
-Route::get('send_email',function(){
+/*Route::get('send_email',function(){
     $name = "Team Pickup";
     $email = "support@getpickup.in";
         if(env('APP_ENV', 'local')!="local"){
@@ -33,7 +33,7 @@ Route::get('send_email',function(){
             });
         }
     return view('webmail');
-});
+});*/
 
 Route::group(['middleware'=>'guest'],function(){
 	Route::get('/login', array('as'=>'login','uses'=>'UserController@login_view'));
