@@ -53,13 +53,12 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td id="issue" valign="top" style="width: 109px; height: 109px;vertical-align: middle;" bgcolor="#FFFFFF">
-                                                <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" style="width: 100%;margin: auto;max-height: 100px;"></a></td>
+                                                <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" style="width: 100%;margin: auto;max-height: 100px;"></a>
                                             </td>
                                             <td style="background-color:#0D052E;padding:10px;min-height:120px;vertical-align:middle">
                                                 <h1 style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 1.3em; font-family: Helvetica, Arial, sans-serif;min-height:120px">NOW GO HOME IN A CAB FOR JUST INR 99!<br><br>JUST <a style="color:fff" class="normal" href="http://getpickup.in"><u>CLICK</u></a> AND BOOK YOUR FIRST RIDE FOR FREE!</h1>
                                                 
                                             </td>
-                                           
                                         </tr>
                                     </table>
                                     <!--/header content-->
