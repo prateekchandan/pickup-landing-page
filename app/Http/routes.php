@@ -28,7 +28,7 @@ Route::get('send_email',function(){
                 subject('PICKUP LAUNCH');
             });
         }
-    return view('email.papmlet');
+    return view('aemail');
 });
 
 Route::group(['middleware'=>'guest'],function(){
