@@ -14,6 +14,22 @@
 Route::get('/', 'HomeController@index');
 Route::post('/', 'UserController@addUser');
 
+Route::get('campaign_email',function(){
+    return view('aemail');
+});
+
+Route::get('send_email',function(){
+    $name = "PRATEEK CHANDAN";
+    $email = "prateek@getpickup.in";
+        if(env('APP_ENV', 'local')!="local"){
+             Mail::send('aemail', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
+                $message->to('prateekchandan5545@gmail.com',"Team Pickup")->
+                replyTo($email, $name)->
+                subject('PICKUP LAUNCH');
+            });
+        }
+    return view('email.papmlet');
+});
 
 Route::group(['middleware'=>'guest'],function(){
 	Route::get('/login', array('as'=>'login','uses'=>'UserController@login_view'));
