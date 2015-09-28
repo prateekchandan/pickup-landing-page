@@ -53,11 +53,11 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td>
-                                                <h1 style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 30px; font-family: Helvetica, Arial, sans-serif;background-color:#0D052E;padding:10px">NOW GO HOME IN A CAB FOR JUST INR 99!<br><br>JUST <a style="color:fff" class="normal" href="http://getpickup.in"><u>CLICK</u></a> AND BOOK YOUR FIRST RIDE FOR FREE!</h1>
+                                                <h1 style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 1.3em; font-family: Helvetica, Arial, sans-serif;background-color:#0D052E;padding:10px">NOW GO HOME IN A CAB FOR JUST INR 99!<br><br>JUST <a style="color:fff" class="normal" href="http://getpickup.in"><u>CLICK</u></a> AND BOOK YOUR FIRST RIDE FOR FREE!</h1>
                                                 
                                             </td>
                                             <td id="issue" valign="top" style="width: 109px; height: 109px;" bgcolor="#FFFFFF">
-                                                <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" width="200" height="200"></a></td>
+                                                <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" width="50%" height="50%"></a></td>
                                             </td>
                                         </tr>
                                     </table>
@@ -114,13 +114,13 @@ a.normal:hover,a.normal:focus{
                                                     <tr>
                                                         <td valign="top" style="text-align:center;background-color: #FFBF47;/* margin: 10px; */border: 5px solid #fff;">
                                                             <a style="color:fff" class="normal" href="http://getpickup.in">
-                                                            <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img2.jpg')}}" alt="img2" style=";" width="138" /></p>
+                                                            <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img2.jpg')}}" alt="img2" style=";" width="100" /></p>
                                                             <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">Visit Website</h4>
                                                             </a>
                                                         </td> 
                                                         <td valign="top" style="text-align:center;background-color: #FFBF47;/* margin: 10px; */border: 5px solid #fff;">
                                                             <a style="color:fff" class="normal" href="mailto:support@getpickup.in">
-                                                            <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img3.jpg')}}" alt="img2" style=";" width="138" /></p>
+                                                            <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/img3.jpg')}}" alt="img2" style=";" width="100" /></p>
                                                             <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">Send Mail</h4>
                                                             </a>
                                                         </td> 
