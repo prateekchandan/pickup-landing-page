@@ -19,7 +19,7 @@ a.normal:hover,a.normal:focus{
     <tr>
         <td>
             <!--email container-->
-            <table cellspacing="0" border="0" align="center" cellpadding="0" width="624">
+            <table cellspacing="0" border="0" align="center" cellpadding="0" width="624" style="margin:0px">
                 <tr>
                     <td>
                         <!--header-->
