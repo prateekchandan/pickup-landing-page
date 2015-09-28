@@ -27,7 +27,7 @@ a.normal:hover,a.normal:focus{
                             <tr>
                                 <td valign="top"> 
                                     <!--top links-->
-                                    <table cellspacing="0" border="0" cellpadding="0" width="624" style="background-color:#E0EBEA;padding:5px">
+                                    <table cellspacing="0" border="0" cellpadding="0" width="624" style="background-color:#E0EBEA;padding:5px;margin:0px">
                                         <tr>
                                             <td valign="middle" width="221">
                                                 <p style="font-size: 12px; font-family: Helvetica, Arial, sans-serif; color: #333; margin: 0px;">Pickup Is Here!</p>
