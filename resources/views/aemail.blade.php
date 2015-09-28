@@ -23,7 +23,7 @@ a.normal:hover,a.normal:focus{
                 <tr>
                     <td>
                         <!--header-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
+                        <table cellspacing="0" border="0" cellpadding="0" width="624" style="margin:0px">
                             <tr>
                                 <td valign="top"> 
                                     <!--top links-->
