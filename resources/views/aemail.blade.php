@@ -57,7 +57,7 @@ a.normal:hover,a.normal:focus{
                                                 
                                             </td>
                                             <td id="issue" valign="top" style="width: 109px; height: 109px;" bgcolor="#FFFFFF">
-                                                <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" width="50%" height="50%"></a></td>
+                                                <a style="color:fff" class="normal" href="http://getpickup.in"><img align="right" src="{{asset('assets/img/icon/ms-icon-310x310.png')}}" style="width: 100%;margin: auto;max-height: 100px;"></a></td>
                                             </td>
                                         </tr>
                                     </table>
@@ -108,7 +108,7 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td>
-                                                <h3 style="font-size: 24px; font-family: Helvetica, Arial, sans-serif; color: #000000 !important; margin: 0px;background-color:#FFBF47;padding:20px">FOR ICICI EMPLOYEES, THE <a style="color:fff" class="normal" href="http://getpickup.in">FIRST RIDE IS FREE</a>.</h3>
+                                                <h3 style="font-size: 1.2em; font-family: Helvetica, Arial, sans-serif; color: #000000 !important; margin: 0px;background-color:#FFBF47;padding:20px">FOR ICICI EMPLOYEES, THE <a style="color:fff" class="normal" href="http://getpickup.in">FIRST RIDE IS FREE</a>.</h3>
                                                 <img src="{{asset('email/images/line-break.jpg')}}" height="10" width="624" />
                                                 <table cellspacing="0" border="0" cellpadding="8" width="100%" style="margin-top: 10px;">
                                                     <tr>
