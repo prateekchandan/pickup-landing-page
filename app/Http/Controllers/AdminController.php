@@ -262,4 +262,28 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+    *   Send Email
+    */
+    public function view_send_email(){
+        return view('admin.sendemail',[
+            'menu'=>'email'
+        ]);
+    }
+
+    public function send_email(){
+       $email = Input::get('email');
+       $name = Input::get('name');
+       $subject = Input::get('subject');
+
+       if(env('APP_ENV', 'local')!="local"){
+             Mail::send('aemail', array(),   function($message) use ($email,$name,$subject){
+                $message->to($email,$name)->
+                replyTo("support@getpickup.in", "Team Pickup")->
+                subject($subject);
+            });
+        }
+        return redirect()->back()->with('message', "Email successfully sent");;
+    }
+
 }

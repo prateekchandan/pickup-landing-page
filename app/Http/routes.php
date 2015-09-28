@@ -18,22 +18,6 @@ Route::get('campaign_email',function(){
     return view('webmail');
 });
 
-/*Route::get('send_email',function(){
-    $name = "Team Pickup";
-    $email = "support@getpickup.in";
-        if(env('APP_ENV', 'local')!="local"){
-             Mail::send('aemail', array('name' => $name,'email'=>$email),   function($message) use ($email,$name){
-                $message->to('prateekchandan5545@gmail.com',"Prateek Chandan")->
-                replyTo($email, $name)->
-                subject('Free cab rides for ICICI employees: Pickup');
-
-                $message->to('y.soni08@gmail.com',"Yogesh Soni")->
-                replyTo($email, $name)->
-                subject('Free cab rides for ICICI employees: Pickup');
-            });
-        }
-    return view('webmail');
-});*/
 
 Route::group(['middleware'=>'guest'],function(){
 	Route::get('/login', array('as'=>'login','uses'=>'UserController@login_view'));
@@ -64,6 +48,9 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
     Route::get('new_groups',['as'=>'group.new','uses'=>'AdminController@new_groups']);
     Route::get('active_groups',['as'=>'group.active','uses'=>'AdminController@active_groups']);
     Route::get('finished_groups',['as'=>'group.finished','uses'=>'AdminController@finished_groups']);
+    
+    Route::get('send_email',['as'=>'email.icici','uses'=>'AdminController@view_send_email']);
+    Route::post('send_email',['uses'=>'AdminController@send_email']);
 });
 
 

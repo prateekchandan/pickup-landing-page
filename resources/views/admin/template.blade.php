@@ -172,7 +172,7 @@
                                     <li><a {!!($submenu=="group.finished")?'class="active"':''!!} href="{{route('admin::group.finished')}}">Finished Groups</a></li>
                                 </ul>
                             </li>
-
+                            <li {{($menu=="email")?'class="active"':''}}><a href="{{route('admin::email.icici')}}"><i class="md md-email    "></i> Send Email </a></li>
 
                         </ul>
                     </div>
