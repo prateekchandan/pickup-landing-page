@@ -10,7 +10,6 @@
                             <thead>
                                 <tr>
                                     <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
-                                    <th data-column-id="name">Name</th>
                                     <th data-column-id="phone">Phone</th>
                                     <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
                                 </tr>
@@ -19,7 +18,6 @@
                             	@foreach($users as $user)
                                 <tr>
                                     <td>{{$user->id}}</td>
-                                    <td>{{$user->first_name}}</td>
                                     <td>{{$user->phone}}</td>
                                 </tr>
                                 @endforeach
@@ -44,10 +42,7 @@
                     },
                     formatters: {
                         "commands": function(column, row) {
-                        	var home_location = $(row.home_location).data('location');
-                        	var office_location = $(row.office_location).data('location');
-
-                        	console.log(home_location);
+                        
                             return "<button type=\"button\"  class=\"btn btn-icon command-delete\" data-row-id=\"" + row.id + "\"><span class=\"md md-delete\"></span></button>"+
                             "<a href=\"{{route('admin::home')}}/book-ride/"+row.id+"\" type=\"button\"  class=\"btn btn-icon command-edit\" data-row-id=\"" + row.id + "\"><span class=\"md md-send\"></span></a>";
                         }
