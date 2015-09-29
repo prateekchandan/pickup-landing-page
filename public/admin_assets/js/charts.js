@@ -76,7 +76,7 @@ $(document).ready(function () {
      * Easy Pie Charts - Used in widgets
      */
     function easyPieChart(id, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
-        $('.'+id).easyPieChart({
+        $('#'+id).easyPieChart({
             trackColor: trackColor,
             scaleColor: scaleColor,
             barColor: barColor,
@@ -90,11 +90,16 @@ $(document).ready(function () {
     if ($('.main-pie')[0]) {
         easyPieChart('main-pie', 'rgba(255,255,255,0.2)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.7)', 7, 'butt', 148);
     }
-    
     /* Others */
-    if ($('.sub-pie-1')[0]) {
-        easyPieChart('sub-pie-1', '#eee', '#ccc', '#2196F3', 4, 'butt', 95);
-    }
+    var pies = $('.sub-pie');
+    for (var i = pies.length - 1; i >= 0; i--) {
+        if (pies[i]) {
+        var colors = ['#2196F3','#FFC107','#009688','#DC5A56'];
+        var color = colors[Math.floor(Math.random()*colors.length)];
+        easyPieChart('sub-pie-'+i, '#eee', '#ccc', color, 4, 'butt', 120);
+        }
+    };
+    
     
     if ($('.sub-pie-2')[0]) {
         easyPieChart('sub-pie-2', '#eee', '#ccc', '#FFC107', 4, 'butt', 95);

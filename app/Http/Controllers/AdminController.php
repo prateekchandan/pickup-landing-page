@@ -14,6 +14,7 @@ use App\User;
 use App\Driver;
 use App\Journey;
 use App\Group;
+use App\ClickCount;
 use GuzzleHttp\Client;
 
 class AdminController extends Controller
@@ -36,8 +37,17 @@ class AdminController extends Controller
 
 
     public function home(){
+        $numUsers = User::where('admin','!=','1')->count();
+        $clicks = ClickCount::all();
+        $totalClicks = ClickCount::sum('count');
+        foreach ($clicks as $key => $value) {
+            $clicks[$key]->percent=intval(($value->count*100)/$totalClicks);
+        }
     	return view('admin.home',[
-    		'menu'=>'home'
+    		'menu'=>'home',
+            'user'=>$numUsers,
+            'totalClicks'=>$totalClicks,
+            'clicks'=>$clicks
     	]);
     }
 
