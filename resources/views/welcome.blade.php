@@ -96,6 +96,7 @@
                     <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
                     <form role="form"  method="post"> 
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
+                        <input type="hidden" name="platform" value="web">
                         <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
                          oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
                         onchange="try{setCustomValidity('')}catch(e){}">
@@ -346,7 +347,7 @@
 
           ga('create', 'UA-67243120-1', 'auto');
           ga('send', 'pageview');
-          
+
           window.history.pushState("", "Clean URL", "/");
         </script>
     

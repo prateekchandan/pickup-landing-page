@@ -30,6 +30,7 @@ class UserController extends Controller
         $u->device_id =uniqid();  
         $message = 'You are successfully registered';
         $u->email = $request->input('phone');
+        $u->platform = $request->input('platform');
     }
     
     $u->phone = $request->input('phone');

@@ -109,6 +109,7 @@
         <div class="mobile-num-block">
             <form class="wrapper" method="POST">
                 <input type="hidden" value="{{csrf_token()}}" name="_token">
+                <input type="hidden" name="platform" value="phone">
                 <input placeholder="Enter Your Mobile No." type="number" name="phone" id="phone_num" required/>
                 <button>Get My Free Ride</button>
             </form>
