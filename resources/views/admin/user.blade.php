@@ -11,10 +11,7 @@
                                 <tr>
                                     <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
                                     <th data-column-id="name">Name</th>
-                                    <th data-column-id="email">Email</th>
                                     <th data-column-id="phone">Phone</th>
-                                    <th data-column-id="home_location">Home Location</th>
-                                    <th data-column-id="office_location">Office Location</th>
                                     <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
                                 </tr>
                             </thead>
@@ -23,10 +20,7 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->first_name}}</td>
-                                    <td>{{$user->email}}</td>
                                     <td>{{$user->phone}}</td>
-                                    <td><a data-location="{{$user->home_location}}" href="http://maps.google.com/maps?q={{$user->home_location}}&z=17" target="_blank"> {{$user->home_text}}</a></td>
-                                    <td><a data-location="{{$user->office_location}}" href="http://maps.google.com/maps?q={{$user->office_location}}&z=17" target="_blank"> {{$user->office_text}}</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>
