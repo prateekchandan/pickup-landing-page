@@ -92,7 +92,7 @@
                 </div>
                 <img src="{{asset('assets/img/static.png')}}" id="bck-img">
 
-                <div class="phone-register centered" id="phone-register">
+                <div class="phone-register centered" id="phone-register" data-0="padding:30px" data-500="padding:0px" style="padding:0px;position:fixed;z-index:1;bottom:0px">
                     <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
                     <form role="form"  method="post"> 
                         <input type="hidden" value="{{csrf_token()}}" name="_token">
@@ -321,13 +321,14 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/retina-1.1.0.js"></script>
-    <script src="assets/js/classie.js"></script>
-    <script src="assets/js/smoothscroll.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/nivo-lightbox.min.js"></script>
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/retina-1.1.0.js')}}"></script>
+    <script src="{{asset('assets/js/classie.js')}}"></script>
+    <script src="{{asset('assets/js/smoothscroll.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/nivo-lightbox.min.js')}}"></script>
+    <script src="{{asset('assets/js/skrollr.min.js')}}"></script>
     <script src="{{asset('admin_assets/vendors/sweet-alert/sweet-alert.min.js')}}"></script>
     <script>
    @if(session()->has('registered'))
@@ -347,7 +348,7 @@
 
           ga('create', 'UA-67243120-1', 'auto');
           ga('send', 'pageview');
-
+          var s = skrollr.init();
           window.history.pushState("", "Clean URL", "/");
         </script>
     
