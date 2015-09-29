@@ -346,7 +346,8 @@
 
           ga('create', 'UA-67243120-1', 'auto');
           ga('send', 'pageview');
-
+          
+          window.history.pushState("", "Clean URL", "/");
         </script>
     
   </body>

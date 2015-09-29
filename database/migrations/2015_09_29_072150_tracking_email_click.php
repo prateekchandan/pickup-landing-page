@@ -20,6 +20,7 @@ class TrackingEmailClick extends Migration
             $table->string('description',1000)->default("");
             $table->integer('count')->default(0);
             $table->string('type',1000)->default("");
+            $table->timestamps();
         });
     }
 
