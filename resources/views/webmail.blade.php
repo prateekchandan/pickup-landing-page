@@ -108,7 +108,8 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td>
-                                                <h3 style="font-size: 1.2em; font-family: Helvetica, Arial, sans-serif; color: #000000 !important; margin: 0px;background-color:#FFBF47;padding:20px;text-align:center">FOR ICICI EMPLOYEES, THE <a style="color:fff" class="normal" href="http://getpickup.in?click=5">FIRST RIDE IS FREE</a>.</h3>
+                                                <h3 style="font-size: 1.2em; font-family: Helvetica, Arial, sans-serif; color: #000000 !important; margin: 0px;background-color:#FFBF47;padding:20px;text-align:center">FOR 
+                                                <span id="company">{{(isset($company))?$company:"ICICI"}}</span> EMPLOYEES, THE <a style="color:fff" class="normal" href="http://getpickup.in?click=5">FIRST RIDE IS FREE</a>.</h3>
                                                 <p style="height:10px;margin:0px"></p>
                                                 <table cellspacing="0" border="0" cellpadding="8" width="100%">
                                                     <tr>
@@ -146,7 +147,7 @@ a.normal:hover,a.normal:focus{
                                     <table cellspacing="0" border="0" cellpadding="0" width="624">
                                         <tr>
                                             <td>
-                                                <p style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 16px; font-family: Helvetica, Arial, sans-serif;background-color:#0D052E;padding:10px;text-align:center;line-height:25px">We’re kick-starting operations from this Wednesday (30, September).  <br>To make your daily commute easier, just <br>
+                                                <p style="color: #fff !important; margin: 0px; font-weight: normal; font-size: 16px; font-family: Helvetica, Arial, sans-serif;background-color:#0D052E;padding:10px;text-align:center;line-height:25px">We’re kick-starting operations from this <span id="launch-date">{{(isset($date))?$date:"Monday (30, September)"}}</span>.  <br>To make your daily commute easier, just <br>
                                                 <a style="color:fff" class="normal" href="http://getpickup.in?click=7"><u>click here</u></a><br>and we’ll take it from there.</p>
                                                 <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"><img src="{{asset('email/images/spacer-ten.jpg')}}" height="10" width="624" /></p>
                                             </td>

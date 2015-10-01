@@ -286,9 +286,11 @@ class AdminController extends Controller
        $email = Input::get('email');
        $name = Input::get('name');
        $subject = Input::get('subject');
+       $company = Input::get('company');
+       $date = Input::get('date');
 
        if(env('APP_ENV', 'local')!="local"){
-             Mail::send('aemail', array(),   function($message) use ($email,$name,$subject){
+             Mail::send('aemail', array('company'=>$company,'date'=>$date),   function($message) use ($email,$name,$subject){
                 $message->to($email,$name)->
                 replyTo("support@getpickup.in", "Team Pickup")->
                 subject($subject);

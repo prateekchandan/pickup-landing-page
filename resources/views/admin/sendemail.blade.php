@@ -50,7 +50,18 @@
 		            </div>
 		            <label class="fg-label">Subject</label>
 		        </div>
-
+		        <div class="form-group fg-float">
+		            <div class="fg-line">
+		                <input type="text" name ="company" class="input-lg form-control fg-input" id="company_input" value="ICICI" required>
+		            </div>
+		            <label class="fg-label">Company Name</label>
+		        </div>
+		        <div class="form-group fg-float">
+                    <div class="fg-line">
+                        <input type='text' class="form-control input-lg  fg-input launch-date-picker" name ='date' data-toggle="dropdown">
+                    </div>
+                    <label class="fg-label">Date</label>
+                </div>
 		        <button class="btn bgm-deeporange btn-primary btn-block waves-effect">
 		        	<i class="md md-mail"></i> Send
 		        </button>
@@ -76,4 +87,20 @@
     notify("{{Session::get('message')}}","success");
 </script>
 @endif
+
+<script type="text/javascript">
+	$( "#company_input" ).keyup(function() {
+	  $('#company').html($( "#company_input" ).val());
+	});
+
+	if ($('.launch-date-picker')[0]) {
+    	$('.launch-date-picker').datetimepicker({
+    	    format: 'dddd (D, MMMM)'
+    	});
+    	$('.launch-date-picker').on('dp.change', function (ev) {
+		    var date = $('.launch-date-picker')[0].value;
+		    $('#launch-date').html(date);
+		});
+    }
+</script>
 @endsection
