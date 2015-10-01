@@ -73,7 +73,7 @@
 	    
 	    <div class="card-body card-padding">
 	        
-		        @include('webmail')
+		        @include('aemail',['web' => '1'])
 		</div>
 
 	</div>

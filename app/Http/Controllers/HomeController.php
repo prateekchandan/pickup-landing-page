@@ -66,9 +66,10 @@ class HomeController extends Controller {
 		else
 			$company = 'YOU';
 
-    	return view('webmail')->with([
+    	return view('aemail')->with([
     		'date' => $date,
-    		'company' => $company
+    		'company' => $company,
+    		'web'=>'1'
     	]);
 	}
 
