@@ -34,7 +34,7 @@ a.normal:hover,a.normal:focus{
                                             </td>
                                             <td valign="top" width="285">
                                                 <p style="font-size: 12px; font-family: Helvetica, Arial, sans-serif; color: #333; margin: 0px;text-align: right;">
-                                                    <webversion id="vw" style="float: right; padding: 5px; -webkit-border-radius: 3px; font-weight: bold; text-decoration: none; color: #333; -khtml-border-radius: 3px; background: #e9e8e8; -moz-border-radius: 3px; border-radius: 3px;"><a class="normal" href="{{URL::to('campaign_email')}}?{{URL::to('campaign_email')}}?{{(isset($date))?'date='.$date.'&':''}}{{(isset($company))?'company='.$company.'&':''}}">View it in a web browser</a></webversion>
+                                                    <webversion id="vw" style="float: right; padding: 5px; -webkit-border-radius: 3px; font-weight: bold; text-decoration: none; color: #333; -khtml-border-radius: 3px; background: #e9e8e8; -moz-border-radius: 3px; border-radius: 3px;"><a class="normal" href="{{URL::to('campaign_email')}}?{{(isset($date))?'date='.$date.'&':''}}{{(isset($company))?'company='.$company.'&':''}}">View it in a web browser</a></webversion>
                                                 </p>
                                             </td>
                                         </tr>

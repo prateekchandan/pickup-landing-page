@@ -53,4 +53,23 @@ class HomeController extends Controller {
 		return view('welcome');
 	}
 
+	public function browser_email()
+	{
+		if(Input::has('date')){
+			$date = Input::get('date');
+		}
+		else
+			$date = 'Monday (3, October)';
+
+		if(Input::has('company'))
+			$company = Input::get('company');
+		else
+			$company = 'YOU';
+
+    	return view('webmail')->with([
+    		'date' => $date,
+    		'company' => $company
+    	]);
+	}
+
 }

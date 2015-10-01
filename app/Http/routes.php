@@ -14,9 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::post('/', 'UserController@addUser');
 
-Route::get('campaign_email',function(){
-    return view('webmail');
-});
+Route::get('campaign_email','HomeController@browser_email');
 
 
 Route::group(['middleware'=>'guest'],function(){
