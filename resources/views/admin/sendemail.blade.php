@@ -58,7 +58,7 @@
 		        </div>
 		        <div class="form-group fg-float">
                     <div class="fg-line">
-                        <input type='text' class="form-control input-lg  fg-input launch-date-picker" name ='date' data-toggle="dropdown">
+                        <input type='text' class="form-control input-lg  fg-input launch-date-picker" name ='date' data-toggle="dropdown" required>
                     </div>
                     <label class="fg-label">Date</label>
                 </div>
