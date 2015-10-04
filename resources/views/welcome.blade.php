@@ -79,8 +79,8 @@
     </nav>
 
       <!-- ********** HEADER ********** -->
-      <section id="home"></section>
-      <div id="h">
+    <section id="home"></section>
+    <div class="sec sec-active" id="f1">
         <div class="row centered logo_bar">
             <img src="{{asset('assets/img/pickup logo.png')}}">
         </div>
@@ -92,40 +92,16 @@
                 </div>
                 <img src="{{asset('assets/img/static.png')}}" id="bck-img">
 
-                <div class="phone-register centered" id="phone-register" data-0="padding:30px" data-500="padding:0px" style="padding:0px;position:fixed;z-index:1;bottom:0px">
-                    <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
-                    <form role="form"  method="post"> 
-                        <input type="hidden" value="{{csrf_token()}}" name="_token">
-                        <input type="hidden" name="platform" value="web">
-                        <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
-                         oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
-                        onchange="try{setCustomValidity('')}catch(e){}">
-                        <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
-                    </form>
-                     @if(session()->has('error'))
-                        <div class="text-danger" id="hint-text"><small>
-                            {{session('error')}}
-                        </small></div>
-                    @elseif(session()->has('registered'))
-                         <div class="text-success" id="hint-text"><small>
-                            @if(session()->has('msg'))
-                                {{session('msg')}}
-                            @else
-                            You have already registered
-                            @endif
-                        </small></div>
-                    @endif
-                </div>
                 <div class="go aligncenter">
                     <a href="#about" class="smoothScroll">What is PickUp? <i class="icon ion-arrow-down-b"></i></a>
                 </div>
             </div>
         </div><!--/container -->
-      </div><!--/H -->
+    </div><!--/H -->
 
     <!-- ********** ICONS ********** -->    
     <section id="about"></section>
-    <div id="g">  
+    <div class="sec" id="f2">  
         <div class="container">
             <img src="{{asset('assets/img/what.png')}}" class="full-width">
 
@@ -147,7 +123,7 @@
 
     <!-- ********** SHOWCASE ********** -->
     <section id="why_free"></section>
-    <div id="">
+    <div class="sec" id="f3">
         <div class="container">
             <img src="{{asset('assets/img/why.png')}}" class="full-width">
 
@@ -166,7 +142,7 @@
     </div><!--/slides -->
 
     <section id="how_to_book"></section>
-    <div id="">
+    <div class="sec" id="f4">
         <div class="container">
 
             <div class="row mtb centered">
@@ -221,7 +197,7 @@
     
     <!-- ********** SHOWCASE ********** -->
     <section id="why_chose"></section>
-    <div id="">
+    <div class="sec" id="f5">
         <div class="container">
             <div class="row mtb centered">
                 <div class="col-md-10 col-md-offset-1">
@@ -277,7 +253,7 @@
     
     <!-- ********** DOWNLOAD APP ********** -->
     <section id="download"></section>
-    <div id="g">
+    <div class="sec" id="f6">
         <div class="container">
             <div class="row mtb">
                 <h1 class="centered">Download Our App</h1>
@@ -287,9 +263,7 @@
                 </div>
             </div><!--/row -->
         </div><!--/container -->
-    </div><!--/G -->
-    
-    <div class="contact-sec-2">
+         <div class="contact-sec-2">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-sm-4">
@@ -312,8 +286,37 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
+    </div><!--/G -->
+    
+   
 
+    <div class="phone-register centered" id="phone-register" style="">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+        <form role="form"  method="post"> 
+          <input type="hidden" value="{{csrf_token()}}" name="_token">
+          <input type="hidden" name="platform" value="web">
+          <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+            oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+            onchange="try{setCustomValidity('')}catch(e){}">
+          <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+        </form>
+        @if(session()->has('error'))
+          <div class="text-danger" id="hint-text"><small>
+            {{session('error')}}
+            </small>
+          </div>
+        @elseif(session()->has('registered'))
+          <div class="text-success" id="hint-text"><small>
+            @if(session()->has('msg'))
+              {{session('msg')}}
+            @else
+              You have already registered
+            @endif
+            </small>
+          </div>
+         @endif
+    </div>
     <footer class="centerd">
         &copy; 2015.Pickup. All right reserved
     </footer>
@@ -352,5 +355,51 @@
           window.history.pushState("", "Clean URL", "/");
         </script>
     
+
+    <script type="text/javascript">
+      $(window).scroll(function() {
+         if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            /*if(trial==0){
+              trial++;
+              return;
+            }*/
+            next();
+         }
+         if($(window).scrollTop()==0){
+            /*if(trial==0){
+              trial++;
+              return;
+            }*/
+          previous();
+         }
+      });
+
+      var index=1;
+      var trial=0;
+      var section=['f1','f2','f3','f4','f5','f6'];
+    
+      function previous(){
+          if(index == 1)
+            return;
+
+          $('#'+section[index-1]).removeClass('sec-active');
+            index--;
+          $('#'+section[index-1]).addClass('sec-active');
+
+          trial=0;
+      }
+
+      function next(){
+          if(index == section.length)
+            return;
+
+          $('#'+section[index-1]).removeClass('sec-active');
+            index++;
+          $('#'+section[index-1]).addClass('sec-active');
+          trial=0;
+      }
+
+
+    </script>
   </body>
 </html>
