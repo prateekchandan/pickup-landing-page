@@ -80,21 +80,18 @@
 
       <!-- ********** HEADER ********** -->
     <section id="home"></section>
-    <div class="sec sec-active" id="f1">
+    <div class="sec sec-active pb2" id="f1">
         <div class="row centered logo_bar">
             <img src="{{asset('assets/img/pickup logo.png')}}">
         </div>
 
-        <div class="container">
+        <div class="container" style="padding-top:15px;">
             <div class="row centered">
                 <div class="col-md-8 col-md-offset-2">
                     <h2>Get Your First Cabpooling Experience <br>With Us For <b>Free</b>, Anywhere In Mumbai! </h2>
                 </div>
                 <img src="{{asset('assets/img/static.png')}}" id="bck-img">
 
-                <div class="go aligncenter">
-                    <a href="#about" class="smoothScroll">What is PickUp? <i class="icon ion-arrow-down-b"></i></a>
-                </div>
             </div>
         </div><!--/container -->
     </div><!--/H -->
@@ -105,7 +102,7 @@
         <div class="container">
             <img src="{{asset('assets/img/what.png')}}" class="full-width">
 
-            <div class="row mtb centered">
+            <div class="row pb2 centered">
                 <div class="col-md-10 col-md-offset-1">
                    <h2>What is Pickup?</h2>
                     <p>Pickup is a cabpooling platform where you book a ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don't, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.</p>
@@ -114,9 +111,6 @@
                     <p>Thats right! We charge a mere Rs 99 for the first 12km and Rs. 6 per km thereafter. The more you ride with us, the better the perks get.</p>
                 </div>
             </div><!--/row -->
-            <div class="go aligncenter centered">
-                <a href="#why_free" class="smoothScroll">Why the free ride? <i class="icon ion-arrow-down-b"></i></a>
-            </div>
         </div><!--/container -->
     </div><!--/G -->
     
@@ -127,7 +121,7 @@
         <div class="container">
             <img src="{{asset('assets/img/why.png')}}" class="full-width">
 
-            <div class="row mtb centered">
+            <div class="row pb2 centered">
                 <div class="col-md-10 col-md-offset-1">
                    <h2>Why The Free Ride?</h2>
                     <p>Why Not! While daily office commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in cabpooling.<br>
@@ -135,9 +129,6 @@
                     
                 </div>
             </div><!--/row -->
-            <div class="go aligncenter centered">
-                <a href="#how_to_book" class="smoothScroll">Here's how you can book your next ride? <i class="icon ion-arrow-down-b"></i></a>
-            </div>
         </div><!--/container -->
     </div><!--/slides -->
 
@@ -145,12 +136,12 @@
     <div class="sec" id="f4">
         <div class="container">
 
-            <div class="row mtb centered">
+            <div class="row mb centered">
                 <div class="col-md-10 col-md-offset-1">
                    <div id="how-carousel" class="carousel slide" data-ride="carousel">
                       <div class="carousel-inner">
                         <div class="item active">
-                          <img src="{{asset('assets/img/how-1.png')}}" class="aligncenter" alt="First slide">
+                          <img src="{{asset('assets/img/how-1.png')}}" class="slide-image aligncenter" alt="First slide">
                           <div class="indicators">
                               <span class="ind-item ind-item-active"><span>1</span></span>
                               <span class="ind-item" onclick="gotoSlide(1)"><span>2</span></span>
@@ -161,7 +152,7 @@
                           <p>Select the destination on our app. Within moments, we'll match you with a ride and app will notify you with the price based on km and the estimated time for your pickup.</p>
                         </div>
                         <div class="item">
-                          <img src="{{asset('assets/img/how-2.png')}}" class="aligncenter" alt="First slide">
+                          <img src="{{asset('assets/img/how-2.png')}}" class="slide-image aligncenter" alt="First slide">
                           <div class="indicators">
                               <span class="ind-item" onclick="gotoSlide(0)"><span>1</span></span>
                               <span class="ind-item ind-item-active" ><span>2</span></span>
@@ -175,7 +166,7 @@
                           </p>
                         </div>
                         <div class="item">
-                          <img src="{{asset('assets/img/how-3.png')}}" class="aligncenter" alt="First slide">
+                          <img src="{{asset('assets/img/how-3.png')}}" class="slide-image aligncenter" alt="First slide">
                           <div class="indicators">
                               <span class="ind-item " onclick="gotoSlide(0)"><span>1</span></span>
                               <span class="ind-item" onclick="gotoSlide(1)"><span>2</span></span>
@@ -189,9 +180,6 @@
                     </div><!-- /.carousel -->
                 </div>
             </div><!--/row -->
-            <div class="go aligncenter centered">
-                <a href="#why_chose" class="smoothScroll">Why Chose us? <i class="icon ion-arrow-down-b"></i></a>
-            </div>
         </div><!--/container -->
     </div><!--/slides -->
     
@@ -199,15 +187,15 @@
     <section id="why_chose"></section>
     <div class="sec" id="f5">
         <div class="container">
-            <div class="row mtb centered">
+            <div class="row pb2 centered">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="row">
                         <h2 class="mb">Why Chose Us?</h2>
                     </div>
-                    <div class="row mt">
+                    <div class="row ">
                         <div class="col-md-6">
                             <div class="col-md-4" style="margin-top:30px">
-                                 <img src="{{asset('assets/img/save-money.png')}}" style="max-width:200px">
+                                 <img src="{{asset('assets/img/save-money.png')}}" class="icon-img">
                             </div>
                             <div class="col-md-8 text-left">
                                 <p><b>Save Money</b></p>
@@ -216,7 +204,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="col-md-4" style="margin-top:30px">
-                                 <img src="{{asset('assets/img/convinience.png')}}" style="max-width:200px">
+                                 <img src="{{asset('assets/img/convinience.png')}}" class="icon-img">
                             </div>
                             <div class="col-md-8 text-left">
                                 <p><b>Convenience</b></p>
@@ -224,10 +212,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt">
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="col-md-4" style="margin-top:30px">
-                                 <img src="{{asset('assets/img/secure.png')}}" style="max-width:200px">
+                                 <img src="{{asset('assets/img/secure.png')}}" class="icon-img">
                             </div>
                             <div class="col-md-8 text-left">
                                 <p><b>Secure</b></p>
@@ -236,7 +224,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="col-md-4" style="margin-top:30px">
-                                 <img src="{{asset('assets/img/eco-friendly.png')}}" style="max-width:200px">
+                                 <img src="{{asset('assets/img/eco-friendly.png')}}" class="icon-img">
                             </div>
                             <div class="col-md-8 text-left">
                                 <p><b>Eco-Friendly</b></p>
@@ -252,10 +240,10 @@
    
     
     <!-- ********** DOWNLOAD APP ********** -->
-    <section id="download"></section>
+    <section id="download_app"></section>
     <div class="sec" id="f6">
         <div class="container">
-            <div class="row mtb">
+            <div class="row pb">
                 <h1 class="centered">Download Our App</h1>
                 <hr class="aligncenter">
                 <div class="col-md-6 col-md-offset-3 mt centered">
@@ -263,7 +251,7 @@
                 </div>
             </div><!--/row -->
         </div><!--/container -->
-         <div class="contact-sec-2">
+        <div class="contact-sec-2">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-sm-4">
@@ -286,13 +274,13 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div><!--/G -->
     
-   
-
-    <div class="phone-register centered" id="phone-register" style="">
-          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+    <div class="ptb"></div>
+    <!-- The mobile number registration part-->
+    <div class="phone-register centered" id="phone-register" data-0="padding:20px" data-300="padding:0px">
+        <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
         <form role="form"  method="post"> 
           <input type="hidden" value="{{csrf_token()}}" name="_token">
           <input type="hidden" name="platform" value="web">
@@ -317,8 +305,32 @@
           </div>
          @endif
     </div>
+
     <footer class="centerd">
-        &copy; 2015.Pickup. All right reserved
+      <div class="go aligncenter ft ft-active" id="b1">
+          <a href="#about" class="smoothScroll">What is PickUp? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
+
+      <div class="go aligncenter ft" id="b2">
+        <a href="#why_free" class="smoothScroll">Why the free ride? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
+
+      <div class="go aligncenter ft" id="b3">
+          <a href="#how_to_book" class="smoothScroll">Here's how you can book your next ride? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
+
+      <div class="go aligncenter ft" id="b4">
+          <a href="#why_chose" class="smoothScroll">Why Chose us? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
+
+      <div class="go aligncenter ft" id="b5">
+          <a href="#download_app" class="smoothScroll">Download APP <i class="icon ion-arrow-down-b"></i></a>
+      </div>
+
+      <div class="aligncenter ft" id="b6">
+          &copy; 2015.Pickup. All right reserved
+      </div>
+        <!-- &copy; 2015.Pickup. All right reserved -->
     </footer>
     
     <!-- Bootstrap core JavaScript
@@ -357,48 +369,25 @@
     
 
     <script type="text/javascript">
+      var divs=['f1','f2','f3','f4','f5','f6'];
+      var blocks=['b1','b2','b3','b4','b5','b6'];
       $(window).scroll(function() {
-         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            /*if(trial==0){
-              trial++;
-              return;
-            }*/
-            next();
-         }
-         if($(window).scrollTop()==0){
-            /*if(trial==0){
-              trial++;
-              return;
-            }*/
-          previous();
-         }
+        pos = $(window).scrollTop();
+        mypos = [0,0,0,0,0,0];
+        for (var i = divs.length - 1; i >= 0; i--) {
+          mypos[i] = $('#'+divs[i]).position().top;
+        };
+        var i = 0;
+        for (; i < divs.length; i++) {
+          if(pos < mypos[i])
+            break;
+        };
+        i--;
+        for (var j = blocks.length - 1; j >= 0; j--) {
+          $('#'+blocks[j]).removeClass('ft-active');
+        };
+        $('#'+blocks[i]).addClass('ft-active');
       });
-
-      var index=1;
-      var trial=0;
-      var section=['f1','f2','f3','f4','f5','f6'];
-    
-      function previous(){
-          if(index == 1)
-            return;
-
-          $('#'+section[index-1]).removeClass('sec-active');
-            index--;
-          $('#'+section[index-1]).addClass('sec-active');
-
-          trial=0;
-      }
-
-      function next(){
-          if(index == section.length)
-            return;
-
-          $('#'+section[index-1]).removeClass('sec-active');
-            index++;
-          $('#'+section[index-1]).addClass('sec-active');
-          trial=0;
-      }
-
 
     </script>
   </body>
