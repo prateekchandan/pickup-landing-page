@@ -52,7 +52,8 @@ class AdminController extends Controller
     }
 
     public function showUser(){
-    	$users = User::where('admin','!=','1')->get();
+    	$users = User::where('admin','!=','1')->
+            where('phone','!=','')->orderBy('id', 'desc')->get();
     	return view('admin.user',[
     		'menu'=>'user',
     		'submenu'=>'user.all',

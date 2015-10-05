@@ -11,6 +11,7 @@
                                 <tr>
                                     <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
                                     <th data-column-id="phone">Phone</th>
+                                    <th data-column-id="date">Date</th>
                                     <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
                                 </tr>
                             </thead>
@@ -19,6 +20,7 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->phone}}</td>
+                                    <td>{{date('M j Y', strtotime($user->updated_at))}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
