@@ -206,6 +206,7 @@ button {
 	border-top:1px dashed rgba(0, 0, 0, 0.11);;
 	font-weight: bold;
 	font-size: 1.1em;
+	margin-bottom: 20px;
 }
 .fix-bottom img{
 	float: right;
@@ -276,4 +277,9 @@ button {
 .chose_ans_body{
 	padding-left: 10px;
 	padding-right: 10px;
+}
+.footer-text{
+	font-weight: normal;
+	font-size: 0.95em;
+	text-align: center;
 }

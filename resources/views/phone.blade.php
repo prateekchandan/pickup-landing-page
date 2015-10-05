@@ -215,6 +215,10 @@
           </div>
         </div>
       </div>
+
+      <div class="fix-bottom footer-text">
+        &copy; 2015.Pickup. All right reserved
+      </div>
     </div>
   </section>
   <div class="mobile-num-block">
