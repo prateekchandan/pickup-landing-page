@@ -5,7 +5,12 @@ html,body{
 	font-family: "Open Sans", sans-serif;
 	overflow-x:hidden; 
 }
-
+html{
+	overflow-y:hidden; 
+}
+body{
+	overflow-y:visible;
+}
 .head-logo{
 	margin-top: 10px;
 	width: 100%;
@@ -38,9 +43,7 @@ html,body{
 	max-height: 20%;
 }
 .body{
-	padding: 20px;
-	padding-bottom: 0px;
-	padding-top: 0px;
+	
 }
 .body-padding{
 	padding-bottom: 50px;
@@ -68,8 +71,10 @@ html,body{
     overflow: hidden;
     text-align: center;
  }   
-.text-head-answer p{
+.text-head-answer>p{
 	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .text-head-answer img{
 	min-height: 120px;
@@ -152,8 +157,8 @@ html,body{
 input {
     float: left;
     box-sizing: border-box;
-    padding-right: 32%;
-    width: 90%;
+    padding-right: 0%;
+    width: 60%;
     height: 45px;
     padding-left: 10px;
     font-size: 1.1em;
@@ -198,10 +203,77 @@ button {
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border:1px dashed #F5BA42;
+	border-top:1px dashed rgba(0, 0, 0, 0.11);;
 	font-weight: bold;
 	font-size: 1.1em;
 }
 .fix-bottom img{
 	float: right;
+}
+
+.logo-top{
+	border-bottom:1px dashed rgba(0, 0, 0, 0.11);;
+	width: 100%;
+}
+.logo-top img{
+	height: 50px;
+}
+
+.slide-banner{
+	background-color: #FFCE58;
+	padding: 20px;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+.slide-banner img{
+	height: 130px;
+}
+.slide p{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.slide-buttons{
+	width: 100%;
+}
+.slide-buttons span{
+	width: 50px;
+	height: 38px;
+	border-radius: 50%;
+	background: rgba(83,40,101,0.2);
+	display: inline-table;
+	margin: 20px;
+	padding-top: 12px;
+	vertical-align: middle;
+	color: #FFBF47;
+	cursor: pointer;
+}
+.slide-buttons span.active{
+	background:rgba(83,40,101,1);
+}
+.chose_ans_head{
+	height: 60px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.chose_ans_head img{
+	width: 60px;
+	height: 60px;
+	min-height: 60px;
+}
+.chose_ans_head span{
+	display: block;
+}
+.chose_head{
+	width:68%;
+	margin-top: -50px;
+	margin-left: 30%;
+	text-align: left;
+	padding-left: 5%;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+.chose_ans_body{
+	padding-left: 10px;
+	padding-right: 10px;
 }
