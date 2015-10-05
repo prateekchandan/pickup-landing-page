@@ -20,7 +20,7 @@
                                 <tr>
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->phone}}</td>
-                                    <td>{{date('M j Y', strtotime($user->updated_at))}}</td>
+                                    <td>{{date('M j Y g:i A', strtotime($user->updated_at))}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
