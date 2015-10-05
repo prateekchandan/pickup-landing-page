@@ -109,6 +109,88 @@
                             
                         </div>
                     </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                            <h2>Email Clicks <small>Day wise and hour wise email click data</small></h2>
+                           
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="chart-edge">
+                                <div id="hour-line-chart" style="height:200px" ></div>
+                            </div>
+                        </div>
+                    </div>
                     
                     
+@endsection
+
+
+@section('script')
+<script type="text/javascript">
+$(document).ready(function(){
+    var hour_data = {!!json_encode($hours)!!};
+
+    var options = {
+        series: {
+            shadowSize: 0,
+            curvedLines: { //This is a third party plugin to make curved lines
+                apply: false,
+                active: false,
+                monotonicFit: true
+            },
+            lines: {
+                show: false,
+                lineWidth: 0,
+            },
+        },
+        grid: {
+            borderWidth: 0,
+            labelMargin:10,
+            hoverable: true,
+            clickable: true,
+            mouseActiveRadius:6,
+            
+        },
+        xaxis: {
+            tickDecimals: 0,
+            ticks: false
+        },
+        
+        yaxis: {
+            tickDecimals: 0,
+            ticks: false
+        },
+        
+        legend: {
+            show: false
+        }
+    };
+
+     if ($("#hour-line-chart")[0]) {
+        $.plot($("#hour-line-chart"), [
+            {data: hour_data, lines: { show: true, fill: 0.98 }, label: 'Hour', stack: false, color: '#abcdef' }
+        ], options);
+    }
+    
+    /* Tooltips for Flot Charts */
+    
+    if ($("#hour-line-chart")[0]) {
+        $("#hour-line-chart").bind("plothover", function (event, pos, item) {
+            if (item) {
+                var x = item.datapoint[0].toFixed(2),
+                    y = item.datapoint[1].toFixed(2);
+                $(".flot-tooltip").html("At "+item.series.label +" "+ parseInt(x) + " click = " + parseInt(y)).css({top: item.pageY+5, left: item.pageX-50}).show();
+            }
+            else {
+                $(".flot-tooltip").hide();
+            }
+        });
+        
+        $("<div class='flot-tooltip' class='chart-tooltip'></div>").appendTo("body");
+    }
+});
+</script>
+
 @endsection

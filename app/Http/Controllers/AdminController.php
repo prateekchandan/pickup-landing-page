@@ -15,6 +15,7 @@ use App\Driver;
 use App\Journey;
 use App\Group;
 use App\ClickCount;
+use App\HourlyClick;
 use GuzzleHttp\Client;
 
 class AdminController extends Controller
@@ -40,6 +41,11 @@ class AdminController extends Controller
         $numUsers = User::where('admin','!=','1')->count();
         $clicks = ClickCount::all();
         $totalClicks = ClickCount::sum('count');
+        $hourlyClick=HourlyClick::all();
+        $hours = array();
+        foreach ($hourlyClick as $key => $value) {
+            array_push($hours, [$value->hour,$value->count]);
+        }
         foreach ($clicks as $key => $value) {
             $clicks[$key]->percent=intval(($value->count*100)/$totalClicks);
         }
@@ -47,7 +53,8 @@ class AdminController extends Controller
     		'menu'=>'home',
             'user'=>$numUsers,
             'totalClicks'=>$totalClicks,
-            'clicks'=>$clicks
+            'clicks'=>$clicks,
+            'hours'=>$hours
     	]);
     }
 

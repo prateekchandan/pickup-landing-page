@@ -3,8 +3,8 @@ $(document).ready(function(){
     /* Make some random data for the Chart*/
     
     var d1 = [];
-    for (var i = 0; i <= 10; i += 1) {
-        d1.push([i, parseInt(Math.random() * 30)]);
+    for (var i = 0; i < 10; i += 1) {
+        d1.push([10-i, 2*i]);
     }
     var d2 = [];
     for (var i = 0; i <= 20; i += 1) {
@@ -57,13 +57,13 @@ $(document).ready(function(){
     
     if ($("#curved-line-chart")[0]) {
         $.plot($("#curved-line-chart"), [
-            {data: d1, lines: { show: true, fill: 0.98 }, label: 'Product 1', stack: true, color: '#e3e3e3' },
-            {data: d3, lines: { show: true, fill: 0.98 }, label: 'Product 2', stack: true, color: '#f1dd2c' }
+            {data: d1, lines: { show: true, fill: 0.98 }, label: 'Product 1', stack: false, color: '#e3e3e3' }/*,
+            {data: d3, lines: { show: true, fill: 0.98 }, label: 'Product 2', stack: true, color: '#f1dd2c' }*/
         ], options);
     }
     
     /* Tooltips for Flot Charts */
-    
+    /*
     if ($(".flot-chart")[0]) {
         $(".flot-chart").bind("plothover", function (event, pos, item) {
             if (item) {
@@ -77,5 +77,5 @@ $(document).ready(function(){
         });
         
         $("<div class='flot-tooltip' class='chart-tooltip'></div>").appendTo("body");
-    }
+    }*/
 });
