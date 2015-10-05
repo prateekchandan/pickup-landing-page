@@ -97,7 +97,7 @@
                                     <div class="p-t-20 p-b-20 text-center">
                                     	@foreach($clicks as $key => $click)
                                     		<div class="easy-pie sub-pie" id="sub-pie-{{$key}}" data-percent="{{$click->percent}}">
-	                                            <div class="percent">{{$click->count}}</div>
+	                                            <div class="percent">{{$click->register}}/{{$click->count}}</div>
 	                                            <div class="pie-title">{{$click->description}}</div>
 	                                        </div>
                                     	@endforeach
@@ -110,7 +110,7 @@
                         </div>
                     </div>
 
-                      <div class="card">
+                    <div class="card">
                         <div class="card-header">
                             <h2>Email Clicks <small>Day wise and hour wise email click data</small></h2>
                            
