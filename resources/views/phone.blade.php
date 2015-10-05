@@ -240,8 +240,6 @@
   </div>
   <link href="{{asset('assets/css/style-phone.css')}}" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript" src="{{asset('assets/js/script-phone.js')}}"></script>
-
   <div class="body-padding">
   </div>
 
@@ -261,6 +259,22 @@
     ga('create', 'UA-67243120-1', 'auto');
     ga('send', 'pageview');
     window.history.pushState("", "Clean URL", "/");
+
+    window.onload = function() {
+      function focus(){
+        document.getElementById('phone_num').focus();
+      }
+      document.getElementById('free').addEventListener('click', focus);
+      document.getElementsByClassName('img')[0].addEventListener('click', focus);
+    }
+
+    function hide(id){
+      document.getElementById(id).style.display="none";
+    }
+
+    function show(id){
+      document.getElementById(id).style.display="block";
+    }
   </script>
 </body>
 
