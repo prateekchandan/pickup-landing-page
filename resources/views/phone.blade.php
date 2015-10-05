@@ -39,7 +39,7 @@
     <body>
         <section class="head">
             <div class="head-logo">
-                <img src="{{asset('assets/img/pickup logo-compress.png')}}">
+                <img src="{{asset('assets/img/pickup logo-compress.png')}}" class="logo-icon">
                 <div class="head-text-wrapper">
                     <p class="head-text" >
                        Get Your First<br> Cabpooling Experience<br> With Us For <b><span  id="free">Free</span></b>,<br> Anywhere In Mumbai!
