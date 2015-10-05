@@ -480,6 +480,7 @@ hr {
 #f input , input{ 
 	font-size: 18px;
 	min-height: 60px;
+	max-height: 65px;
 	line-height: 24px;
 	padding: 16px 30px 20px;
 	border: none;
@@ -506,6 +507,7 @@ hr {
 	color: #FFBF47;
 	font-size: 18px;
 	min-height: 60px;
+	max-height: 65px;
 	text-decoration: none;
 	display: inline-block;
 	line-height: 24px;
@@ -532,7 +534,7 @@ hr {
 .ind-item{
 	display: inline-block;
 	cursor: pointer;
-	    margin-left: 10px;
+	margin-left: 10px;
 }
 .ind-item span{
 	display: table-cell;
