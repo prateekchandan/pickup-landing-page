@@ -34,7 +34,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/nivo-lightbox.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/nivo-themes/default/default.css')}}" type="text/css">
-    <link href="{{asset('admin_assets/vendors/sweet-alert/sweet-alert.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/sweet-alert.css')}}" rel="stylesheet">
     
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('assets/img/icon/apple-icon-57x57.png')}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{asset('assets/img/icon/apple-icon-60x60.png')}}">
@@ -136,7 +136,7 @@
     <div class="sec" id="f4">
         <div class="container">
 
-            <div class="row mb centered">
+            <div class="row pb2 centered">
                 <div class="col-md-10 col-md-offset-1">
                    <div id="how-carousel" class="carousel slide" data-ride="carousel">
                       <div class="carousel-inner">
@@ -344,6 +344,7 @@
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/nivo-lightbox.min.js')}}"></script>
     <script src="{{asset('assets/js/skrollr.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.placeholder.min.js')}}"></script>
     <script src="{{asset('admin_assets/vendors/sweet-alert/sweet-alert.min.js')}}"></script>
     <script>
    @if(session()->has('registered'))
@@ -371,6 +372,8 @@
     <script type="text/javascript">
       var divs=['f1','f2','f3','f4','f5','f6'];
       var blocks=['b1','b2','b3','b4','b5','b6'];
+      $('input, textarea').placeholder();
+      
       $(window).scroll(function() {
         pos = $(window).scrollTop();
         mypos = [0,0,0,0,0,0];
