@@ -1,4 +1,5 @@
 window.onload = function() {
+        /*
         var anchors = document.getElementsByClassName('text-head');
         for(var i = 0; i < anchors.length; i++) {
             anchors[i].onclick = function(i) {
@@ -12,11 +13,12 @@ window.onload = function() {
 	                toggleClass(document.getElementById(id),'show')
 	            }
             }(i);
-        }
+        }*/
         function focus(){
 			document.getElementById('phone_num').focus();
 		}
          document.getElementById('free').addEventListener('click', focus);
+         document.getElementsByClassName('img')[0].addEventListener('click', focus);
 }
 
 
@@ -36,3 +38,12 @@ function toggleClass(element, className){
     element.className = classString;
 }
 
+function hide(id){
+    document.getElementById(id).style.display="none";
+    window.scrollTo(0, 0);
+}
+
+function show(id){
+    document.getElementById(id).style.display="block";
+    window.scrollTo(0, 0);
+}

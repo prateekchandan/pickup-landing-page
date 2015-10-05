@@ -37,7 +37,7 @@
     </head>
 
     <body>
-        <section class="head">
+        <section class="head" id="head_content">
             <div class="head-logo">
                 <img src="{{asset('assets/img/pickup logo-compress.png')}}" class="logo-icon">
                 <div class="head-text-wrapper">
@@ -46,22 +46,36 @@
                     </p>
                     <img src="{{asset('assets/img-phone/group.png')}}" class="back-img">
                 </div>
-                
+
+                <div class="android-display">
+                  <h3>GET IT ON <br>GOOGLE PLAY STORE</h3>
+                  <div class="img">
+                    <img src="{{asset('assets/img-phone/android.png')}}">
+                  </div>
+                </div>
+            </div>
+            <div class="fix-bottom" onclick="show('body_content');show('sec1');hide('head_content');">
+              Know More <img src="{{asset('assets/img/down arrow.png')}}" />
             </div>
         </section>
-        <section class="body">
-           <div class="text-head" data-targetid="what_is_pickup_ans" data-img="what_img">
-               What is PickUp?
-               <img src="{{asset('assets/img/down arrow.png')}}" id="what_img"/>
-           </div>
-           <div class="text-head-answer" id="what_is_pickup_ans">
-                <img src="{{asset('assets/img-phone/what.png')}}">
-                <p>
-                    PickUp is a cabpooling platform where you book an air-conditioned ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don’t, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.
-                </p>
-           </div>
-
-           <div class="text-head" data-targetid="why_ans" data-img="why_img">
+        <section class="body hidden" id="body_content">
+          <div id="sec1" class="hidden">
+             <div class="text-head" data-targetid="what_is_pickup_ans" onclick="show('head_content');hide('body_content');hide('sec1');" data-img="what_img">
+                 What is PickUp?
+                 <img src="{{asset('assets/img/down arrow.png')}}" id="what_img"/>
+             </div>
+             <div class="text-head-answer" id="what_is_pickup_ans">
+                  <img src="{{asset('assets/img-phone/what.png')}}">
+                  <p>
+                      PickUp is a cabpooling platform where you book an air-conditioned ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don’t, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.
+                  </p>
+             </div>
+             <div class="fix-bottom" onclick="show('sec2');hide('sec1');">
+              Why the free ride? <img src="{{asset('assets/img/down arrow.png')}}" />
+             </div>
+          </div>
+          <div id="sec2" class="hidden">
+           <div class="text-head" data-targetid="why_ans" data-img="why_img" onclick="show('sec1');hide('sec2');">
                Why the free ride?
                <img src="{{asset('assets/img/down arrow.png')}}" id="why_img"/>
            </div>
@@ -71,8 +85,13 @@
                     Why not! While daily commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in carpooling. Let’s build a trusted community wherein people can share a ride with comfort and ease; a community that not just shares but also gives back to the environment. Give us a shot in bringing about a change in your daily commute. We are hoping this free ride could be that change.
                 </p>
            </div>
+           <div class="fix-bottom" onclick="show('sec3');hide('sec2');">
+              How to book your ride? <img src="{{asset('assets/img/down arrow.png')}}" />
+           </div>
+          </div>
 
-           <div class="text-head" data-targetid="how_ans" data-img="how_img">
+          <div id="sec3" class="hidden">
+           <div class="text-head" data-targetid="how_ans" data-img="how_img" onclick="show('sec2');hide('sec3');">
                How to book your ride?
                <img src="{{asset('assets/img/down arrow.png')}}" id="how_img"/>
            </div>
@@ -88,8 +107,13 @@
                 -      Rate your co-passengers on the app based on your experience to help us build a better community.
                 </p>
            </div>
+           <div class="fix-bottom" onclick="show('sec4');hide('sec3');">
+              Why Chose Us? <img src="{{asset('assets/img/down arrow.png')}}" />
+           </div>
+          </div>
 
-           <div class="text-head" data-targetid="chose_ans" data-img="chose_img">
+          <div id="sec4" class="hidden">
+           <div class="text-head" data-targetid="chose_ans" data-img="chose_img" onclick="show('sec3');hide('sec4');">
                Why Chose Us?
                <img src="{{asset('assets/img/down arrow.png')}}" id="chose_img"/>
            </div>
@@ -104,7 +128,7 @@
                 <br><br>-       Eco-friendly – Greenify the surroundings with us by decreasing fuel consumption and curbing air and noise pollution.
                 </p>
            </div>
-          
+          </div>
         </section>
         <div class="mobile-num-block">
             <form class="wrapper" method="POST">
