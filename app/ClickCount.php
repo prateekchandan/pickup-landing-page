@@ -18,4 +18,10 @@ class ClickCount extends Model
 		$this->count+=1;
 		$this->save();
 	}
+
+	public function register()
+	{
+		$this->register+=1;
+		$this->save();
+	}
 }

@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\ClickCount;
 use Socialize;
 use Auth;
-
+use Session;
 class UserController extends Controller
 {
   public function addUser(Request $request)
@@ -37,7 +38,15 @@ class UserController extends Controller
 
     $u->save();
     
+
     session(['registered'=>'1','phone'=>$u->phone]);
+
+    if(Session::has('clickval')){
+        $click = ClickCount::find(Session::pull('clickval',0));
+        if(!is_null($click))
+            $click->register();
+
+    }
     return redirect()->back()->with('msg', $message);
   }
 

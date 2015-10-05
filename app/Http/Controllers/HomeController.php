@@ -7,6 +7,7 @@ use Mail;
 use Agent;
 use Input;
 use App\ClickCount;
+use App\HourlyClick;
 class HomeController extends Controller {
 
 	/*
@@ -30,6 +31,21 @@ class HomeController extends Controller {
 		//$this->middleware('guest');
 	}
 
+
+	private function hour_count()
+	{
+		$hour  = date('H',time());
+		$date = date('Y-m-d',time());
+
+		$dateObj = HourlyClick::where('date','=',$date)->where('hour','=',$hour)->first();
+		if(is_null($dateObj))
+			$dateObj = new HourlyClick();
+
+		$dateObj->date = $date;
+		$dateObj->hour = $hour;
+		$dateObj->count += 1;
+		$dateObj->save();
+	}
 	/**
 	 * Show the application welcome screen to the user.
 	 *
@@ -39,11 +55,12 @@ class HomeController extends Controller {
 	{
 		if(Input::has('click')){
 			$num = intval(Input::get('click'));
-			if($num>=1 && $num<=7){
-				$click = ClickCount::find($num);
-				if(!is_null($click)){
-					$click->plus_one();
-				}
+			
+			$click = ClickCount::find($num);
+			if(!is_null($click)){
+				$click->plus_one();
+				session(['clickval'=>$num]);
+				$this->hour_count();
 			}
 		}
 		if(Agent::isMobile())
