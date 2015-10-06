@@ -246,7 +246,8 @@
             <div class="row pb">
                 <h1 class="centered">Download Our App</h1>
                 <hr class="aligncenter">
-                <div class="col-md-6 col-md-offset-3 mt centered">
+                <h3 class="centered mt">Coming Soon on</h3>
+                <div class="col-md-6 col-md-offset-3 centered">
                     <button class="btn btn-lg btn-android" onclick="document.getElementById('input-phone').focus()">Play Store</button>
                 </div>
             </div><!--/row -->
