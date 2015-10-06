@@ -52,7 +52,7 @@
       </div>
 
       <div class="android-display">
-        <h3>GET IT ON <br>GOOGLE PLAY STORE</h3>
+        <h3>COMING SOON ON <br>GOOGLE PLAY STORE</h3>
         <div class="img">
           <img src="{{asset('assets/img-phone/android.png')}}">
         </div>
