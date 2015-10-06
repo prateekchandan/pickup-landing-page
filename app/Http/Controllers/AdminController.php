@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use View;
 use Input;
 use Hash;
+use Response;
 use Mail;
 use App\User;
 use App\Driver;
@@ -155,7 +156,7 @@ class AdminController extends Controller
     public function bookRide($id){
     	$user = User::find($id);
     	if(is_null($user)){
-    		return "Wrong User Id";
+    		return redirect()->back();
     	}
 
     	$home = explode(',', $user->home_location);
@@ -307,4 +308,44 @@ class AdminController extends Controller
         return redirect()->back()->with('message', "Email successfully sent");;
     }
 
+    public function show_user($id)
+    {
+        $user = User::find($id);
+        
+        if(is_null($user)){
+            return redirect()->back();
+        }
+
+       
+        date_default_timezone_set('Asia/Kolkata');
+
+        $user->time = date("Y-m-d")." ".$user->leaving_office;
+        $user->time_int = strtotime($user->time)*1000;
+        
+        
+        return view('admin.user_detail',[
+            'user'=>$user
+        ]);
+    }
+
+    public function user_update()
+    {
+        $user=User::find(Input::get('user_id',-1));
+        if(is_null($user)){
+            return Response::json("Invalid User ID", 401);
+        }
+        $user->first_name = Input::get('first_name',$user->first_name);
+        $user->phone = Input::get('phone',$user->phone);
+        $user->email = Input::get('email',$user->email);
+        $user->home_text = Input::get('start_text',$user->home_text);
+        $user->home_location = Input::get('home_location',$user->home_location);
+        $user->office_text = Input::get('end_text',$user->office_text);
+        $user->office_location = Input::get('office_location',$user->office_location);
+        $user->gender = Input::get('gender',$user->gender);
+        $user->company = Input::get('company',$user->company);
+        $user->company_email = Input::get('company_email',$user->company_email);
+        $user->save();
+        return "Details for ".$user->first_name." updated successfully";
+        
+    }
 }

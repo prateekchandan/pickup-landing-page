@@ -46,7 +46,7 @@
                         "commands": function(column, row) {
                         
                             return "<button type=\"button\"  class=\"btn btn-icon command-delete\" data-row-id=\"" + row.id + "\"><span class=\"md md-delete\"></span></button>"+
-                            "<a href=\"{{route('admin::home')}}/book-ride/"+row.id+"\" type=\"button\"  class=\"btn btn-icon command-edit\" data-row-id=\"" + row.id + "\"><span class=\"md md-send\"></span></a>";
+                            "<a href=\"{{route('admin::home')}}/user/"+row.id+"\" type=\"button\"  class=\"btn btn-icon command-edit\" data-row-id=\"" + row.id + "\"><span class=\"md md-send\"></span></a>";
                         }
                     }
                 });

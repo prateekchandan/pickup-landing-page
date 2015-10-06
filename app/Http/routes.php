@@ -39,6 +39,8 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
     Route::get('driver-map-update', ['as' => 'driver.map.update', 'uses'=>'AdminController@allDriverMapUpdate']);
     
     Route::get('book-ride/{id}', ['uses'=>'AdminController@bookRide']);
+    Route::get('user/{id}', ['uses'=>'AdminController@show_user']);
+    Route::post('user', ['as' => 'user.edit','uses'=>'AdminController@user_update']);
 
     Route::post('get_best_match',['as'=>'api.get_best_match','uses'=>'AdminController@api_get_best_match']);
     Route::get('confirm_journey/{id}',['as'=>'api.confirm','uses'=>'AdminController@confirm']);
