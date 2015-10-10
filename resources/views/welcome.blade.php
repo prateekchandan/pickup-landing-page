@@ -32,8 +32,6 @@
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/ionicons.min.css')}}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('assets/css/nivo-lightbox.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/css/nivo-themes/default/default.css')}}" type="text/css">
     <link href="{{asset('assets/css/sweet-alert.css')}}" rel="stylesheet">
     
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('assets/img/icon/apple-icon-57x57.png')}}">
@@ -60,33 +58,32 @@
     <![endif]-->
   </head>
 
-  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+  <body >
 
     <!-- Menu -->
     <nav class="menu" id="theMenu">
         <div class="menu-wrap">
-            <h1 class="logo"><a href="#home">PICKUP</a></h1>
+            <h1 class="logo"><a href="#" onclick="return gotopage(1);">PICKUP</a></h1>
             <i class="ion-android-close menu-close"></i>
-            <a href="#home" class="smoothScroll">Home</a>
-            <a href="#about" class="smoothScroll">What is Pickup</a>
-            <a href="#why_free" class="smoothScroll">Why Free Ride</a>
-            <a href="#how_to_book" class="smoothScroll">How to Book Ride</a>
-            <a href="#why_chose" class="smoothScroll">Why Chose Us</a>
+            <a href="#" class="smoothScroll" onclick="return gotopage(1);">Home</a>
+            <a href="#" class="smoothScroll" onclick="return gotopage(2);">What is Pickup</a>
+            <a href="#" class="smoothScroll" onclick="return gotopage(3);">Why Free Ride</a>
+            <a href="#" class="smoothScroll" onclick="return gotopage(4);">How to Book Ride</a>
+            <a href="#" class="smoothScroll" onclick="return gotopage(5);">Why Chose Us</a>
+            <a href="#" class="smoothScroll" onclick="return gotopage(6);">Get our App</a>
         </div>
         
         <!-- Menu button -->
         <div id="menuToggle"><i class="ion-navicon"></i> Menu</div>
     </nav>
 
-      <!-- ********** HEADER ********** -->
-    <section id="home"></section>
-    <div class="sec sec-active pb2" id="f1">
-        <div class="row centered logo_bar">
+    <div class="sec sec-active" id="f1">
+        <div class="row centered logo_bar" style="height:12%">
             <img src="{{asset('assets/img/pickup logo.png')}}">
         </div>
 
-        <div class="container" style="padding-top:15px;">
-            <div class="row centered">
+        <div style="height:58%">
+            <div class="row centered" style="height:100%">
                 <div class="col-md-8 col-md-offset-2">
                     <h2>Get Your First Cabpooling Experience <br>With Us For <b>Free</b>, Anywhere In Mumbai! </h2>
                 </div>
@@ -94,155 +91,313 @@
 
             </div>
         </div><!--/container -->
+         <!-- The mobile number registration part-->
+        <div class="phone-register centered" id="phone-register" style="height:20%">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+          <form role="form"  method="post"> 
+            <input type="hidden" value="{{csrf_token()}}" name="_token">
+            <input type="hidden" name="platform" value="web">
+            <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+              oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+            <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+          </form>
+          @if(session()->has('error'))
+            <div class="text-danger" id="hint-text"><small>
+              {{session('error')}}
+              </small>
+            </div>
+          @elseif(session()->has('registered'))
+            <div class="text-success" id="hint-text"><small>
+              @if(session()->has('msg'))
+                {{session('msg')}}
+              @else
+                You have already registered
+              @endif
+              </small>
+            </div>
+           @endif
+        </div>
+
+        <div class="go aligncenter ft ft-active" style="height:10%" onclick="return gotopage(2);">
+          <a href="#" onclick="return gotopage(2);">What is PickUp? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
     </div><!--/H -->
 
     <!-- ********** ICONS ********** -->    
-    <section id="about"></section>
     <div class="sec" id="f2">  
-        <div class="container">
-            <img src="{{asset('assets/img/what.png')}}" class="full-width">
+        <div class="row centered logo_bar" style="height:8%">
+            <img src="{{asset('assets/img/pickup logo.png')}}" style="height:100%">
+        </div>
+        <div style="height:62%">
+            <div class="aligncenter" style="height:50%">
+              <img src="{{asset('assets/img/what.png')}}" style="height:100%">
+            </div>
 
-            <div class="row pb2 centered">
-                <div class="col-md-10 col-md-offset-1">
-                   <h2>What is Pickup?</h2>
-                    <p>Pickup is a cabpooling platform where you book a ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don't, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.</p>
-                    <br>
-                    <h3>GET AIR-CONDITIONED CABS AT JUST RS.99/-!</h3>
-                    <p>Thats right! We charge a mere Rs 99 for the first 12km and Rs. 6 per km thereafter. The more you ride with us, the better the perks get.</p>
+            <div class="centered" style="height:50%">
+                <div class="col-md-12">
+                   <h2 class="text-head">What is Pickup?</h2>
+                    <p class="body-text">Pickup is a cabpooling platform where you book a ride to any destination at an affordable rate. If we find a passenger along the way, we hook them with the same ride. And if we don't, you still ride at the same rate! With just 2 travellers with you and the driver, we have ensured that you get the privacy and spatial comfort you need while travelling.</p>
+                    <h3 class="text-head">GET AIR-CONDITIONED CABS AT JUST RS.99/-!</h3>
+                    <p class="body-text">Thats right! We charge a mere Rs 99 for the first 12km and Rs. 6 per km thereafter. The more you ride with us, the better the perks get.</p>
                 </div>
             </div><!--/row -->
         </div><!--/container -->
+        <div class="phone-register centered" id="phone-register" style="height:20%">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+          <form role="form"  method="post"> 
+            <input type="hidden" value="{{csrf_token()}}" name="_token">
+            <input type="hidden" name="platform" value="web">
+            <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+              oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+            <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+          </form>
+          @if(session()->has('error'))
+            <div class="text-danger" id="hint-text"><small>
+              {{session('error')}}
+              </small>
+            </div>
+          @elseif(session()->has('registered'))
+            <div class="text-success" id="hint-text"><small>
+              @if(session()->has('msg'))
+                {{session('msg')}}
+              @else
+                You have already registered
+              @endif
+              </small>
+            </div>
+           @endif
+        </div>
+
+        <div class="go aligncenter ft ft-active" style="height:10%" onclick="return gotopage(3);">
+          <a href="#" onclick="return gotopage(3);">Why the free ride? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
     </div><!--/G -->
     
 
     <!-- ********** SHOWCASE ********** -->
-    <section id="why_free"></section>
     <div class="sec" id="f3">
-        <div class="container">
-            <img src="{{asset('assets/img/why.png')}}" class="full-width">
+        <div class="row centered logo_bar" style="height:8%">
+            <img src="{{asset('assets/img/pickup logo.png')}}" style="height:100%">
+        </div>
+        <div style="height:62%">
+            <div class="aligncenter" style="height:60%">
+              <img src="{{asset('assets/img/why.png')}}" style="height:100%">
+            </div>
 
-            <div class="row pb2 centered">
-                <div class="col-md-10 col-md-offset-1">
-                   <h2>Why The Free Ride?</h2>
-                    <p>Why Not! While daily office commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in cabpooling.<br>
+            <div class="row centered" style="height:40%">
+                <div class="col-md-12">
+                   <h2 class="text-head">Why The Free Ride?</h2>
+                    <p class="body-text">Why Not! While daily office commute in the city has gotten progressively hectic, we have combined top-notch cars with reliable drivers to give you a remarkable first-hand experience in cabpooling.
                     Let's build a trusted community wherein people can share a ride with comfort and ease; a community that not just shares but also gives back to environment. Give us a shot in bringing about a change in your daily commute.</p>
                     
                 </div>
             </div><!--/row -->
         </div><!--/container -->
+        <div class="phone-register centered" id="phone-register" style="height:20%">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+          <form role="form"  method="post"> 
+            <input type="hidden" value="{{csrf_token()}}" name="_token">
+            <input type="hidden" name="platform" value="web">
+            <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+              oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+            <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+          </form>
+          @if(session()->has('error'))
+            <div class="text-danger" id="hint-text"><small>
+              {{session('error')}}
+              </small>
+            </div>
+          @elseif(session()->has('registered'))
+            <div class="text-success" id="hint-text"><small>
+              @if(session()->has('msg'))
+                {{session('msg')}}
+              @else
+                You have already registered
+              @endif
+              </small>
+            </div>
+           @endif
+        </div>
+
+        <div class="go aligncenter ft ft-active" style="height:10%" onclick="return gotopage(4);">
+          <a href="#" onclick="return gotopage(4);">Here's how you can book your next ride? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
     </div><!--/slides -->
 
-    <section id="how_to_book"></section>
-    <div class="sec" id="f4">
-        <div class="container">
-
-            <div class="row pb2 centered">
-                <div class="col-md-10 col-md-offset-1">
-                   <div id="how-carousel" class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="item active">
-                          <img src="{{asset('assets/img/how-1.png')}}" class="slide-image aligncenter" alt="First slide">
-                          <div class="indicators">
-                              <span class="ind-item ind-item-active"><span>1</span></span>
-                              <span class="ind-item" onclick="gotoSlide(1)"><span>2</span></span>
-                              <span class="ind-item" onclick="gotoSlide(2)"><span>3</span></span>
-                          </div>
-                          <p>Here's how you can book your next ride:</p>
-                          <h2>REQUEST A PICKUP</h2>
-                          <p>Select the destination on our app. Within moments, we'll match you with a ride and app will notify you with the price based on km and the estimated time for your pickup.</p>
-                        </div>
-                        <div class="item">
-                          <img src="{{asset('assets/img/how-2.png')}}" class="slide-image aligncenter" alt="First slide">
-                          <div class="indicators">
-                              <span class="ind-item" onclick="gotoSlide(0)"><span>1</span></span>
-                              <span class="ind-item ind-item-active" ><span>2</span></span>
-                              <span class="ind-item" onclick="gotoSlide(2)"><span>3</span></span>
-                          </div>
-                          <p>Here's how you can book your next ride:</p>
-                          <h2>GET PICKED UP</h2>
-                          <p>We'll text you when your pickup arrives.
-                            <br>
-                            Just hop in and pay via our various payments method.
-                          </p>
-                        </div>
-                        <div class="item">
-                          <img src="{{asset('assets/img/how-3.png')}}" class="slide-image aligncenter" alt="First slide">
-                          <div class="indicators">
-                              <span class="ind-item " onclick="gotoSlide(0)"><span>1</span></span>
-                              <span class="ind-item" onclick="gotoSlide(1)"><span>2</span></span>
-                              <span class="ind-item ind-item-active"><span>3</span></span>
-                          </div>
-                          <p>Here's how you can book your next ride:</p>
-                          <h2>REVIEW YOUR CO-PASSENGERS</h2>
-                          <p>Rate your co-passengers on the app based on your experience to help us build a better community.</p>
-                        </div>
-                      </div>
-                    </div><!-- /.carousel -->
-                </div>
-            </div><!--/row -->
+    <div class="sec aligncenter" id="f4">
+        <div class="row centered logo_bar" style="height:8%">
+            <img src="{{asset('assets/img/pickup logo.png')}}" style="height:100%">
+        </div>
+        <div style="height:62%">
+          <div id="how-carousel" class="carousel slide" data-ride="carousel" style="height:55%" data-interval="false">
+            <div class="carousel-inner" style="height:100%">
+              <div class="item active" style="height:100%">
+                <img src="{{asset('assets/img/how-1.png')}}" class="slide-image aligncenter" alt="First slide">
+              </div>
+              <div class="item" style="height:100%">
+                <img src="{{asset('assets/img/how-2.png')}}" class="slide-image aligncenter" alt="First slide">
+              </div>
+              <div class="item" style="height:100%">
+                <img src="{{asset('assets/img/how-3.png')}}" class="slide-image aligncenter" alt="First slide">
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="indicators" style="height:15%">
+              <span class="ind-item ind-item-active" id="ind-item0" onclick="gotoSlide(0)"><span>1</span></span>
+              <span class="ind-item" id="ind-item1" onclick="gotoSlide(1)"><span>2</span></span>
+              <span class="ind-item" id="ind-item2" onclick="gotoSlide(2)"><span>3</span></span>
+            </div>
+            <p style="margin:0px">Here's how you can book your next ride:</p>
+          </div>
+          <div id="how1-carousel" class="carousel slide" data-ride="carousel" style="height:30%" data-interval="false">
+            <div class="carousel-inner">
+              <div class="item active">
+                <h2 class="text-head">REQUEST A PICKUP</h2>
+                <p class="body-text" style="margin:0px">Select the destination on our app. Within moments, we'll match you with a ride and app will notify you with the price based on km and the estimated time for your pickup.</p>
+              </div>
+              <div class="item">
+                <h2 class="text-head">GET PICKED UP</h2>
+                <p class="body-text" style="margin:0px">We'll text you when your pickup arrives.
+                  <br> Just hop in and pay via our various payments method.
+                </p>
+              </div>
+              <div class="item">
+                <h2 class="text-head">REVIEW YOUR CO-PASSENGERS</h2>
+                <p class="body-text" style="margin:0px">Rate your co-passengers on the app based on your experience to help us build a better community.</p>
+              </div>
+            </div>
+          </div>
         </div><!--/container -->
+        <div class="phone-register centered" id="phone-register" style="height:20%;">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+          <form role="form"  method="post"> 
+            <input type="hidden" value="{{csrf_token()}}" name="_token">
+            <input type="hidden" name="platform" value="web">
+            <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+              oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+            <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+          </form>
+          @if(session()->has('error'))
+            <div class="text-danger" id="hint-text"><small>
+              {{session('error')}}
+              </small>
+            </div>
+          @elseif(session()->has('registered'))
+            <div class="text-success" id="hint-text"><small>
+              @if(session()->has('msg'))
+                {{session('msg')}}
+              @else
+                You have already registered
+              @endif
+              </small>
+            </div>
+           @endif
+        </div>
+
+        <div class="go aligncenter ft ft-active" style="height:10%" onclick="return gotopage(5);">
+          <a href="#" onclick="return gotopage(5);">Why Chose us? <i class="icon ion-arrow-down-b"></i></a>
+      </div>
     </div><!--/slides -->
     
     <!-- ********** SHOWCASE ********** -->
-    <section id="why_chose"></section>
     <div class="sec" id="f5">
-        <div class="container">
-            <div class="row pb2 centered">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="row">
-                        <h2 class="mb">Why Chose Us?</h2>
+        <div class="row centered logo_bar" style="height:8%">
+            <img src="{{asset('assets/img/pickup logo.png')}}" style="height:100%">
+        </div>
+        <div style="height:62%">
+            <div class="row centered" style="height:100%">
+                <div class="col-md-10 col-md-offset-1" style="height:100%">
+                    <div class="row" style="height:16%">
+                        <h2>Why Chose Us?</h2>
                     </div>
-                    <div class="row ">
-                        <div class="col-md-6">
-                            <div class="col-md-4" style="margin-top:30px">
+                    <div class="row " style="height:42%">
+                        <div class="col-xs-6 why-box" >
+                            <div class="col-xs-4">
                                  <img src="{{asset('assets/img/save-money.png')}}" class="icon-img">
                             </div>
-                            <div class="col-md-8 text-left">
+                            <div class="col-xs-8 text-left">
                                 <p><b>Save Money</b></p>
-                                <p>Our competitive price module allows us to give you a bang for your buck. We charge a highly affordable flat fee of Rs. 100 for the first 12km followed by Rs. 6 per km</p>
+                                <p  class="body-text">Our competitive price module allows us to give you a bang for your buck. We charge a highly affordable flat fee of Rs. 100 for the first 12km followed by Rs. 6 per km</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="col-md-4" style="margin-top:30px">
+                        <div class="col-xs-6 why-box">
+                            <div class="col-xs-4" style="margin-top:30px">
                                  <img src="{{asset('assets/img/convinience.png')}}" class="icon-img">
                             </div>
-                            <div class="col-md-8 text-left">
+                            <div class="col-xs-8 text-left">
                                 <p><b>Convenience</b></p>
-                                <p>Get a ride for yourself with just 2 clicks in our app. Using our 3-people-per-car policy we deliver a comfortable and stress free experience.</p>
+                                <p class="body-text">Get a ride for yourself with just 2 clicks in our app. Using our 3-people-per-car policy we deliver a comfortable and stress free experience.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="col-md-4" style="margin-top:30px">
+                    <div class="row" style="height:42%">
+                        <div class="col-xs-6 why-box">
+                            <div class="col-xs-4" style="margin-top:30px">
                                  <img src="{{asset('assets/img/secure.png')}}" class="icon-img">
                             </div>
-                            <div class="col-md-8 text-left">
+                            <div class="col-xs-8 text-left">
                                 <p><b>Secure</b></p>
-                                <p>It is important for us to make you feel safe while travelling. Our drivers are selected after a rigorous background check and every passenger's rating is provided seamlessly.</p>
+                                <p class="body-text">It is important for us to make you feel safe while travelling. Our drivers are selected after a rigorous background check and every passenger's rating is provided seamlessly.</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="col-md-4" style="margin-top:30px">
+                        <div class="col-xs-6 why-box">
+                            <div class="col-xs-4" style="margin-top:30px">
                                  <img src="{{asset('assets/img/eco-friendly.png')}}" class="icon-img">
                             </div>
-                            <div class="col-md-8 text-left">
+                            <div class="col-xs-8 text-left">
                                 <p><b>Eco-Friendly</b></p>
-                                <p>Greenify the surroundings with us by decreasing fuel consumption and curbing air and noise pollution.</p>
+                                <p class="body-text">Greenify the surroundings with us by decreasing fuel consumption and curbing air and noise pollution.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div><!--/row -->
         </div><!--/container -->
+        <div class="phone-register centered" id="phone-register" style="height:20%">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+          <form role="form"  method="post"> 
+            <input type="hidden" value="{{csrf_token()}}" name="_token">
+            <input type="hidden" name="platform" value="web">
+            <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+              oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+            <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+          </form>
+          @if(session()->has('error'))
+            <div class="text-danger" id="hint-text"><small>
+              {{session('error')}}
+              </small>
+            </div>
+          @elseif(session()->has('registered'))
+            <div class="text-success" id="hint-text"><small>
+              @if(session()->has('msg'))
+                {{session('msg')}}
+              @else
+                You have already registered
+              @endif
+              </small>
+            </div>
+           @endif
+        </div>
+
+        <div class="go aligncenter ft ft-active" style="height:10%" onclick="return gotopage(6);">
+          <a href="#" onclick="return gotopage(6);">Download APP <i class="icon ion-arrow-down-b"></i></a>
+        </div>
     </div><!--/slides -->
 
    
     
     <!-- ********** DOWNLOAD APP ********** -->
-    <section id="download_app"></section>
     <div class="sec" id="f6">
-        <div class="container">
+        <div class="row centered logo_bar" style="height:8%">
+            <img src="{{asset('assets/img/pickup logo.png')}}" style="height:100%">
+        </div>
+        <div style="height:35%">
             <div class="row pb">
                 <h1 class="centered">Download Our App</h1>
                 <hr class="aligncenter">
@@ -252,22 +407,22 @@
                 </div>
             </div><!--/row -->
         </div><!--/container -->
-        <div class="contact-sec-2">
+        <div style="height:27%">
             <div class="container text-center">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-xs-4">
                         <div class="contact-col wow animated flipInY animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInY;">
                             <i class="ion-ios-telephone icon"></i>
                             <p>+91 99 20 255 390</p>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-xs-4">
                         <div class="contact-col wow animated flipInY animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInY;">
                             <i class="ion-email icon"></i>
                             <p>support@getpickup.in</p>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-xs-4">
                         <div class="contact-col wow animated flipInY animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: flipInY;">
                             <i class="ion-home icon"></i>
                             <p>Powai , Mumbai<br>400076, India</p>
@@ -276,58 +431,46 @@
                 </div>
             </div>
         </div>
+         <div class="phone-register centered" id="phone-register" style="height:20%">
+          <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
+          <form role="form"  method="post"> 
+            <input type="hidden" value="{{csrf_token()}}" name="_token">
+            <input type="hidden" name="platform" value="web">
+            <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
+              oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
+              onchange="try{setCustomValidity('')}catch(e){}">
+            <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
+          </form>
+          @if(session()->has('error'))
+            <div class="text-danger" id="hint-text"><small>
+              {{session('error')}}
+              </small>
+            </div>
+          @elseif(session()->has('registered'))
+            <div class="text-success" id="hint-text"><small>
+              @if(session()->has('msg'))
+                {{session('msg')}}
+              @else
+                You have already registered
+              @endif
+              </small>
+            </div>
+           @endif
+        </div>
+
+        <div class="aligncenter ft ft-active" style="height:10%;padding:15px">
+           &copy; 2015.Pickup. All right reserved
+        </div>
     </div><!--/G -->
     
-    <div class="ptb"></div>
-    <!-- The mobile number registration part-->
-    <div class="phone-register centered" id="phone-register" data-0="padding:20px" data-300="padding:0px">
-        <p>INTRODUCING AIR-CONDITIONED CABS THAT ARE COMFY, SECURE AND AFFORDABLE</p>
-        <form role="form"  method="post"> 
-          <input type="hidden" value="{{csrf_token()}}" name="_token">
-          <input type="hidden" name="platform" value="web">
-          <input type="text" pattern="[7-9][0-9]{9}"  id="input-phone" name="phone" class="subscribe-input" placeholder="Enter Your Mobile No." required
-            oninvalid="setCustomValidity('Please Enter a valid 10-digit phone number')"
-            onchange="try{setCustomValidity('')}catch(e){}">
-          <button class='btn btn-submit subscribe-submit' type="submit">Get My Free Ride</button>
-        </form>
-        @if(session()->has('error'))
-          <div class="text-danger" id="hint-text"><small>
-            {{session('error')}}
-            </small>
-          </div>
-        @elseif(session()->has('registered'))
-          <div class="text-success" id="hint-text"><small>
-            @if(session()->has('msg'))
-              {{session('msg')}}
-            @else
-              You have already registered
-            @endif
-            </small>
-          </div>
-         @endif
-    </div>
+   
 
-    <footer class="centerd">
-      <div class="go aligncenter ft ft-active" id="b1">
-          <a href="#about" class="smoothScroll">What is PickUp? <i class="icon ion-arrow-down-b"></i></a>
-      </div>
-
-      <div class="go aligncenter ft" id="b2">
-        <a href="#why_free" class="smoothScroll">Why the free ride? <i class="icon ion-arrow-down-b"></i></a>
-      </div>
-
-      <div class="go aligncenter ft" id="b3">
-          <a href="#how_to_book" class="smoothScroll">Here's how you can book your next ride? <i class="icon ion-arrow-down-b"></i></a>
-      </div>
-
+    <footer class="centerd" style="display:none">
+     
+     
       <div class="go aligncenter ft" id="b4">
-          <a href="#why_chose" class="smoothScroll">Why Chose us? <i class="icon ion-arrow-down-b"></i></a>
+          <a href="#why_chose" class="smoothScroll"> <i class="icon ion-arrow-down-b"></i></a>
       </div>
-
-      <div class="go aligncenter ft" id="b5">
-          <a href="#download_app" class="smoothScroll">Download APP <i class="icon ion-arrow-down-b"></i></a>
-      </div>
-
       <div class="aligncenter ft" id="b6">
           &copy; 2015.Pickup. All right reserved
       </div>
@@ -343,9 +486,8 @@
     <script src="{{asset('assets/js/classie.js')}}"></script>
     <script src="{{asset('assets/js/smoothscroll.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-    <script src="{{asset('assets/js/nivo-lightbox.min.js')}}"></script>
-    <script src="{{asset('assets/js/skrollr.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.placeholder.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.mousewheel.min.js')}}"></script>
     <script src="{{asset('admin_assets/vendors/sweet-alert/sweet-alert.min.js')}}"></script>
     <script>
    @if(session()->has('registered'))
@@ -365,7 +507,6 @@
 
           ga('create', 'UA-67243120-1', 'auto');
           ga('send', 'pageview');
-          var s = skrollr.init();
           window.history.pushState("", "Clean URL", "/");
         </script>
     
@@ -374,25 +515,56 @@
       var divs=['f1','f2','f3','f4','f5','f6'];
       var blocks=['b1','b2','b3','b4','b5','b6'];
       $('input, textarea').placeholder();
-      
-      $(window).scroll(function() {
-        pos = $(window).scrollTop();
-        mypos = [0,0,0,0,0,0];
-        for (var i = divs.length - 1; i >= 0; i--) {
-          mypos[i] = $('#'+divs[i]).position().top;
-        };
-        var i = 0;
-        for (; i < divs.length; i++) {
-          if(pos < mypos[i])
-            break;
-        };
-        i--;
-        for (var j = blocks.length - 1; j >= 0; j--) {
-          $('#'+blocks[j]).removeClass('ft-active');
-        };
-        $('#'+blocks[i]).addClass('ft-active');
-      });
+     
+      var pageno=1;
+      function nextpage(){
+        if(pageno<6)
+          temppage = pageno+1;
+        gotopage(temppage);
+      }
 
+      function prevpage(){
+        if(pageno>1)
+          temppage = pageno-1;
+        gotopage(temppage);
+      }
+
+      var isChange = true;
+      function gotopage(pg){
+        /*if(!isChange)
+            return;*/
+        $('#f'+pageno).removeClass('sec-active');
+        pageno=pg;
+        $('#f'+pageno).addClass('sec-active');
+        isChange=false; 
+        setTimeout(function(){isChange=true;}, 500);
+        return false;
+      }
+
+    $(window).mousewheel(function(event) {
+        if(event.deltaY<0)
+          nextpage();
+        else
+          prevpage();
+    });
+
+    $(document).keydown(function(e) {
+      switch(e.which) {
+          case 38: // up
+          prevpage();
+          break;
+          case 40: // down
+          nextpage();
+          break;
+
+          default: return; // exit this handler for other keys
+      }
+      e.preventDefault(); // prevent the default action (scroll / move caret)
+  });
+    $('.subscribe-input').keyup(function(){
+      val = $(this).val();
+      $('.subscribe-input').val(val);
+    })
     </script>
   </body>
 </html>

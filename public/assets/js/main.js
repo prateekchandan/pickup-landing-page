@@ -7,13 +7,18 @@
 				$('#theMenu').toggleClass('menu-open');
 			});
 
-			$("#how-carousel").carousel('pause');
 
 
 })(jQuery)
 
 function gotoSlide(ind){
 	$("#how-carousel").carousel(ind);
+	$("#how1-carousel").carousel(ind);
+
+	for (var i = 0;i<3;i++) {
+		$('#ind-item'+i).removeClass('ind-item-active');
+	};
+	$('#ind-item'+ind).addClass('ind-item-active');
 }
 
 
