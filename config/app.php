@@ -147,6 +147,7 @@ return [
 
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Jenssegers\Agent\AgentServiceProvider',
+		'Themonkeys\Cachebuster\CachebusterServiceProvider',
 
 	],
 
@@ -197,6 +198,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+		'Bust' => 'Themonkeys\Cachebuster\Cachebuster'
 
 	],
 

@@ -54,3 +54,7 @@ Route::group(['as' => 'admin::','middleware' => 'admin','prefix'=>'admin'], func
 });
 
 
+Route::get('{path}', function($filename) {
+  return Bust::css($filename);
+})->where('path', '.*\.css$');
+App::make('cachebuster.StripSessionCookiesFilter')->addPattern('|\.css$|');

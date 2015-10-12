@@ -29,6 +29,7 @@ class Agent extends Mobile_Detect {
      */
     protected static $additionalBrowsers = array(
         'Opera'             => 'Opera|OPR',
+        'Edge'              => 'Edge',
         'Chrome'            => 'Chrome',
         'Firefox'           => 'Firefox',
         'Safari'            => 'Safari',
@@ -38,7 +39,7 @@ class Agent extends Mobile_Detect {
     );
 
     /**
-     * List of additional browsers.
+     * List of additional properties.
      *
      * @var array
      */
@@ -328,7 +329,7 @@ class Agent extends Mobile_Detect {
      */
     public function __call($name, $arguments)
     {
-        //make sure the name starts with 'is', otherwise
+        // Make sure the name starts with 'is', otherwise
         if (substr($name, 0, 2) != 'is')
         {
             throw new BadMethodCallException("No such method exists: $name");
