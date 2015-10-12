@@ -483,7 +483,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    
+
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/retina-1.1.0.js')}}"></script>
@@ -512,7 +512,7 @@
           ga('create', 'UA-67243120-1', 'auto');
           ga('send', 'pageview');
           console.log("here");
-          //window.history.pushState("", "Clean URL", "/");
+          window.history.replaceState("", "Pickup", "/");
         </script>
     
 
@@ -569,16 +569,7 @@
       $('.subscribe-input').val(val);
     })
 
-    $(document).ready(function(){
-      var head = document.getElementsByTagName('head')[0],
-      style = document.createElement('style');
-      style.type = 'text/css';
-      style.styleSheet.cssText = ':before,:after{content:none !important';
-      head.appendChild(style);
-      setTimeout(function(){
-          head.removeChild(style);
-      }, 0);
-    })
+  
     </script>
   </body>
 </html>

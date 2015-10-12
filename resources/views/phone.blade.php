@@ -258,7 +258,7 @@
 
     ga('create', 'UA-67243120-1', 'auto');
     ga('send', 'pageview');
-    window.history.pushState("", "Clean URL", "/");
+    window.history.replaceState("", "Pickup", "/");
 
     window.onload = function() {
       function focus(){
