@@ -270,10 +270,22 @@
 
     function hide(id){
       document.getElementById(id).style.display="none";
+      scrollTop();
     }
 
     function show(id){
       document.getElementById(id).style.display="block";
+      scrollTop();
+    }
+
+    function scrollTop(){
+      /*var x = document.getElementsByTagName('*');
+      for (var i = x.length - 1; i >= 0; i--) {
+        if(x[i].scrollTop!=0){
+          x[i].scrollTop=0;
+        }
+      };*/
+      window.scrollTo(0,0);
     }
   </script>
 </body>

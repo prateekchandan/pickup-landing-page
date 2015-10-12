@@ -1,4 +1,4 @@
-html,body{
+html{
 	height: 100%;
 	background: #FFBF47;
 	color:#372F5E;
@@ -6,10 +6,10 @@ html,body{
 	overflow-x:hidden; 
 }
 html{
-	overflow-y:hidden; 
+	/*overflow-y:hidden; */
 }
 body{
-	overflow-y:visible;
+	/*overflow-y:auto;*/
 }
 .head-logo{
 	margin-top: 10px;

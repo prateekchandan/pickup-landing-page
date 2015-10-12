@@ -53,7 +53,7 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
@@ -507,7 +507,8 @@
 
           ga('create', 'UA-67243120-1', 'auto');
           ga('send', 'pageview');
-          window.history.pushState("", "Clean URL", "/");
+          console.log("here");
+          //window.history.pushState("", "Clean URL", "/");
         </script>
     
 
@@ -518,30 +519,28 @@
      
       var pageno=1;
       function nextpage(){
-        if(pageno<6)
+        if(pageno<6){
           temppage = pageno+1;
-        gotopage(temppage);
+          gotopage(temppage);
+        }
       }
 
       function prevpage(){
-        if(pageno>1)
+        if(pageno>1){
           temppage = pageno-1;
-        gotopage(temppage);
+          gotopage(temppage);
+        }
       }
 
-      var isChange = true;
       function gotopage(pg){
-        /*if(!isChange)
-            return;*/
         $('#f'+pageno).removeClass('sec-active');
         pageno=pg;
         $('#f'+pageno).addClass('sec-active');
-        isChange=false; 
-        setTimeout(function(){isChange=true;}, 500);
         return false;
       }
 
-    $(window).mousewheel(function(event) {
+
+    $('body').mousewheel(function(event) {
         if(event.deltaY<0)
           nextpage();
         else
@@ -564,6 +563,17 @@
     $('.subscribe-input').keyup(function(){
       val = $(this).val();
       $('.subscribe-input').val(val);
+    })
+
+    $(document).ready(function(){
+      var head = document.getElementsByTagName('head')[0],
+      style = document.createElement('style');
+      style.type = 'text/css';
+      style.styleSheet.cssText = ':before,:after{content:none !important';
+      head.appendChild(style);
+      setTimeout(function(){
+          head.removeChild(style);
+      }, 0);
     })
     </script>
   </body>
